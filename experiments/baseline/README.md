@@ -1,26 +1,24 @@
-# Main replication protocol (draft)
+# 主复现实验方案（草案）
 
-1. Read `docs/claims.md` and select exact rows from Tables 1 and 2 before final runs.
-   Copy `config/experiments.example.json` to a named final JSON configuration and
-   record the selection criteria, excluded cases, program paths and inputs.
-2. Pin code/tool versions, error oracle, build flags, affinity and environment.
-3. Match the paper's budgets and metrics for each selected subject. The reference
-   depth limits are 5 for CVE examples and 3 for SCTBench, with 10,000 schedules.
-4. Validate Native and any other selected baseline with the same error oracle.
-   Describe how its run/time budget maps to PERIOD's schedule budget. A detection
-   difference is not attributable to scheduling if the error oracles differ.
-5. Execute at least three independent runs per setting (paper: ten). Reset program
-   state and output locations, and retain every attempt including failures.
-6. Preserve original logs, exact invocation, config, environment and group commit.
-   Extract observations into `results/raw/measurements.csv`; do not guess values.
-7. Run `python scripts/summarize.py`. Populate the Paper vs. Ours table using the
-   same metric/unit and exact original row. Explain all mismatched settings.
-8. For each discrepancy, complete `docs/analysis.md` with a controlled check.
+1. 阅读 `docs/claims.md`，在正式运行前确定论文表 1 和表 2 中要复现的具体行。
+   将 `config/experiments.example.json` 复制为有明确名称的正式 JSON 配置文件，
+   记录选择标准、排除的用例、程序路径及输入。
+2. 固定代码／工具版本、错误判定标准、编译参数、CPU 亲和性和运行环境。
+3. 针对每个选定用例，对齐论文的实验预算和指标。
+   参考深度限制为：CVE 示例取 5，SCTBench 取 3；调度预算为 10,000 次。
+4. 使用相同的错误判定标准验证 Native 及其他选定基线。
+   说明基线的运行次数／时间预算如何与 PERIOD 的调度预算对应。
+   如果错误判定标准不同，就不能把缺陷检出差异归因于调度策略。
+5. 每种设置至少独立运行三次（原论文为十次）。
+   每次重置程序状态和输出位置，保留所有尝试，包括失败的运行。
+6. 保存原始日志、完整调用命令、配置、环境和小组仓库提交版本。
+   将真实观测值提取到 `results/raw/measurements.csv`，不得猜测数值。
+7. 运行 `python scripts/summarize.py`。填写论文／本组结果对比表时，
+   使用相同指标和单位，并注明原论文的准确行位置；解释所有未对齐的设置。
+8. 针对每项差异，在 `docs/analysis.md` 中设计并记录控制变量验证。
 
-`run_PDS.py -t` controls its subprocess timeout; it is not a substitute for the
-overall schedule budget. Record both limits explicitly. Confirm current flags
-against the pinned code before building the campaign runner.
+`run_PDS.py -t` 控制子进程超时，不能代替整体调度预算。
+两种限制都要明确记录。在编写批量实验脚本前，先根据固定版本源码确认参数含义。
 
-Runtime estimates, selected subjects, the final campaign runner and validated
-baseline invocation are pending the installation stage. No completed experiment
-is implied by this protocol.
+运行耗时估计、最终用例、批量实验脚本及经过验证的基线调用命令，
+均需在安装阶段进一步确定。本方案不表示实验已经完成。

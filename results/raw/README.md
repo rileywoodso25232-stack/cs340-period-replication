@@ -1,26 +1,25 @@
-# Raw evidence
+# 原始实验证据
 
-This folder initially contains **no measured observations**. Keep the CSV header.
-Append actual numeric observations only, one metric per row:
+此目录初始状态下**没有任何实测观测值**。请保留 CSV 表头，
+仅追加真实的数值观测，每行记录一个指标：
 
 `experiment_id,claim_id,benchmark,mode,run_id,metric,value,unit,log_path,environment_path`
 
-- `experiment_id`: one frozen campaign/configuration; use a new ID for extensions
-  or controlled checks. Never pool conditions under the same ID.
-- `run_id`: unique independent repetition within the condition.
-- `metric`: e.g. `schedules_to_first_bug`, `total_schedules`, `buggy_schedules`, or
-  `wall_time_seconds`. Use the exact same metric and unit for paper comparisons.
-- `value`: a measured finite number; missing/not-found results are not zero.
-- `log_path`: repository-relative path to the original small execution log.
-- `environment_path`: repository-relative path to the corresponding environment JSON.
+- `experiment_id`：一轮固定配置的实验；扩展实验或控制变量验证使用新 ID，
+  不得用同一 ID 混合不同条件。
+- `run_id`：该条件下某次独立重复运行的唯一标识。
+- `metric`：例如 `schedules_to_first_bug`（首次发现缺陷所需调度数）、
+  `total_schedules`（总调度数）、`buggy_schedules`（触发缺陷的调度数）
+  或 `wall_time_seconds`（实际运行秒数）。与论文对比时，指标和单位必须一致。
+- `value`：实测的有限数值；缺失或未发现缺陷不能记为零。
+- `log_path`：原始小型运行日志的仓库相对路径。
+- `environment_path`：对应环境 JSON 文件的仓库相对路径。
 
-Save exact commands, budgets, exit codes, failures and generated interleavings.
-Small `.log` files are intentionally trackable. Large output stays in ignored
-`bulk/`; if cited evidence is external, supply a stable retrieval script/location
-and checksum and adapt the evidence validator explicitly.
+保存完整命令、预算、退出码、失败情况和生成的线程交错执行序列。
+仓库允许跟踪小型 `.log` 文件。大型输出放入已忽略的 `bulk/` 目录；
+如果引用外部证据，需提供稳定的获取脚本／位置和校验和，并相应调整证据验证逻辑。
 
-The numeric CSV cannot represent censoring by itself. Keep every unsuccessful
-attempt in a separate campaign outcome record and its original log, and define
-the treatment before reporting an aggregate time-to-bug or detection rate.
-The summarizer reports descriptive statistics only; it does not infer detection
-rates, timeouts, claim verdicts or comparisons from absent observations.
+数值 CSV 本身无法表达“预算耗尽仍未发现缺陷”等被截断的观测。
+每次未成功的尝试都要另存实验运行结果记录和原始日志，
+并在汇总发现缺陷所需时间或检出率之前明确这类数据的处理方式。
+统计脚本只输出描述性统计，不能根据缺失观测推断检出率、超时情况、研究主张是否成立或方法间的优劣。

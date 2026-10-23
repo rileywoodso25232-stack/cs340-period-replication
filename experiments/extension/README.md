@@ -1,20 +1,18 @@
-# Proposed extension: available CPU count
+# 扩展实验提案：可用 CPU 数量
 
-Question: does limiting available cores change PERIOD's detection stability and
-wall-clock cost on a fixed, validated subset?
+研究问题：在固定且经过验证的用例子集上，限制可用核心数量，
+是否会改变 PERIOD 检出缺陷的稳定性和实际运行耗时？
 
-Proposed levels: 2 and 4 available logical CPUs on the same machine. Check that
-the chosen input/configuration was not already evaluated in the paper before
-describing it as beyond-paper work. If resources do not permit these levels,
-revise and justify the design before collecting data.
+计划在同一台机器上比较 2 个和 4 个可用逻辑 CPU。
+将其称为“论文之外的扩展”之前，先确认原论文没有评估过所选输入／配置。
+如果资源不足以支持这两种设置，应在收集数据前修改方案并说明理由。
 
-Hold the program, input, thread count, compiler, detector, search depth, budget,
-memory limit and software versions fixed. Pin actual CPU affinity as well as
-recording the number of CPUs. Treat this as a separate campaign from replication.
-Run each condition at least three times. Collect detection, schedule metrics,
-runtime, timeouts and replay evidence. Do not classify a timeout as a bug without
-verification.
+保持程序、输入、线程数量、编译器、错误检测方式、搜索深度、预算、
+内存限制和软件版本不变。除了记录 CPU 数量，还要实际固定 CPU 亲和性。
+本实验与主复现实验分别组织和记录，每种条件至少运行三次。
+收集缺陷检出情况、调度指标、运行耗时、超时情况及重放证据。
+未经验证，不能将超时直接判定为程序缺陷。
 
-Interpret whether findings concern search behavior, execution overhead, or
-resource sensitivity; do not infer universal scaling from two core counts.
-If another factor must change, record the deviation or redesign the experiment.
+分析时区分结果反映的是搜索行为、执行开销还是资源敏感性，
+不能仅凭两个核心数量就推断普遍的扩展规律。
+如果必须同时改变其他因素，应记录偏差或重新设计实验。

@@ -1,10 +1,9 @@
-# Processed results
+# 处理后的结果
 
-Generate `summary.csv` using `python scripts/summarize.py` after collecting
-independent observations. It uses arithmetic mean and sample standard deviation
-(`n-1`). Each group requires at least three runs. Never combine different settings.
+收集独立观测值后，运行 `python scripts/summarize.py` 生成 `summary.csv`。
+脚本计算算术平均值和样本标准差（分母为 `n-1`），每组至少需要三次运行。
+不得将不同实验设置的数据合并统计。
 
-Fill `paper_vs_ours.csv` only from verified paper values and our generated summary.
-Use the same metric, unit and stated setting. Quantify gaps, identify the original
-table/figure row, list deviations, and link controlled evidence. Header-only files
-are templates, not research findings.
+`paper_vs_ours.csv` 只能根据已核实的论文数值和本组生成的统计结果填写。
+使用相同指标、单位及明确注明的设置；量化差距，标明原论文表格／图中的具体行或数据位置，
+列出偏差，并关联控制变量实验的证据。只有表头的文件是模板，不是研究结果。

@@ -1,5 +1,6 @@
-# Upstream patches
+# 上游源码补丁
 
-No patches yet. Each future patch identifies its base commit, affected files,
-purpose and application command. Verify that a fresh pinned checkout plus the
-patch reproduces the modified source. Preserve upstream licenses and notices.
+目前没有补丁。后续每个补丁都应注明所基于的提交、受影响的文件、修改目的和应用命令。
+
+验证“重新获取固定版本源码，再应用补丁”能够恢复修改后的源码。
+保留上游许可证和版权声明。

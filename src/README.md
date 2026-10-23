@@ -1,6 +1,8 @@
-# Group implementation
+# 小组自行实现的代码
 
-Place group-authored benchmark adapters, parsers and instrumentation here when
-needed. Keep original upstream files in the separate downloaded checkout.
-Save reproducible source changes in `patches/` and list them in
-`docs/upstream-modifications.csv`. No upstream source changes exist at scaffold time.
+按需在此目录添加小组编写的测试用例适配器、解析器和插桩代码。
+原始上游文件保留在单独下载的源码目录中。
+
+将可重现的上游源码修改保存到 `patches/`，并在
+`docs/upstream-modifications.csv` 中逐项记录。
+当前仓库骨架尚未包含任何上游源码修改。

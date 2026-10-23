@@ -1,6 +1,7 @@
-# Figures
+# 结果图表
 
-Place figures generated from processed data here. Each figure must identify its
-source CSV, generating script, unit, repeat count and uncertainty convention.
-No plots have been produced. Prefer error bars for repeated measurements and
-separate schedule counts from wall-clock time.
+此目录存放根据处理后数据生成的图表。
+每张图都应注明源 CSV、绘图脚本、单位、重复次数，以及误差或不确定性的表示方式。
+
+目前尚未生成图表。重复测量结果优先使用误差条，
+调度数量与实际运行耗时应分别展示。

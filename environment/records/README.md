@@ -1,5 +1,5 @@
-# Environment records
+# 环境记录
 
-`scripts/capture_environment.py` writes timestamped JSON records here. Commit the
-records used by reported runs after reviewing them. Every measurement references
-one record; collect host and container records separately when applicable.
+`scripts/capture_environment.py` 会在此目录生成带时间戳的 JSON 环境记录。
+检查内容后，将报告中实际运行所使用的记录提交到仓库。
+每条测量记录都应引用一份对应的环境记录；使用容器时，分别采集宿主机和容器内的记录。

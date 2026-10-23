@@ -1,17 +1,16 @@
-# Environment setup (not yet validated)
+# 环境搭建（尚未验证）
 
-## Original artifact
+## 原作者提供的环境
 
-Start with the pinned implementation's `INSTALL.md` and `REQUIREMENTS.md` after
-running `python scripts/fetch_upstream.py`. The author's Dockerfile uses Ubuntu
-18.04. The paper reports GCC 7.5 and LLVM 10.0. These are original reference
-settings, not a statement that they are installed on a group machine.
+执行 `python scripts/fetch_upstream.py` 后，先阅读固定版本源码中的
+`INSTALL.md` 和 `REQUIREMENTS.md`。原作者的 Dockerfile 使用 Ubuntu 18.04，
+论文报告的编译器版本为 GCC 7.5 和 LLVM 10.0。
+这些是原始参考设置，并不表示小组机器已经安装了这些版本。
 
-The original installation guide recommends a multi-core Linux host with kernel
-4.x or newer and runs the artifact container with privileged access. Validate
-this route on a dedicated experiment machine or VM before adopting it.
+原作者的安装指南建议使用内核为 4.x 或更新版本的多核 Linux 主机，
+并以特权模式运行工具容器。正式采用前，应先在专用实验机器或虚拟机中验证这条路线。
 
-## Initial procedure to validate
+## 待验证的初始步骤
 
 ```sh
 python3 scripts/fetch_upstream.py
@@ -20,28 +19,26 @@ docker build -t cs340-period:setup .
 docker run --privileged -it cs340-period:setup /bin/bash
 ```
 
-These are the upstream build route adapted to the group checkout; they have not
-been exercised for this project. Historical package sources or downloads may need
-repair. Record each change as a patch and deviation rather than silently replacing
-compiler versions. Do not change unrelated settings during debugging.
+以上命令根据上游构建流程调整了本地路径，尚未在本项目中实际执行验证。
+旧软件源或下载链接可能需要修复。每项修改都应保存为补丁并记录偏差，
+不能直接替换编译器版本而不作说明。排查问题时不要同时改动无关设置。
 
-Inside the configured container, inspect the setup and run the smoke procedure.
-Record exact working directories and export/copy original logs into this group
-repository. The container is not yet configured to export logs automatically.
+进入配置完成的容器后，检查安装情况并执行安装验证流程。
+记录准确的工作目录，将原始日志导出或复制到本小组仓库。
+目前容器尚未配置自动导出日志的功能。
 
-## Required records
+## 必须记录的信息
 
-Run `python3 scripts/capture_environment.py` on the machine used for each campaign.
-For a container, record both host and container environments. Also record:
+每轮实验都应在实际使用的机器上运行 `python3 scripts/capture_environment.py`。
+使用容器时，宿主机和容器内的环境需要分别记录。此外还需记录：
 
-- CPU model, physical/logical cores, RAM, CPU affinity and background workloads.
-- OS release, host/guest kernel, architecture and virtualization mode.
-- Git, GCC, Clang/LLVM, Python and dependency versions, compile flags and oracle.
-- Docker version, image ID/digest, mounted paths and CPU/memory limits.
-- Upstream SHA, group commit, actual modifications and workload hashes.
-- Commands, measured build/runtime, failures and reproduction steps.
+- CPU 型号、物理／逻辑核心数、内存、CPU 亲和性以及后台负载。
+- 操作系统发行版、宿主机／虚拟机内核、体系结构和虚拟化方式。
+- Git、GCC、Clang/LLVM、Python 与依赖版本，以及编译参数和错误判定标准。
+- Docker 版本、镜像 ID／摘要、挂载路径及 CPU／内存限制。
+- 上游提交 SHA、小组仓库提交、实际修改和测试负载的哈希值。
+- 完整命令、实测编译／运行耗时、失败情况及复现步骤。
 
-The capture helper collects a subset automatically. Fill missing fields from
-actual observations. Final reproducibility requires pinning all acquired inputs
-and dependencies, not just the upstream SHA. Add a validated setup script or
-Dockerfile here after a successful smoke test.
+环境采集脚本只能自动收集部分信息，缺失字段应根据实际观察补齐。
+最终实现可复现需要固定所有获取的输入和依赖，不能只固定上游提交 SHA。
+安装验证成功后，再在此目录加入经过实际验证的搭建脚本或 Dockerfile。

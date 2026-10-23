@@ -1,8 +1,9 @@
-# Installation smoke test
+# 安装验证（冒烟测试）
 
-Status: planned; not executed. Run inside the configured upstream Linux environment.
+当前状态：已规划，尚未执行。请在配置完成的上游 Linux 环境中运行。
 
-The pinned upstream checkout provides `test/doubleFree/`. From its root:
+固定版本的上游源码包含 `test/doubleFree/` 示例。
+从上游源码根目录开始执行：
 
 ```sh
 source tool/init_env.sh
@@ -12,15 +13,14 @@ cd test/doubleFree
 "$ROOT_DIR/tool/DBDS/run_PDS.py" -y -d 3 ./df
 ```
 
-The upstream README illustrates six tested schedules and four failing schedules
-at depth three for this example. That is an installation reference, not a result
-produced by this group. Several failing schedules can represent one bug.
+上游 README 对该示例的演示结果是：深度为 3 时测试了 6 个调度，
+其中 4 个调度触发失败。这是安装参考，不是本组实测结果。
+多个失败调度可能对应同一个缺陷。
 
-Save stdout/stderr, exit status, the command, environment, and generated schedules.
-Replay a saved failing schedule with upstream `run_PDS.py -r <saved-file> ./df`.
-Copy small cited logs into `results/raw/`; keep bulk output out of Git.
-Record differences or installation failures before attempting final benchmarks.
+保存标准输出／标准错误、退出状态、运行命令、环境以及生成的调度文件。
+使用上游命令 `run_PDS.py -r <saved-file> ./df` 重放已保存的失败调度。
+将需要引用的小型日志复制到 `results/raw/`，大型输出不要提交到 Git。
+在运行正式测试用例前，先记录与参考结果的差异或安装失败情况。
 
-Next gate: validate at least one `evaluation/` subject and the intended baseline,
-then freeze the actual main-experiment configuration. Smoke success alone does
-not establish the paper's research claims.
+下一步：验证至少一个 `evaluation/` 用例及计划使用的基线，
+再固定实际的主实验配置。安装验证通过本身不能证明论文的研究主张成立。

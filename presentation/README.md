@@ -1,8 +1,8 @@
-# Presentation materials
+# 展示材料
 
-The handout refers to a separate Presentation Instruction that has not yet been
-provided. Confirm duration, slide requirements and rubric before finalizing slides.
+课程说明提到了单独的展示要求（Presentation Instruction），但目前尚未提供。
+定稿前需要确认展示时长、幻灯片要求及评分标准。
 
-Proposed story: problem and claim -> bounded reproduction -> evidence -> controlled
-discrepancy analysis -> extension -> limitations and verdict. Use the report's
-verified results and cite each figure's source. Do not present draft data as findings.
+建议按以下顺序组织：研究问题与主张 → 明确范围的复现 → 实验证据 →
+控制变量的差异分析 → 扩展实验 → 局限性与结论。
+使用报告中已经核实的结果，并注明每张图的来源。不要将草稿数据作为研究发现展示。
