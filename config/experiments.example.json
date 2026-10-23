@@ -1,0 +1,16 @@
+{
+  "status": "draft-not-validated",
+  "repeats": 3,
+  "schedule_limit": 10000,
+  "cve_bug_depth_limit": 5,
+  "sctbench_bug_depth_limit": 3,
+  "planned_modes": ["period", "native"],
+  "selected_benchmarks": [],
+  "selection_note": "Select and freeze exact Table 1/2 rows before final runs. Do not select only successful cases.",
+  "extension": {
+    "status": "proposed",
+    "factor": "available_cpu_count",
+    "levels": [2, 4],
+    "controls": ["program", "input", "thread_count", "bug_depth", "schedule_budget", "error_oracle", "software_versions"]
+  }
+}

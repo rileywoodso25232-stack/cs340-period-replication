@@ -1,0 +1,60 @@
+# Local dependencies, downloaded upstream source and build outputs
+/third_party/PERIOD/
+/build/
+/dist/
+/.cache/
+/downloads/
+/tmp/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.bc
+*.core
+core
+core.*
+
+# Disk images, traces, archives and large generated output
+*.img
+*.qcow2
+*.vmdk
+*.vdi
+*.iso
+*.trace
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+**/out_*/
+/results/raw/bulk/
+
+# Credentials and local machine settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Report build intermediates; final report PDF may be tracked
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.out
+
+# Keep small raw .log files: reported measurements must be traceable.

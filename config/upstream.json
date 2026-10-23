@@ -1,0 +1,9 @@
+{
+  "name": "PERIOD",
+  "repository": "https://github.com/wcventure/PERIOD.git",
+  "commit": "cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+  "destination": "third_party/PERIOD",
+  "license": "MIT",
+  "verified_on": "2026-10-23",
+  "note": "Fixed starting reference; not asserted to be the exact paper-evaluation commit."
+}
