@@ -31,7 +31,7 @@ AddressSanitizer 报告 double-free，说明该调度可以再次触发重复释
 - [Dockerfile.repro](Dockerfile.repro)：从容器代码目录中保存的搭建文件；尚未确认当前镜像是否由此文件构建。
 - 重放日志位置：`results/raw/setup-smoke/replay.log`，相对于仓库根目录。
 - 失败调度位置：`results/raw/setup-smoke/out_df_1/Errors/`，相对于仓库根目录。
-- 测试日志及失败调度文件将另行上传；4 个失败调度不代表 4 种不同缺陷。
+- 测试日志及失败调度文件已提交；4 个失败调度不代表 4 种不同缺陷。
 - 容器配置原始记录保留在本地备份中，本次未提交。
 
 ## 已验证的重放方法
