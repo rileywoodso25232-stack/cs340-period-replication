@@ -1,0 +1,85 @@
+{
+  "captured_at_utc": "2026-10-27T12:05:13.073644+00:00",
+  "system": "Windows",
+  "release": "11",
+  "version": "10.0.26200",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "python": "3.12.14",
+  "git": {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "git version 2.53.0.windows.3",
+    "stderr": ""
+  },
+  "gcc": {
+    "command": [
+      "gcc",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "gcc (x86_64-posix-sjlj-rev0, Built by MinGW-W64 project) 8.1.0\nCopyright (C) 2018 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    "stderr": ""
+  },
+  "clang": {
+    "status": "unavailable",
+    "command": [
+      "clang",
+      "--version"
+    ]
+  },
+  "docker": {
+    "status": "unavailable",
+    "command": [
+      "docker",
+      "--version"
+    ]
+  },
+  "group_commit": {
+    "command": [
+      "git",
+      "-C",
+      "C:\\Users\\13989\\Desktop\\OS复现\\cs340-period-replication",
+      "rev-parse",
+      "HEAD"
+    ],
+    "returncode": 0,
+    "stdout": "4eedd2125e62bd7c3f122dd2f366d90b7292979d",
+    "stderr": ""
+  },
+  "group_worktree": {
+    "command": [
+      "git",
+      "-C",
+      "C:\\Users\\13989\\Desktop\\OS复现\\cs340-period-replication",
+      "status",
+      "--short"
+    ],
+    "returncode": 0,
+    "stdout": "?? docs/research-workflow.zh-CN.md\n?? environment/records/windows-setup/\n?? scripts/windows/",
+    "stderr": ""
+  },
+  "linux_cpu": null,
+  "upstream_reference": {
+    "name": "PERIOD",
+    "repository": "https://github.com/wcventure/PERIOD.git",
+    "commit": "cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+    "destination": "third_party/PERIOD",
+    "license": "MIT",
+    "verified_on": "2026-10-23",
+    "note": "Fixed starting reference; not asserted to be the exact paper-evaluation commit."
+  },
+  "not_collected_automatically": [
+    "RAM",
+    "container image digest",
+    "CPU affinity",
+    "build flags",
+    "workload checksums",
+    "oracle settings",
+    "dependency versions"
+  ],
+  "experiment_environment_validated": false
+}

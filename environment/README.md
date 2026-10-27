@@ -1,5 +1,7 @@
 # 环境搭建（尚未验证）
 
+本机已开始搭建，实际进度与重启后步骤见[本机搭建记录](LOCAL_SETUP_STATUS.zh-CN.md)。
+
 ## 原作者提供的环境
 
 执行 `python scripts/fetch_upstream.py` 后，先阅读固定版本源码中的

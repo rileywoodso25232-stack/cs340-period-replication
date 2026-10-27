@@ -3,6 +3,7 @@
 | Date | Tool | Assistance | Human verification | Scope limitation |
 | --- | --- | --- | --- | --- |
 | 2026-10-23 | OpenAI Codex | Paper-selection discussion; initial repository layout, documentation and helper scripts | Pending team review; check outputs are recorded separately | No experimental findings were generated |
+| 2026-10-27 | OpenAI Codex | Expanded research workflow; local Windows host preflight, WSL prerequisites, pinned source retrieval and a Linux scheduler probe | Pending team review; observed setup states are saved in environment/records/windows-setup/ | No PERIOD build, smoke-test result or research observation has been produced at this stage |
 
 Update this record throughout the project. Record material AI help with code,
 analysis and writing, what was checked by humans, and how it was used. Do not claim

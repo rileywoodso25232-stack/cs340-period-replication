@@ -36,6 +36,8 @@ core.*
 /results/raw/bulk/
 
 # Credentials and local machine settings
+# Verbose Windows Installer logs contain local account and system properties.
+/environment/records/windows-setup/*-msi.log
 .env
 .env.*
 !.env.example

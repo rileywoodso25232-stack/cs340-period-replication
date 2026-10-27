@@ -1,0 +1,30 @@
+{
+  "updated_at_utc": "2026-10-27T12:15:25.6056233Z",
+  "stage": "restart_required_before_kernel_install",
+  "restart_required": true,
+  "wsl_installed": false,
+  "linux_smoke_test_run": false,
+  "features": [
+    {
+      "name": "Microsoft-Windows-Subsystem-Linux",
+      "before": "Disabled",
+      "restart_needed": true,
+      "after": "Enabled"
+    },
+    {
+      "name": "VirtualMachinePlatform",
+      "before": "Disabled",
+      "restart_needed": true,
+      "after": "Enabled"
+    }
+  ],
+  "wsl_install_exit_code": -1,
+  "runtime_route": "windows_inbox_wsl2",
+  "kernel_msi_exit_code": 1603,
+  "error": "Kernel MSI returned 1603; inspect inbox-kernel-msi.log.",
+  "kernel_package_installed": false,
+  "linux_distribution_installed": false,
+  "required_next_action": "Manually restart Windows, then recheck WSL and retry the signed kernel package if appropriate.",
+  "bootstrap_download_stopped": true,
+  "period_smoke_test_run": false
+}
