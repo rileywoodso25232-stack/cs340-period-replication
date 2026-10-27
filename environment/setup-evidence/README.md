@@ -1,163 +1,82 @@
-﻿\# PERIOD 鐜鎼缓涓庡畨瑁呴獙璇佹潗鏂?
+# PERIOD 环境搭建与安装验证材料
 
+## 提交人
+- 学号：1240014957
+- 全名：吴明阳
 
+## 完成情况
+已完成 PERIOD 环境配置，并成功重放 doubleFree 示例的一个失败调度。
+AddressSanitizer 报告 double-free，说明该调度可以再次触发重复释放错误。
+本次材料用于环境与安装验证，不代表论文主实验已完成。
 
-\## 鎻愪氦浜?
+## 实际环境
+- 运行方式：Docker，使用 WSL2 Linux 内核
+- 容器系统：Ubuntu 18.04.6 LTS
+- 内核：6.18.33.2-microsoft-standard-WSL2
+- GCC：7.5.0
+- Clang：10.0.0
+- Python 3：3.6.9
+- PERIOD 提交：cb8deb9a176e5bb292d70d46557dd61dc0e98069
+- Docker 镜像名称：period:cb8deb9
+- 本地镜像 ID：sha256:5ab9c6dec0438d00f35f21a02c127aeed628236c470cabf2fcbec453379f57a2
+- 容器名称：period-cs340
+- 特权模式：开启
+- 挂载目录：无
+- 容器内代码目录：/workdir/PERIOD
 
-\- 瀛﹀彿锛?240014957
+## 材料说明
+以下链接以本说明文件所在目录为基准：
 
-\- 鍏ㄥ悕锛氬惔鏄庨槼
+- [environment.txt](environment.txt)：系统、内核、代码提交和编译器版本记录。
+- [Dockerfile.repro](Dockerfile.repro)：从容器代码目录中保存的搭建文件；尚未确认当前镜像是否由此文件构建。
+- 重放日志位置：`results/raw/setup-smoke/replay.log`，相对于仓库根目录。
+- 失败调度位置：`results/raw/setup-smoke/out_df_1/Errors/`，相对于仓库根目录。
+- 测试日志及失败调度文件将另行上传；4 个失败调度不代表 4 种不同缺陷。
+- 容器配置原始记录保留在本地备份中，本次未提交。
 
+## 已验证的重放方法
 
+以下步骤适用于本机已有容器，尚不是全新机器上的完整安装流程。
 
-\## 瀹屾垚鎯呭喌
-
-宸插畬鎴?PERIOD 鐜閰嶇疆锛屽苟鎴愬姛閲嶆斁 doubleFree 绀轰緥鐨勪竴涓け璐ヨ皟搴︺€?
-
-AddressSanitizer 鎶ュ憡 double-free锛岃鏄庤璋冨害鍙互鍐嶆瑙﹀彂閲嶅閲婃斁閿欒銆?
-
-鏈鏉愭枡鐢ㄤ簬鐜涓庡畨瑁呴獙璇侊紝涓嶄唬琛ㄨ鏂囦富瀹為獙宸插畬鎴愩€?
-
-
-
-\## 瀹為檯鐜
-
-\- 杩愯鏂瑰紡锛欴ocker锛屼娇鐢?WSL2 Linux 鍐呮牳
-
-\- 瀹瑰櫒绯荤粺锛歎buntu 18.04.6 LTS
-
-\- 鍐呮牳锛?.18.33.2-microsoft-standard-WSL2
-
-\- GCC锛?.5.0
-
-\- Clang锛?0.0.0
-
-\- Python 3锛?.6.9
-
-\- PERIOD 鎻愪氦锛歝b8deb9a176e5bb292d70d46557dd61dc0e98069
-
-\- Docker 闀滃儚鍚嶇О锛歱eriod:cb8deb9
-
-\- 鏈湴闀滃儚 ID锛歴ha256:5ab9c6dec0438d00f35f21a02c127aeed628236c470cabf2fcbec453379f57a2
-
-\- 瀹瑰櫒鍚嶇О锛歱eriod-cs340
-
-\- 鐗规潈妯″紡锛氬紑鍚?
-
-\- 鎸傝浇鐩綍锛氭棤
-
-\- 瀹瑰櫒鍐呬唬鐮佺洰褰曪細/workdir/PERIOD
-
-
-
-\## 鏉愭枡璇存槑
-
-浠ヤ笅閾炬帴浠ユ湰璇存槑鏂囦欢鎵€鍦ㄧ洰褰曚负鍩哄噯锛?
-
-
-
-\- \[environment.txt](environment.txt)锛氱郴缁熴€佸唴鏍搞€佷唬鐮佹彁浜ゅ拰缂栬瘧鍣ㄧ増鏈褰曘€?
-
-\- \[Dockerfile.repro](Dockerfile.repro)锛氫粠瀹瑰櫒浠ｇ爜鐩綍涓繚瀛樼殑鎼缓鏂囦欢锛涘皻鏈‘璁ゅ綋鍓嶉暅鍍忔槸鍚︾敱姝ゆ枃浠舵瀯寤恒€?
-
-\- \[閲嶆斁鏃ュ織](../../results/raw/setup-smoke/replay.log)锛氭湰娆″け璐ヨ皟搴﹂噸鏀剧殑杈撳嚭鏃ュ織銆?
-
-\- \[澶辫触璋冨害鐩綍](../../results/raw/setup-smoke/out_df_1/Errors/)锛氭鍓嶈繍琛屼繚瀛樼殑 4 涓け璐ヨ皟搴︽枃浠躲€傝繖浜涙枃浠朵笉浠ｈ〃 4 绉嶄笉鍚岀己闄枫€?
-
-\- 瀹瑰櫒閰嶇疆鍘熷璁板綍 container-inspect.json 淇濈暀鍦ㄦ湰鍦板浠戒腑锛屾湰娆℃湭鎻愪氦銆?
-
-
-
-\## 宸查獙璇佺殑閲嶆斁鏂规硶
-
-
-
-浠ヤ笅姝ラ閫傜敤浜庢湰鏈哄凡鏈夊鍣紝灏氫笉鏄叏鏂版満鍣ㄤ笂鐨勫畬鏁村畨瑁呮祦绋嬨€?
-
-
-
-鍦?Windows PowerShell 涓惎鍔ㄥ苟杩涘叆宸叉湁瀹瑰櫒锛?
-
-
+在 Windows PowerShell 中启动并进入已有容器：
 
 ```powershell
-
 docker start -ai period-cs340
-
 ```
 
-
-
-濡傛灉瀹瑰櫒宸插湪杩愯锛屽彲鏀圭敤锛?
-
-
+如果容器已在运行，可改用：
 
 ```powershell
-
 docker exec -it period-cs340 /bin/bash
-
 ```
 
-
-
-杩涘叆瀹瑰櫒鍚庝緷娆℃墽琛岋細
-
-
+进入容器后依次执行：
 
 ```bash
-
 cd /workdir/PERIOD
-
 source tool/init_env.sh
-
 cd test/doubleFree
-
 "$ROOT_DIR/tool/DBDS/run_PDS.py" -r out_df_1/Errors/000001_0000003_double-free ./df
-
 ```
 
-
-
-瀹為檯杈撳嚭鍖呭惈锛?
-
-
+实际输出包含：
 
 ```text
-
 ERROR: AddressSanitizer: attempting double-free
-
 SUMMARY: AddressSanitizer: double-free
-
 ABORTING
-
 ```
 
+结论：保存的失败调度成功再次触发 double-free 错误。
+ABORTING 表示测试程序检测到错误后终止。
 
+## 当前限制与后续工作
+- 尚未完成依据这份材料在全新机器上的构建验证。
+- 尚未确认当前镜像是否由备份的 Dockerfile.repro 构建。
+- 原始测试的完整控制台日志尚未收集；replay.log 是本次重新执行重放时保存的日志。
+- 不能仅凭 4 个失败调度文件推断总调度数、不同缺陷数量或运行耗时。
+- 后续需要补充正式实验配置、至少三次独立运行的数据、论文结果对比、差异分析及扩展实验。
 
-缁撹锛氫繚瀛樼殑澶辫触璋冨害鎴愬姛鍐嶆瑙﹀彂 double-free 閿欒銆?
-
-ABORTING 琛ㄧず娴嬭瘯绋嬪簭妫€娴嬪埌閿欒鍚庣粓姝€?
-
-
-
-\## 褰撳墠闄愬埗涓庡悗缁伐浣?
-
-\- 灏氭湭瀹屾垚渚濇嵁杩欎唤鏉愭枡鍦ㄥ叏鏂版満鍣ㄤ笂鐨勬瀯寤洪獙璇併€?
-
-\- 灏氭湭纭褰撳墠闀滃儚鏄惁鐢卞浠界殑 Dockerfile.repro 鏋勫缓銆?
-
-\- 鍘熷娴嬭瘯鐨勫畬鏁存帶鍒跺彴鏃ュ織灏氭湭鏀堕泦锛況eplay.log 鏄湰娆￠噸鏂版墽琛岄噸鏀炬椂淇濆瓨鐨勬棩蹇椼€?
-
-\- 涓嶈兘浠呭嚟 4 涓け璐ヨ皟搴︽枃浠舵帹鏂€昏皟搴︽暟銆佷笉鍚岀己闄锋暟閲忔垨杩愯鑰楁椂銆?
-
-\- 鍚庣画闇€瑕佽ˉ鍏呮寮忓疄楠岄厤缃€佽嚦灏戜笁娆＄嫭绔嬭繍琛岀殑鏁版嵁銆佽鏂囩粨鏋滃姣斻€佸樊寮傚垎鏋愬強鎵╁睍瀹為獙銆?
-
-
-
-\## AI 浣跨敤璇存槑
-
-浣跨敤 ChatGPT 杈呭姪鏁寸悊鎿嶄綔鍛戒护銆佽В閲婄粓绔緭鍑哄拰缂栧啓鏉愭枡璇存槑銆?
-
-鐜閰嶇疆鍙婃祴璇曟墽琛岀敱鏈汉瀹為檯鎿嶄綔锛岃繍琛岀粨鏋滃凡鏍稿銆?
-
-
+## AI 使用说明
+使用 ChatGPT 辅助整理操作命令、解释终端输出和编写材料说明。
+环境配置及测试执行由本人实际操作，运行结果已核对。
