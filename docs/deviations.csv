@@ -1,1 +1,4 @@
 item,paper_setting,our_setting,reason,affected_claims,evidence_path
+python_dependencies,Upstream pip installation without fixed versions,Ubuntu NumPy 1.13.3 and sysv_ipc 0.6.8,Use versioned distro packages compatible with Python2.7 and 3.6; import and example compilation passed,Runtime compatibility still requires smoke test,environment/records/linux-setup/packages.tsv
+script_line_endings,Fixed source archive contains CRLF scripts,LF in Linux tool Python/shell scripts and doubleFree shell scripts,Required for Linux shell and shebang execution; no algorithm changes,Build reproducibility,environment/records/linux-setup/line-endings.json
+kernel,Paper Linux environment; exact kernel to verify,WSL2 6.18.54.1-microsoft-standard-WSL2,Initial local feasibility environment; SCHED_DEADLINE probe passed,Runtime and scheduling comparability; not yet validated with PERIOD,environment/records/linux-setup/deadline-probe.json

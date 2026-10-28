@@ -1,0 +1,56 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libblas3 libgfortran4 liblapack3
+Suggested packages:
+  gfortran python-nose python-numpy-dbg python-numpy-doc python3-nose
+  python3-numpy-dbg
+The following NEW packages will be installed:
+  libblas3 libgfortran4 liblapack3 python-numpy python3-numpy python3-sysv-ipc
+0 upgraded, 6 newly installed, 0 to remove and 44 not upgraded.
+Need to get 6643 kB of archives.
+After this operation, 31.4 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python3-sysv-ipc amd64 0.6.8-2build4 [18.2 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 libblas3 amd64 3.7.1-4ubuntu1 [140 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libgfortran4 amd64 7.5.0-3ubuntu1~18.04 [492 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 liblapack3 amd64 3.7.1-4ubuntu1 [2112 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-numpy amd64 1:1.13.3-2ubuntu1 [1938 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 python3-numpy amd64 1:1.13.3-2ubuntu1 [1943 kB]
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 6643 kB in 5s (1270 kB/s)
+Selecting previously unselected package python3-sysv-ipc.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 47078 files and directories currently installed.)
+Preparing to unpack .../0-python3-sysv-ipc_0.6.8-2build4_amd64.deb ...
+Unpacking python3-sysv-ipc (0.6.8-2build4) ...
+Selecting previously unselected package libblas3:amd64.
+Preparing to unpack .../1-libblas3_3.7.1-4ubuntu1_amd64.deb ...
+Unpacking libblas3:amd64 (3.7.1-4ubuntu1) ...
+Selecting previously unselected package libgfortran4:amd64.
+Preparing to unpack .../2-libgfortran4_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking libgfortran4:amd64 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package liblapack3:amd64.
+Preparing to unpack .../3-liblapack3_3.7.1-4ubuntu1_amd64.deb ...
+Unpacking liblapack3:amd64 (3.7.1-4ubuntu1) ...
+Selecting previously unselected package python-numpy.
+Preparing to unpack .../4-python-numpy_1%3a1.13.3-2ubuntu1_amd64.deb ...
+Unpacking python-numpy (1:1.13.3-2ubuntu1) ...
+Selecting previously unselected package python3-numpy.
+Preparing to unpack .../5-python3-numpy_1%3a1.13.3-2ubuntu1_amd64.deb ...
+Unpacking python3-numpy (1:1.13.3-2ubuntu1) ...
+Setting up libgfortran4:amd64 (7.5.0-3ubuntu1~18.04) ...
+Setting up python3-sysv-ipc (0.6.8-2build4) ...
+Setting up libblas3:amd64 (3.7.1-4ubuntu1) ...
+update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto mode
+Setting up liblapack3:amd64 (3.7.1-4ubuntu1) ...
+update-alternatives: using /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3 to provide /usr/lib/x86_64-linux-gnu/liblapack.so.3 (liblapack.so.3-x86_64-linux-gnu) in auto mode
+Setting up python-numpy (1:1.13.3-2ubuntu1) ...
+Setting up python3-numpy (1:1.13.3-2ubuntu1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...

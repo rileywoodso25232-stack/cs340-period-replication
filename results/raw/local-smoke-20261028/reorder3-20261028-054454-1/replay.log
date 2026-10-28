@@ -1,0 +1,10 @@
+Bug found!
+reorder_3_bad: reorder_bad.c:80: void *checkThread(void *): Assertion `0' failed.
+opts: [('-y', ''), ('-r', 'out_reorder_3_bad_1/Errors/000001_0000006_assertion-failed')]
+args: ['./reorder_3_bad']
+reproduceFile: out_reorder_3_bad_1/Errors/000001_0000006_assertion-failed
+
+
+[4;36mPerform Dry Run![0m
+
+[4;36mPerform Reproduction![0m

@@ -1,0 +1,9 @@
+{
+  "source_url": "https://cdimage.ubuntu.com/ubuntu-base/releases/18.04/release/ubuntu-base-18.04.5-base-amd64.tar.gz",
+  "checksum_source": "https://cdimage.ubuntu.com/ubuntu-base/releases/18.04/release/SHA256SUMS",
+  "sha256": "8ff20b47bb123e4271da81b77ee56e6b5aeb85eaf7d9b1b5f6f3fbc7f11d07ea",
+  "sha256_verified": true,
+  "bytes": 26061715,
+  "distribution": "Ubuntu Base 18.04.5 amd64",
+  "imported_into_wsl": false
+}

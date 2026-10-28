@@ -1,0 +1,9 @@
+{
+  "version": "3.0.3.0",
+  "source_api_url": "https://api.github.com/repos/microsoft/WSL/releases/assets/620248546",
+  "expected_bytes": 367575040,
+  "observed_bytes": 367575040,
+  "sha256": "ae977286974255bd26bf925f00f40f5692c6b2084155cbc0563c09aea091f211",
+  "sha256_verified_against_github_asset_digest": true,
+  "download_seconds_this_run": 185.03
+}

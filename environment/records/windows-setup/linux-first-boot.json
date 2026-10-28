@@ -1,0 +1,42 @@
+{
+  "time": "2026-10-28T13:26:37.9679109+08:00",
+  "boot_time": "2026-10-28T13:24:27.5000000+08:00",
+  "linux_exit": 0,
+  "linux_boot_validated": true,
+  "output": [
+    "wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。",
+    "Linux LAPTOP-K3LQOSI9 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux",
+    "NAME=\"Ubuntu\"",
+    "VERSION=\"18.04.5 LTS (Bionic Beaver)\"",
+    "ID=ubuntu",
+    "ID_LIKE=debian",
+    "PRETTY_NAME=\"Ubuntu 18.04.5 LTS\"",
+    "VERSION_ID=\"18.04\"",
+    "HOME_URL=\"https://www.ubuntu.com/\"",
+    "SUPPORT_URL=\"https://help.ubuntu.com/\"",
+    "BUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"",
+    "PRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"",
+    "VERSION_CODENAME=bionic",
+    "UBUNTU_CODENAME=bionic",
+    "uid=0(root) gid=0(root) groups=0(root)",
+    "CPU_COUNT=32",
+    "LINUX_BOOT_OK"
+  ],
+  "services": [
+    {
+      "status": "Running",
+      "name": "hns"
+    },
+    {
+      "status": "Running",
+      "name": "vmcompute"
+    },
+    {
+      "status": "Running",
+      "name": "WslService"
+    }
+  ],
+  "pending_xml_exists": false,
+  "cbs_reboot_pending": false,
+  "period_experiment_run": false
+}

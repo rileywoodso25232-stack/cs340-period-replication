@@ -1,30 +1,16 @@
 {
-  "updated_at_utc": "2026-10-27T12:15:25.6056233Z",
-  "stage": "restart_required_before_kernel_install",
-  "restart_required": true,
-  "wsl_installed": false,
-  "linux_smoke_test_run": false,
-  "features": [
-    {
-      "name": "Microsoft-Windows-Subsystem-Linux",
-      "before": "Disabled",
-      "restart_needed": true,
-      "after": "Enabled"
-    },
-    {
-      "name": "VirtualMachinePlatform",
-      "before": "Disabled",
-      "restart_needed": true,
-      "after": "Enabled"
-    }
-  ],
-  "wsl_install_exit_code": -1,
-  "runtime_route": "windows_inbox_wsl2",
-  "kernel_msi_exit_code": 1603,
-  "error": "Kernel MSI returned 1603; inspect inbox-kernel-msi.log.",
-  "kernel_package_installed": false,
-  "linux_distribution_installed": false,
-  "required_next_action": "Manually restart Windows, then recheck WSL and retry the signed kernel package if appropriate.",
-  "bootstrap_download_stopped": true,
-  "period_smoke_test_run": false
+  "recorded_on": "2026-10-28",
+  "stage": "linux_and_initial_period_smoke_validated",
+  "restart_required": false,
+  "wsl_installed": true,
+  "runtime_route": "modern_wsl3",
+  "wsl_version": "3.0.3.0",
+  "distribution": "CS340-PERIOD",
+  "linux_distribution_installed": true,
+  "linux_boot_validated": true,
+  "linux_kernel": "6.18.54.1-microsoft-standard-WSL2",
+  "period_smoke_test_run": true,
+  "validation_scope": "doubleFree search/replay and reorder_3 three runs with one replay; not formal replication",
+  "evidence": "results/raw/local-smoke-20261028/summary.json",
+  "required_next_action": "Fix research scope and validate Serial baseline before formal comparisons."
 }

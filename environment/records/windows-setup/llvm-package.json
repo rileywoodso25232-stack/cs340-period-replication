@@ -1,0 +1,11 @@
+{
+  "source_api_url": "https://api.github.com/repos/llvm/llvm-project/releases/assets/19022579",
+  "publisher_repository": "llvm/llvm-project",
+  "release_tag": "llvmorg-10.0.0",
+  "filename": "clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz",
+  "bytes": 433701532,
+  "observed_sha256": "b25f592a0c00686f03e3b7db68ca6dc87418f681f4ead4df4745a01d9be63843",
+  "github_published_digest": null,
+  "signature_verification_pending": true,
+  "download_seconds": 254.42
+}

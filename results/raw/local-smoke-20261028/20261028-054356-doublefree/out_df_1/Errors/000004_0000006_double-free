@@ -1,0 +1,30 @@
+[[1, 2], [0, 2]]
+=================================================================
+==48==ERROR: AddressSanitizer: attempting double-free on 0x602000000010 in thread T1:
+    #0 0x4941dd  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4941dd)
+    #1 0x4c6511  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4c6511)
+    #2 0x7c111a2076da  (/lib/x86_64-linux-gnu/libpthread.so.0+0x76da)
+    #3 0x7c1118b2161e  (/lib/x86_64-linux-gnu/libc.so.6+0x12161e)
+
+0x602000000010 is located 0 bytes inside of 7-byte region [0x602000000010,0x602000000017)
+freed by thread T2 here:
+    #0 0x4941dd  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4941dd)
+    #1 0x4c65b1  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4c65b1)
+
+previously allocated by thread T0 here:
+    #0 0x49445d  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x49445d)
+    #1 0x4c66d0  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4c66d0)
+    #2 0x7c1118a21c86  (/lib/x86_64-linux-gnu/libc.so.6+0x21c86)
+
+Thread T1 created by T0 here:
+    #0 0x47f20a  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x47f20a)
+    #1 0x4c674f  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4c674f)
+    #2 0x7c1118a21c86  (/lib/x86_64-linux-gnu/libc.so.6+0x21c86)
+
+Thread T2 created by T0 here:
+    #0 0x47f20a  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x47f20a)
+    #1 0x4c6772  (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4c6772)
+    #2 0x7c1118a21c86  (/lib/x86_64-linux-gnu/libc.so.6+0x21c86)
+
+SUMMARY: AddressSanitizer: double-free (/root/cs340-period/smoke/20261028-054356-doublefree/df+0x4941dd) 
+==48==ABORTING

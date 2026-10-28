@@ -1,46 +1,39 @@
-# 环境搭建（尚未验证）
+# 环境配置与运行验收
 
-本机已开始搭建，实际进度与重启后步骤见[本机搭建记录](LOCAL_SETUP_STATUS.zh-CN.md)。
+本机 WSL2 环境已通过工具链构建及两个小用例验证，详见[最终环境记录](LOCAL_SETUP_STATUS.zh-CN.md)。
 
-## 原作者提供的环境
+## 本机继续工作
 
-执行 `python scripts/fetch_upstream.py` 后，先阅读固定版本源码中的
-`INSTALL.md` 和 `REQUIREMENTS.md`。原作者的 Dockerfile 使用 Ubuntu 18.04，
-论文报告的编译器版本为 GCC 7.5 和 LLVM 10.0。
-这些是原始参考设置，并不表示小组机器已经安装了这些版本。
+在 PowerShell 中进入 Linux：
 
-原作者的安装指南建议使用内核为 4.x 或更新版本的多核 Linux 主机，
-并以特权模式运行工具容器。正式采用前，应先在专用实验机器或虚拟机中验证这条路线。
-
-## 待验证的初始步骤
-
-```sh
-python3 scripts/fetch_upstream.py
-cd third_party/PERIOD
-docker build -t cs340-period:setup .
-docker run --privileged -it cs340-period:setup /bin/bash
+```powershell
+wsl -d CS340-PERIOD
 ```
 
-以上命令根据上游构建流程调整了本地路径，尚未在本项目中实际执行验证。
-旧软件源或下载链接可能需要修复。每项修改都应保存为补丁并记录偏差，
-不能直接替换编译器版本而不作说明。排查问题时不要同时改动无关设置。
+在 Linux bash 中加载本组环境脚本（仓库位置不同需修改路径）：
 
-进入配置完成的容器后，检查安装情况并执行安装验证流程。
-记录准确的工作目录，将原始日志导出或复制到本小组仓库。
-目前容器尚未配置自动导出日志的功能。
+```bash
+source /mnt/c/Users/13989/Desktop/OS复现/cs340-period-replication/scripts/linux/period_env.sh
+cd "$ROOT_DIR"
+```
 
-## 必须记录的信息
+随后按[安装验证说明](../experiments/smoke/README.md)运行。源码目录保存构建产物，预实验使用独立目录，避免清理脚本删除旧观测。
 
-每轮实验都应在实际使用的机器上运行 `python3 scripts/capture_environment.py`。
-使用容器时，宿主机和容器内的环境需要分别记录。此外还需记录：
+## 新机器搭建边界
 
-- CPU 型号、物理／逻辑核心数、内存、CPU 亲和性以及后台负载。
-- 操作系统发行版、宿主机／虚拟机内核、体系结构和虚拟化方式。
-- Git、GCC、Clang/LLVM、Python 与依赖版本，以及编译参数和错误判定标准。
-- Docker 版本、镜像 ID／摘要、挂载路径及 CPU／内存限制。
-- 上游提交 SHA、小组仓库提交、实际修改和测试负载的哈希值。
-- 完整命令、实测编译／运行耗时、失败情况及复现步骤。
+当前脚本是已配置 Linux 中的构建辅助，不是一键 Windows 安装器。
 
-环境采集脚本只能自动收集部分信息，缺失字段应根据实际观察补齐。
-最终实现可复现需要固定所有获取的输入和依赖，不能只固定上游提交 SHA。
-安装验证成功后，再在此目录加入经过实际验证的搭建脚本或 Dockerfile。
+1. 准备 Ubuntu 18.04 Linux 环境，确认实际内核、root/调度权限和网络；运行 `scripts/linux/probe_deadline.py`。
+2. 使用 `config/upstream.json` 固定源码，放入 Linux 文件系统。现有脚本默认 `/root/cs340-period/source/<commit>`，换路径时须同步修改环境与构建脚本。
+3. 按固定版本 `INSTALL.md` 安装系统构建依赖，安装 LLVM 10.0.0 到源码根目录的 `clang+llvm`。本次实际包版本和安装日志在 `records/linux-setup/`。
+4. 根据 `records/linux-setup/line-endings.json` 将 Linux 副本中相关脚本 CRLF 转 LF；reorder_3 的两个 shell 脚本也需转换。
+5. 执行 `bash scripts/linux/configure_period.sh` 构建 SVF、分析插件和插桩工具；该脚本要求前述依赖和 LLVM 已就绪。每阶段日志存入 `/root/cs340-period/setup-logs/`。
+6. 编译最小程序并进行搜索、失败重放，保留全部尝试。新机器必须重新验证，不能复用本机结果充当新结果。
+
+## 记录规则
+
+- 固定源码、依赖、编译参数、资源、命令、日志和退出状态；偏差登记在 `docs/deviations.csv`。
+- 保留真实失败调度和重放证据；小实验与正式结果分开。
+- `records/windows-setup/` 中早期已提交文件属于历史快照，当前状态以最终环境记录与 Linux 验证为准。
+- `scripts/windows/` 中原有脚本属于初期安装辅助，不是此次已验证的完整搭建路线。临时排障脚本已移至本机归档。
+- 原作者推荐的 Docker 路线尚未在本机验证；当前使用 WSL2 内直接构建。
