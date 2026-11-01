@@ -1,0 +1,8 @@
+﻿WSL installation returned -1. Inspect wsl-install.log.
+所在位置 C:\Users\13989\Desktop\OS复现\cs340-period-replication\scripts\windows\Install-WslPrerequisites.ps1:56 字符: 9
++         throw "WSL installation returned $taskWslExit. Inspect wsl-in ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (WSL installatio...sl-install.log.:String) [], RuntimeException
+    + FullyQualifiedErrorId : WSL installation returned -1. Inspect wsl-install.log.
+ 
+

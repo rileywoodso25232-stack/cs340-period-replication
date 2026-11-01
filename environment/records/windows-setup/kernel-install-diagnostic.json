@@ -1,0 +1,15 @@
+{
+  "recorded_on_local_date": "2026-10-27",
+  "package_file": "downloads/wsl_update_x64.msi",
+  "authenticode_status": "Valid",
+  "signer_organization": "Microsoft Corporation",
+  "observed_msi_product_version": "5.10.16",
+  "installation_exit_code": 1603,
+  "failed_action": "LaunchConditions",
+  "observed_message": "This update only applies to machines with the Windows Subsytem for Linux",
+  "windows_feature_restart_required": true,
+  "interpretation": "The installer does not yet recognize a usable WSL prerequisite. Restart to activate the enabled Windows features, then recheck. This is not evidence that the hardware is unsuitable.",
+  "kernel_package_installed": false,
+  "linux_smoke_test_run": false,
+  "next_action": "Manually restart Windows; resume setup without rebooting automatically."
+}

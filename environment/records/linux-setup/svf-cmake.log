@@ -1,0 +1,18 @@
+-- The C compiler identification is Clang 10.0.0
+-- The CXX compiler identification is Clang 10.0.0
+-- Check for working C compiler: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/bin/clang
+-- Check for working C compiler: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/bin/clang -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/bin/clang++
+-- Check for working CXX compiler: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/bin/clang++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Linker detection: GNU ld
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/SVF/Release-build

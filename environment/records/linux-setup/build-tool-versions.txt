@@ -1,0 +1,20 @@
+clang version 10.0.0 
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/bin
+10.0.0
+LLVM (http://llvm.org/):
+  LLVM version 10.0.0
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: goldmont
+Name: wllvm
+Version: 1.1.6
+Summary: Whole Program LLVM
+Home-page: https://github.com/SRI-CSL/whole-program-llvm
+Author: Ian A. Mason, Tristan Ravitch, Dan Liew, Bruno Dutertre, Benjamin Schubert, Berkeley Churchill, Marko Dimjasevic, Will Dietz, Fabian Mager, Ben Liblit, Andrew Santosa, Tomas Kalibera, Loic  Gelle, Joshua Cranmer, Alexander Bakst.
+Author-email: iam@csl.sri.com
+License: MIT
+Location: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/wllvm
+Requires: 
+1.13.3 0.6.8

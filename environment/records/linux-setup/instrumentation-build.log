@@ -1,0 +1,17 @@
+[*] Checking for working 'llvm-config'...
+[*] Checking for working 'clang'...
+[+] All set and ready to build.
+clang -O3 -funroll-loops -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign -DAFL_PATH=\"/usr/local/lib/afl\" -DBIN_PATH=\"/usr/local/bin\" -DVERSION=\"1.01b\"  dbds-clang-fast.c -o ../dbds-clang-fast 
+ln -sf dbds-clang-fast ../dbds-clang-fast++
+clang++ `llvm-config --cxxflags` -Wl,-znodelete -fno-rtti -fpic -O0 -funroll-loops -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign -DVERSION=\"1.01b\" -Wno-variadic-macros -shared dbds-llvm-pass.so.cc -o ../dbds-llvm-pass.so `llvm-config --ldflags` 
+clang++ -O0 -g -O0 -funroll-loops -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign -DVERSION=\"1.01b\" -Wno-variadic-macros -fPIC -c DBDSFunction.cpp -o ../DBDSFunction.o
+[*] Testing the CXX wrapper and instrumentation output...
+unset AFL_USE_ASAN AFL_USE_MSAN AFL_INST_RATIO; AFL_QUIET=1 AFL_PATH=. AFL_CC=clang ../dbds-clang-fast -O3 -funroll-loops -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign -DAFL_PATH=\"/usr/local/lib/afl\" -DBIN_PATH=\"/usr/local/bin\" -DVERSION=\"1.01b\"  -Wno-return-type -c ./test.c -o test.o  #-fsanitize=address
+[DEBUG] The ConConfig file was successfully opened.
+[DEBUG] The file is /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/staticAnalysis/DBDS-INSTRU/llvm-mode/ConConfig
+[DEBUG]
+[DEBUG] Instrumentation for test.c:20
+[DEBUG] Instrumentation for test.c:30
+clang++ ./test.o ../DBDSFunction.o -g -O0 -o test-instr -pthread -ldl #-fsanitize=address
+[+] All right, the instrumentation seems to be working!
+[+] All done! You can now use '../dbds-clang-fast' to compile programs.

@@ -1,0 +1,19 @@
+{
+  "recorded_on_local_date": "2026-10-27",
+  "repository": "https://github.com/wcventure/PERIOD.git",
+  "expected_commit": "cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+  "observed_commit": "cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+  "worktree_clean": true,
+  "initial_direct_fetch": "failed: Recv failure: Connection was reset",
+  "direct_codeload_archive": "failed: TLS unexpected EOF; not used",
+  "successful_method": "Git shallow fetch through the existing Windows system proxy, configured only for that command",
+  "proxy_committed_to_git_config": false,
+  "commands_after_system_proxy_detection": [
+    "git -c http.proxy=<existing-system-proxy> -C third_party/PERIOD fetch --depth 1 origin cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+    "git -C third_party/PERIOD checkout --detach cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+    "git -C third_party/PERIOD rev-parse HEAD",
+    "git -C third_party/PERIOD status --short"
+  ],
+  "linux_build_run": false,
+  "period_smoke_test_run": false
+}

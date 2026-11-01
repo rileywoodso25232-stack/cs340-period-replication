@@ -1,0 +1,16 @@
+{
+  "recorded_on": "2026-10-28",
+  "stage": "linux_and_initial_period_smoke_validated",
+  "restart_required": false,
+  "wsl_installed": true,
+  "runtime_route": "modern_wsl3",
+  "wsl_version": "3.0.3.0",
+  "distribution": "CS340-PERIOD",
+  "linux_distribution_installed": true,
+  "linux_boot_validated": true,
+  "linux_kernel": "6.18.54.1-microsoft-standard-WSL2",
+  "period_smoke_test_run": true,
+  "validation_scope": "doubleFree search/replay and reorder_3 three runs with one replay; not formal replication",
+  "evidence": "results/raw/local-smoke-20261028/summary.json",
+  "required_next_action": "Fix research scope and validate Serial baseline before formal comparisons."
+}

@@ -1,0 +1,20 @@
+Scanning dependencies of target instruFunction
+[ 10%] Building CXX object DryRunPass/CMakeFiles/instruFunction.dir/instruFunction.cpp.o
+Scanning dependencies of target DryRunPass
+Scanning dependencies of target DBDSPass
+Scanning dependencies of target SensitiveOperationsPass
+[ 20%] Building CXX object DBDSPass/CMakeFiles/DBDSPass.dir/DBDSPass.cpp.o
+[ 30%] Building CXX object SensitiveOperationsPass/CMakeFiles/SensitiveOperationsPass.dir/SensitiveOperationsPass.cpp.o
+[ 40%] Building CXX object DryRunPass/CMakeFiles/DryRunPass.dir/DryRunPass.cpp.o
+[ 50%] Linking CXX static library libinstruFunction.a
+[ 50%] Built target instruFunction
+Scanning dependencies of target DBDSFunction
+[ 60%] Building CXX object DBDSPass/CMakeFiles/DBDSFunction.dir/DBDSFunction.cpp.o
+[ 70%] Linking CXX static library libDBDSFunction.a
+[ 70%] Built target DBDSFunction
+[ 80%] Linking CXX shared module libDryRunPass.so
+[ 90%] Linking CXX shared module libDBDSPass.so
+[ 90%] Built target DryRunPass
+[ 90%] Built target DBDSPass
+[100%] Linking CXX shared module libSensitiveOperationsPass.so
+[100%] Built target SensitiveOperationsPass

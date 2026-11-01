@@ -1,0 +1,42 @@
+{
+  "captured_at_utc": "2026-10-27T12:05:12.7611899Z",
+  "purpose": "Windows host preflight for PERIOD",
+  "cpu": {
+    "Name": "Intel(R) Core(TM) i9-14900HX",
+    "NumberOfCores": 24,
+    "NumberOfLogicalProcessors": 32,
+    "VirtualizationFirmwareEnabled": true,
+    "SecondLevelAddressTranslationExtensions": true
+  },
+  "os": {
+    "Caption": "Microsoft Windows 11 家庭版 中文版",
+    "Version": "10.0.26200",
+    "BuildNumber": "26200",
+    "OSArchitecture": "64 位",
+    "TotalVisibleMemorySize": 66826104,
+    "FreePhysicalMemory": 50136976
+  },
+  "hypervisor": {
+    "HypervisorPresent": false
+  },
+  "disks": [
+    {
+      "Name": "C",
+      "Used": 256221532160,
+      "Free": 65902059520
+    },
+    {
+      "Name": "D",
+      "Used": 454929022976,
+      "Free": 244768960512
+    },
+    {
+      "Name": "E",
+      "Used": 427211436032,
+      "Free": 572974874624
+    }
+  ],
+  "upstream_commit": "cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+  "linux_experiment_environment_validated": false,
+  "smoke_test_run": false
+}

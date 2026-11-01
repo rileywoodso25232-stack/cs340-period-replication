@@ -1,0 +1,54 @@
+{
+  "kind": "environment_validation_not_formal_results",
+  "source_commit": "cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+  "linux_directory_timestamps": "UTC; user-facing timezone Asia/Shanghai",
+  "search_depth": 3,
+  "reorder_schedule_limit": 1000,
+  "outer_timeout_seconds": 120,
+  "replay_timeout_seconds": 60,
+  "per_execution_timeout_seconds": 5,
+  "runs": [
+    {
+      "run": "20261028-054356-doublefree",
+      "exit_code": 0,
+      "schedules": 6,
+      "error_schedules": 4,
+      "timeouts": 0,
+      "tool_seconds": 5.09923,
+      "executable_sha256": "6c640c227752c6a23c381aaff290f5c39d0de864494acdb623b853bf98fda360",
+      "replay_exit": 0
+    },
+    {
+      "run": "reorder3-20261028-054454-1",
+      "exit_code": 0,
+      "schedules": 27,
+      "error_schedules": 6,
+      "timeouts": 0,
+      "tool_seconds": 4.18727,
+      "executable_sha256": "debc8f46f33b0c15b39ef111b6bb17a0ff89bf966ff6e7762c45d6b29472fd24",
+      "replay_exit": 0
+    },
+    {
+      "run": "reorder3-20261028-054458-2",
+      "exit_code": 0,
+      "schedules": 27,
+      "error_schedules": 6,
+      "timeouts": 0,
+      "tool_seconds": 2.11832,
+      "executable_sha256": "debc8f46f33b0c15b39ef111b6bb17a0ff89bf966ff6e7762c45d6b29472fd24",
+      "replay_exit": null
+    },
+    {
+      "run": "reorder3-20261028-054500-3",
+      "exit_code": 0,
+      "schedules": 27,
+      "error_schedules": 6,
+      "timeouts": 0,
+      "tool_seconds": 2.15469,
+      "executable_sha256": "debc8f46f33b0c15b39ef111b6bb17a0ff89bf966ff6e7762c45d6b29472fd24",
+      "replay_exit": null
+    }
+  ],
+  "reorder_mean_seconds": 2.8200933333333333,
+  "reorder_sample_sd_seconds": 1.1841493666904244
+}
