@@ -1,0 +1,8 @@
+{
+  "groups": 3,
+  "max_executions": 1000,
+  "execution_timeout_seconds": 5,
+  "group_timeout_seconds": 120,
+  "arguments": [],
+  "oracle": "Bug found! plus assertion failure diagnostic"
+}

@@ -1,0 +1,12 @@
+{
+  "group": 1,
+  "executions": 1000,
+  "outcomes": {
+    "assertion": 0,
+    "normal": 1000,
+    "timeout": 0,
+    "other_error": 0
+  },
+  "first_bug_execution": null,
+  "wall_seconds": 0.842466179999974
+}
