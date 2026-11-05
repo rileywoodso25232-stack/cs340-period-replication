@@ -1,0 +1,7 @@
+method,group,exit,complete,schedules,error_schedules,timeouts,wrapper_elapsed_seconds
+serial,1,0,True,30,10,0,0.495723
+serial,2,0,True,30,10,0,0.406593
+serial,3,0,True,30,10,0,0.42544
+period,1,0,True,27,6,0,0.600303
+period,2,0,True,27,6,0,0.604778
+period,3,0,True,27,6,0,0.71376

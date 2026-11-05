@@ -1,0 +1,7 @@
+{
+  "method": "serial",
+  "saved_failure": "serial/group-1/out_reorder_3_bad_1/Errors/000001_0000010_assertion-failed",
+  "driver_exit": 0,
+  "replay_target_exit": -6,
+  "assertion_reproduced": true
+}
