@@ -1,0 +1,7 @@
+!**/out_*/
+!**/out_*/**
+__pycache__/
+*.pyc
+reorder_3_bad
+core
+core.*
