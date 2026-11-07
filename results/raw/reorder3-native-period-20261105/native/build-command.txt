@@ -1,0 +1,1 @@
+clang -g -O0 reorder_3_bad.c -o reorder_3_native -lpthread -ldl
