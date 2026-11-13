@@ -60,3 +60,12 @@ for timely GitHub history, and it does not itself certify a passed weekly check.
 - 后续发现旧 Python 驱动数组布局与目标运行时不一致，上述 PERIOD 数据留作历史预实验，不与修复后结果合并。Native 是本次自定义配置，未宣称复现论文全部基线。
 - 证据：[Docker 预实验](../results/raw/docker-reorder3-20261105/README.md)、[Native 补充对照](../results/raw/reorder3-native-period-20261105/README.md)。
 - 今日提交采用 GitHub 网页分批上传并创建同一个 PR；本地 Git 暂存状态不作为已上传证明。PR 链接待创建后补充。
+- 
+- ### 2026-11-07 后续更新
+
+- 11 月 5 日的实验材料已通过 [PR #3](https://github.com/rileywoodso25232-stack/cs340-period-replication/pull/3) 合并至 `main`，罗力汗完成了 PR 审核。
+
+## 2026-11-13：表 1 子集进展
+
+- 吴明阳已将三个选定用例的 PERIOD 运行记录推送到实验分支，每个用例独立运行三次。
+- 已更新根目录 README。统计汇总、论文原值对照和组员复核待完成。
