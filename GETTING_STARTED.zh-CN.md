@@ -1,6 +1,6 @@
 # 小组仓库上手指南
 
-当前阶段：已建立仓库骨架，尚未配置或验证 PERIOD 实验环境。
+当前阶段：已完成 WSL2 + Docker 和 WSL2 直接构建两条路线的初步验证，并已收集论文表 1 子集的 PERIOD 运行记录。统计汇总、论文对照和组员复核待完成。
 
 ## 1. 邀请组员
 
@@ -200,9 +200,7 @@ python scripts/check_repository.py
 
 ## 5. 现在的下一项工作
 
-先补齐四人名单和分工，再确定 Linux 实验环境，按照
-`environment/README.md` 和 `experiments/smoke/README.md` 验证安装。
-Windows 可以用于日常协作；正式实验的 Linux 方案仍需选择并验证。
+表 1 下一步是核对原始记录、汇总统计，并与论文原值逐项对照。表 2 下一步是确认用例、基线和正式实验配置。需要搭建环境的组员可先阅读 environment/README.md。
 
 `third_party/PERIOD/` 由脚本按固定 commit 获取，不直接提交整套依赖。
 不要把镜像、编译产物、大型 trace、凭据或超过 50 MB 的文件提交进仓库。
