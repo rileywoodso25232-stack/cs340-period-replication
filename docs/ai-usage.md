@@ -27,3 +27,9 @@ statement based on this record and the actual contribution history.
 The initial summary parser missed ANSI-prefixed lines and reported zero schedules. It was corrected using final Round footers without rerunning experiments. Original summaries, logs, correction audit and failed tool attempts were retained in their respective evidence/backup locations.
 
 Same-day scope also includes the earlier Docker reorder_3 search/replay and three native execution batches: ChatGPT assisted with scripts, output interpretation and write-up; the user executed commands and retained evidence. Earlier PERIOD logs remain historical pre-experiments after the IPC mismatch was identified. Final packaging also reviewed the original conversation, preserved failure excerpts, and prepared browser-upload batches; independent team review is still pending.
+## 2026-11-13 至 2026-11-14 更新
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-13 | Claude | Assisted with experiment preparation, as recorded in the project handoff. | 吴明阳 ran the experiments locally in Docker. Reported observations came from the saved run records. | Independent review of the results was pending. |
+| 2026-11-13–14 | OpenAI Codex / ChatGPT | Reviewed branch documentation, checked the wording of the extension summary, helped standardize commit titles, and diagnosed a CSV formatting issue in the deviations table. | 吴明阳 edited the documentation, pushed the corrected commit titles, and confirmed that GitHub displayed the CSV as a table. | The review did not verify the raw data run by run. |
