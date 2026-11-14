@@ -3,8 +3,14 @@
 本仓库用于小组复现 Cheng Wen 等人在 ICSE 2022 发表的论文
 **Controlled Concurrency Testing via Periodical Scheduling**（基于周期调度的受控并发测试）。
 
-**当前状态：仓库骨架已建立，尚未收集复现实验结果。**
-选题暂定为该论文；上游运行环境、安装验证、基线方法和最终测试用例仍需确认。
+**当前进度：已完成 Docker 和 WSL2 两条环境路线的初步验证，并收集了论文表 1 中三个选定用例的 PERIOD 运行记录。**
+
+11 月 13 日的运行记录保留为原始观测。原驱动与插桩程序的共享内存布局存在差异。11 月 14 日使用兼容驱动，以深度上限 3 对 Table 1 的三个选定用例各复核三轮，九轮均完成且无超时。三个用例每轮的总调度数／错误交错数分别为 19／8、42／4、96／1。
+
+本轮对照覆盖 Table 1 中三个用例的 PERIOD 列。每例三轮、深度上限 3，与论文第 4.1.3 节所述的每个程序运行十次、CVE 基准深度上限 5 有差异。另有一批深度 5 检查，十轮尝试中九轮完成、一轮中止。该批的具体驱动版本待核实，结果单独汇总。
+
+- [Table 1 深度 3 复核](results/raw/table1-verification/README.md)
+- [深度 5 检查](results/raw/depth5-verification/README.md)
 
 - 论文：https://wcventure.github.io/pdf/ICSE2022_PERIOD.pdf
 - 原作者实现：https://github.com/wcventure/PERIOD
@@ -72,7 +78,7 @@ python scripts/fetch_upstream.py
 仅使用 Docker 不能固定宿主机内核；还需记录宿主机／虚拟机内核和容器镜像摘要。
 
 搭建过程中必须实际验证编译、运行命令，并记录耗时。
-当前仓库骨架尚不能证明研究工具可以在全新机器上一键复现。
+目前已在 WSL2 + Docker 和 WSL2 直接构建两条路线完成初步验证。按文档在干净环境中重新构建并运行主实验仍待验证。
 
 ## 测量与分析
 
