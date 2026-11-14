@@ -5,7 +5,12 @@
 
 **当前进度：已完成 Docker 和 WSL2 两条环境路线的初步验证，并收集了论文表 1 中三个选定用例的 PERIOD 运行记录。**
 
-本轮每个用例独立运行三次，记录已提交到实验分支。统计汇总、与论文原值的逐项对照和组员复核仍待完成。本轮范围是表 1 的 PERIOD 子集。
+11 月 13 日的运行记录保留为原始观测。原驱动与插桩程序的共享内存布局存在差异。11 月 14 日使用兼容驱动，以深度上限 3 对 Table 1 的三个选定用例各复核三轮，九轮均完成且无超时。三个用例每轮的总调度数／错误交错数分别为 19／8、42／4、96／1。
+
+本轮对照覆盖 Table 1 中三个用例的 PERIOD 列。每例三轮、深度上限 3，与论文第 4.1.3 节所述的每个程序运行十次、CVE 基准深度上限 5 有差异。另有一批深度 5 检查，十轮尝试中九轮完成、一轮中止。该批的具体驱动版本待核实，结果单独汇总。
+
+- [Table 1 深度 3 复核](results/raw/table1-verification/README.md)
+- [深度 5 检查](results/raw/depth5-verification/README.md)
 
 - 论文：https://wcventure.github.io/pdf/ICSE2022_PERIOD.pdf
 - 原作者实现：https://github.com/wcventure/PERIOD
