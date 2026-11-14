@@ -69,3 +69,8 @@ for timely GitHub history, and it does not itself certify a passed weekly check.
 
 - 吴明阳已将三个选定用例的 PERIOD 运行记录推送到实验分支，每个用例独立运行三次。
 - 已更新根目录 README。统计汇总、论文原值对照和组员复核待完成。
+
+## 2026-11-14：Table 1 子集复核与深度 5 检查
+- Table 1 深度 3 复核：三个用例各三轮，九轮全部完成，零超时。逐轮数据见 [复核说明和统计](../results/raw/table1-verification/README.md)。
+- 深度 5 检查：十轮尝试，九轮完成，完成轮次零超时。15265 第 2 轮因 ASan 报错中止，保留在逐轮表中，排除出完成轮次统计。十份原始日志已在本地核对 SHA-256，具体驱动版本待核实。见 [深度 5 说明、统计和校验记录](../results/raw/depth5-verification/README.md)。
+- 计时口径：7911 的 11 月 13 日原始第 1 轮墙钟时间包含等待按键，排除出耗时比较。原始日志和调度计数保留。组员独立复核待完成。
