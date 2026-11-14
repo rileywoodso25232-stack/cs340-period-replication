@@ -1,0 +1,10 @@
+﻿case,run,schedules,error_interleavings,timeouts,runtime_seconds,status
+7911,1,19,8,0,0.33961,completed
+7911,2,19,8,0,0.26828,completed
+7911,3,19,8,0,0.78217,completed
+9806,1,42,4,0,0.57147,completed
+9806,2,42,4,0,1.68815,completed
+9806,3,42,4,0,1.69240,completed
+15265,1,96,1,0,3.84026,completed
+15265,2,96,1,0,3.72858,completed
+15265,3,96,1,0,3.43033,completed
