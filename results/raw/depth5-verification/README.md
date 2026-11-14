@@ -10,7 +10,8 @@ Evaluate the observed results of PERIOD under the depth-5 configuration.
 - Windows with WSL2 and Docker
 - Existing container: period-cs340
 - Depth parameter: 5
-
+- Driver: Saved PowerShell history identifies `run_candidate.py`. All ten search logs confirm depth 5. The exact driver revision remains unverified because the backup contains neither a copy nor a checksum of the driver file.
+- 
 ## Results
 - Total attempted runs: 10
 - Completed runs: 9
