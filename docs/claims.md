@@ -1,5 +1,9 @@
 # Claims to test (draft)
 
+同日后续：本机 reorder_3 的 PERIOD/Serial 兼容候选各一次搜索与重放已通过，见[动态验收](../results/raw/local-ipc-validation-20261115/README.md)。三个 CVE 尚未在本机用兼容副本执行，正式配置仍未冻结。
+
+2026-11-15：阶段 5 交接采用表一三个候选用例 CVE-2016-7911、CVE-2016-9806、CVE-2017-15265；表二先以 reorder_3 验证候选基线。本机 IPC 兼容问题尚待动态验收，正式配置未冻结。范围、复用边界与补证据清单见[交接核验](stage5-6-handoff.zh-CN.md)。下文最终用例选择待定包含后续表二范围，不表示已有三个 CVE 候选被取消。
+
 Select one to three claims, freeze exact subjects and settings, and link each claim
 to a specific original figure/table. Current entries are proposals, not findings.
 

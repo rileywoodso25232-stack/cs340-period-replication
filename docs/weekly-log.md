@@ -1,5 +1,14 @@
 # Weekly progress log
 
+## 2026-11-15：本机 IPC 兼容候选验收
+
+- 成员：1240013942 刘竞辰；Codex 执行命令并辅助整理，人工复核待完成。
+- 创建 experiments/local-ipc-validation，保留并备份交接改动；本轮 GitHub fetch 超时，尚未同步最新 main。
+- 复用吴明阳 IPC 补丁，在独立 Linux 目录与 IPC 命名空间验证。PERIOD 单次搜索 27 调度/6 失败，Serial 候选单次 30/10，均无超时；各首条失败重放确认 reorder_bad.c:80 断言，目标退出 -6，驱动退出 0。
+- 保存命令、日志、全部 16 条失败调度、驱动副本、哈希及原文件前后不变检查。[证据](../results/raw/local-ipc-validation-20261115/README.md)。
+- 此轮是兼容性验收，不计为新漏洞或正式多次复现；CVE 预实验、组员补证据和正式 Serial 对应关系仍待完成。
+- 提交/推送：尚未执行，不能以本条代替实际 GitHub 历史。
+
 Record real work and the actual push/PR evidence. This file is not a substitute
 for timely GitHub history, and it does not itself certify a passed weekly check.
 

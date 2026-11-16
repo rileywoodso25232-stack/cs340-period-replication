@@ -33,6 +33,9 @@ core.*
 *.tgz
 *.zip
 **/out_*/
+!/results/raw/local-ipc-validation-20261115/**/out_*/
+!/results/raw/local-ipc-validation-20261115/**/out_*/Errors/
+!/results/raw/local-ipc-validation-20261115/**/out_*/Errors/*
 # Keep the small, observed failure schedules needed to replay this validation.
 !/results/raw/local-smoke-20261028/**/out_*/
 !/results/raw/local-smoke-20261028/**/out_*/Errors/

@@ -1,5 +1,11 @@
 # AI usage record
 
+## 2026-11-15 交接核验
+
+同日后续：Codex 创建 experiments/local-ipc-validation，备份并保留当前改动；在独立 Linux 目录与 IPC 命名空间应用组员补丁，实际执行 PERIOD/Serial 候选各一次 reorder_3 搜索和重放。新增观察包装器记录目标退出状态，完整日志/驱动/失败调度及哈希已导出，原文件哈希不变。Git fetch 超时，尚未同步 main。此次实验人工复核待完成；每方法一次，不作正式统计或速度结论。见[验收证据](../results/raw/local-ipc-validation-20261115/README.md)。以下为此前只读检查记录。
+
+Codex 辅助读取 GitHub 固定提交、核对论文与日志、编写交接清单及只读 IPC 检查脚本，并导入署名组员的兼容补丁。实际读取本机 ELF DWARF 并执行补丁 dry-run；未运行新实验、未应用补丁、未代发消息或提交。检查脚本初次编码错误已修复；仓库结构检查通过，人工复核待完成。具体证据见 [阶段 5—6 交接核验](stage5-6-handoff.zh-CN.md)。
+
 | Date | Tool | Assistance | Human verification | Scope limitation |
 | --- | --- | --- | --- | --- |
 | 2026-10-23 | OpenAI Codex | Paper-selection discussion; initial repository layout, documentation and helper scripts | Pending team review; check outputs are recorded separately | No experimental findings were generated |
