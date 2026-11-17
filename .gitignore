@@ -40,6 +40,12 @@ core.*
 !/results/raw/local-smoke-20261028/**/out_*/
 !/results/raw/local-smoke-20261028/**/out_*/Errors/
 !/results/raw/local-smoke-20261028/**/out_*/Errors/*
+!/results/raw/local-table1-cve-pilot-20261117*/**/out_*/
+!/results/raw/local-table1-cve-pilot-20261117*/**/out_*/Errors/
+!/results/raw/local-table1-cve-pilot-20261117*/**/out_*/Errors/*
+!/results/raw/local-table1-15265-diagnostic-20261117/**/out_*/
+!/results/raw/local-table1-15265-diagnostic-20261117/**/out_*/Errors/
+!/results/raw/local-table1-15265-diagnostic-20261117/**/out_*/Errors/*
 /results/raw/bulk/
 
 # Credentials and local machine settings

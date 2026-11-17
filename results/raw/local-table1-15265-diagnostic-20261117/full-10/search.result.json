@@ -1,0 +1,17 @@
+{
+  "asan_reported": false,
+  "candidate_abi": "Candidate IPC ABI: size=24008, offsets=20/220/8148/16076",
+  "completed": true,
+  "dbds_started": true,
+  "dry_run_started": true,
+  "end_utc": "2026-11-16T17:01:44.836738+00:00",
+  "error_schedules": 1,
+  "exit_code": 0,
+  "first_bug_schedule": 11,
+  "outer_timeout": false,
+  "schedules": 96,
+  "status": "completed",
+  "timeouts": 0,
+  "tool_elapsed_seconds": 4.035,
+  "wrapper_elapsed_seconds": 4.131836423999999
+}

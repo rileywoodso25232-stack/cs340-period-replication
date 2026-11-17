@@ -1,5 +1,17 @@
 # Weekly progress log
 
+## 2026-11-17：表一 CVE 本机试跑（阶段 6）
+
+- 成员：1240013942 刘竞辰；DeepSeek Harness 执行命令并辅助整理，人工复核待完成。
+- 预建后续阶段分支（table1-local-runs、table2-local-comparison、analysis/local-reproduction、local-extension、report/final-delivery），当前仍在 experiments/table1-cve-pilot。
+- 审查并修正试跑脚本：dry-run 的 ASan 中止记为 aborted_at_dry_run 并继续；新增阶段 6 运行、导出、诊断与补充重放脚本。
+- 完成表一三个 CVE 的有界试跑：每例 3 次、深度 5、预算 10000、非交互；9/9 搜索完成，8 次批次内重放 + 1 次补充重放确认。
+  - CVE-2016-7911：3 / 19 / 8（3 次一致）；CVE-2016-9806：6 / 42 / 4（3 次一致）；CVE-2017-15265：11 / 96 / 1（3 次一致）。
+- 15265 的 dry-run UAF 单独诊断：完整搜索 10 次中 4 次 dry-run 中止，完成 6 次均为 96/1/11；最小预算探针 0/10。
+- 证据：[主批次](../results/raw/local-table1-cve-pilot-20261117/README.md)、[attempt1](../results/raw/local-table1-cve-pilot-20261117-attempt1-stopped/README.md)、[诊断](../results/raw/local-table1-15265-diagnostic-20261117/README.md)、[补充重放](../results/raw/local-table1-cve-pilot-20261117-replay-supplement/README.md)。
+- 这是试跑，不是正式复现：每例 3 次（论文 10 次）、只有 PERIOD、尚无 Serial；正式配置未冻结。
+- 提交/推送：尚未执行；等待确认后提交。
+
 ## 2026-11-15：本机 IPC 兼容候选验收
 
 - 成员：1240013942 刘竞辰；Codex 执行命令并辅助整理，人工复核待完成。

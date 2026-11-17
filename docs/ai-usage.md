@@ -1,5 +1,16 @@
 # AI usage record
 
+## 2026-11-17 阶段 6 表一 CVE 试跑
+
+DeepSeek Harness（deepseek-flash）审查并修正试跑脚本，执行三个 CVE × 3 次有界试跑、
+15265 dry-run 稳定性诊断（10 次最小预算 + 10 次完整搜索）与 1 次补充重放，导出并校验证据、
+整理日志与文档。实验在本机 WSL2（root）执行，驱动与目标二进制哈希、逐次命令和日志均已保存；
+人工复核待完成。这是试跑，不是正式复现，尚无 Serial 基线。见[主批次](../results/raw/local-table1-cve-pilot-20261117/README.md)。
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-17 | DeepSeek Harness (deepseek-flash) | Stage 6 pilot script fixes; 3 CVE × 3 bounded runs; 15265 dry-run diagnostic; bounded supplementary replay; evidence export and logs | Pending human review | 3 attempts per case, PERIOD only, no formal statistics or Serial comparison |
+
 ## 2026-11-15 交接核验
 
 同日后续：Codex 创建 experiments/local-ipc-validation，备份并保留当前改动；在独立 Linux 目录与 IPC 命名空间应用组员补丁，实际执行 PERIOD/Serial 候选各一次 reorder_3 搜索和重放。新增观察包装器记录目标退出状态，完整日志/驱动/失败调度及哈希已导出，原文件哈希不变。Git fetch 超时，尚未同步 main。此次实验人工复核待完成；每方法一次，不作正式统计或速度结论。见[验收证据](../results/raw/local-ipc-validation-20261115/README.md)。以下为此前只读检查记录。
