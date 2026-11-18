@@ -1,5 +1,17 @@
 # AI usage record
 
+## 2026-11-19 表二 reorder 子集（C2）
+
+DeepSeek Harness（deepseek-flash）编写表二配置、运行/导出脚本与测量/对比脚本，
+执行 24 次尝试（4 个 reorder × Period/Serial × 3 次），处理一次 300 秒整轮超时
+（提高到 600 秒后重跑），并生成表二统计与差异分析。人工复核待完成。见
+[表二批次](../results/raw/local-table2-local-comparison-20261118/README.md) 与
+[表二差异分析](table2-analysis.md)。
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-19 | DeepSeek Harness (deepseek-flash) | Table 2 reorder subset runner, 24 attempts, timeout fix, measurements and comparison | Pending human review | 4 programs, 3 attempts, candidate Serial; not full SCTBench |
+
 ## 2026-11-18 阶段 9 控制变量检查
 
 DeepSeek Harness（deepseek-flash）编写并执行两个单因素控制实验：15265 单独重复

@@ -1,5 +1,21 @@
 # Weekly progress log
 
+## 2026-11-19：表二 reorder 子集（C2）
+
+- 成员：1240013942 刘竞辰；DeepSeek Harness 执行整理，人工复核待完成。
+- 范围：CS.reorder_3/4/5/10，Period/Serial 各 3 次（论文 10 次，声明性缩小），
+  深度 3、预算 10000、整轮 600 秒；24/24 完成，0 超时。
+- 结果：Period reorder_3/4/5 三项与论文完全一致，reorder_10 仅错误 90 vs 89；
+  Serial reorder_3 一致、reorder_4 首次 47 vs 37、reorder_5 错误 816.67 vs 816、
+  reorder_10 三次未找到（与论文 `%/L/0` 一致）。
+- 核心现象复现：线程数增加时 Serial 需要的调度远多于 Period（27→30、100→384、
+  225→5040、2350→10000+未找到）。
+- C2 判定：partially supported（scoped）；证据
+  [表二批次](../results/raw/local-table2-local-comparison-20261118/README.md)、
+  [对比表](../results/processed/table2-paper-vs-ours.md)、
+  [差异分析](table2-analysis.md)。
+- 提交/推送：尚未执行；等待确认后提交，不推送。
+
 ## 2026-11-18：阶段 9 控制变量检查
 
 - 成员：1240013942 刘竞辰；DeepSeek Harness 执行整理，人工复核待完成。

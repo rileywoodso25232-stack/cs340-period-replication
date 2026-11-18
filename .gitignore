@@ -55,6 +55,9 @@ core.*
 !/results/raw/local-table1-15265-namespace-20261118*/**/out_*/
 !/results/raw/local-table1-15265-namespace-20261118*/**/out_*/Errors/
 !/results/raw/local-table1-15265-namespace-20261118*/**/out_*/Errors/*
+!/results/raw/local-table2-local-comparison-20261118*/**/out_*/
+!/results/raw/local-table2-local-comparison-20261118*/**/out_*/Errors/
+!/results/raw/local-table2-local-comparison-20261118*/**/out_*/Errors/*
 /results/raw/bulk/
 
 # Credentials and local machine settings

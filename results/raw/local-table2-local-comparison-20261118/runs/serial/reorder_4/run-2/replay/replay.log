@@ -1,0 +1,14 @@
+opts: [('-y', ''), ('-d', '3'), ('-f', '10000'), ('-t', '5'), ('-r', 'failure.schedule')]
+args: ['./reorder_4_bad']
+bugDepth: 3
+runs_limit: 10000
+subprocessTimeout: 5
+reproduceFile: failure.schedule
+
+
+[4;36mPerform Dry Run![0m
+Candidate IPC ABI: size=24008, offsets=20/220/8148/16076
+
+[4;36mPerform Reproduction![0m
+Bug found!
+reorder_4_bad: reorder_bad.c:80: void *checkThread(void *): Assertion `0' failed.

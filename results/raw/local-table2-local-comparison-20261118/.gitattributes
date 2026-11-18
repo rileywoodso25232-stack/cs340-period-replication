@@ -1,0 +1,3 @@
+# Preserve archived log/driver/config/schedule bytes for SHA-256 verification.
+* -text
+**/* -text

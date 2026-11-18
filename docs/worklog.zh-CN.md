@@ -354,3 +354,23 @@
   `table1-cve-pilot` 留在 `290f618` 作为历史。
 - 未推送；远端 main 仍为 `9287fe4`。
 - 下一步：由用户决定先做表二（C2）、拓展（阶段 10–11）还是报告交付。
+
+## 2026-11-19 00:20 | experiments/table2-local-comparison | 表二 reorder 子集完成
+
+- 新增 `config/table2-local-comparison.json`、`scripts/linux/run_table2_formal.py`、
+  `export_table2_formal.py`、`run_stage_table2.sh`、`build_table2_measurements.py`、
+  `build_table2_paper_vs_ours.py`。
+- 范围：reorder_3/4/5/10 × Period/Serial × 3 次，深度 3、预算 10000、整轮 600 秒；
+  24/24 完成，0 超时，所有找到的失败调度均重放确认。
+- 结果：Period reorder_3/4/5 三项完全一致；reorder_10 为 2350/90/27（论文 89）；
+  Serial reorder_3 一致；reorder_4 首次 47 vs 37、总/错误一致；reorder_5 错误
+  815/816/819（均值 816.67）vs 816；reorder_10 三次未找到（10001 调度，论文 L）。
+- 运行问题：第一次 300 秒整轮超时在 Serial reorder_5 触发；旧证据归档为
+  `local-table2-local-comparison-20261118-attempt1-stopped/`，超时提高到 600 秒后重跑。
+- 数据：`measurements.csv` 追加 141 行（总计 429）；`summary.csv` 77 组；
+  新增 `results/processed/table2-paper-vs-ours.csv/.md`。
+- 证据：`results/raw/local-table2-local-comparison-20261118/`（3555 文件、约 18.8 MB，
+  含 README、逐次日志、失败调度、哈希）。
+- C2 判定 **partially supported（scoped）**：并行 Period 的搜索量优势在线程数系列上复现，
+  但 Serial reorder_4 首次差异、子集选择与 3 次重复限制仍需保留。
+- 未提交、未推送；下一步：向用户汇报并等确认提交。

@@ -11,3 +11,8 @@
 为区分 Period 与 Serial，本仓库的 `paper_vs_ours.csv` 在模板基础上增加了 `mode` 列；
 `table1-paper-vs-ours.md` 是同一数据的可读表格，二者都由
 `scripts/build_paper_vs_ours.py` 从 `summary.csv` 生成。
+
+表二子集使用单独的文件：`table2-paper-vs-ours.csv` / `.md`，由
+`scripts/build_table2_paper_vs_ours.py` 从表二证据目录的 `summary_by_case.csv` 生成；
+对应的测量值已追加到 `results/raw/measurements.csv`（experiment_id 以
+`local-table2-local-comparison` 开头）。

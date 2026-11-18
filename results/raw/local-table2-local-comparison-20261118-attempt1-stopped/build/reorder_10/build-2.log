@@ -1,0 +1,16 @@
+[*] Making static analysis directory
+[*] DIR: /root/cs340-period/table2/local-table2-local-comparison-20261118-x32mzat1/build/reorder_10
+[*] ROOT_DIR: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069
+[*] Generating mssa.reorder_10_bad
+[*] Change format for instrumentation
+[*] Analyze Sensitive Memory Operations
+[*] Update Memory Group with Sensitive Memory Operations
+[*] Dumps mempairs and save it into .npz file
+-rw-r--r-- 1 root root   51 Nov 18 15:30 ConConfig.reorder_10_bad
+-rw-r--r-- 1 root root  197 Nov 18 15:30 mempair.reorder_10_bad
+-rw-r--r-- 1 root root 3.2K Nov 18 15:30 mempair.reorder_10_bad.npz
+-rw-r--r-- 1 root root 1.9K Nov 18 15:30 mssa.reorder_10_bad
+-rw-r--r-- 1 root root  11K Nov 18 15:30 reorder_10_bad.bc
+-rw-rw-r-- 1 root root  66K Oct  9  2022 reorder_10_bad.c
+-rw-r--r-- 1 root root 3.9K Nov 18 15:30 so.reorder_10_bad
+~/cs340-period/table2/local-table2-local-comparison-20261118-x32mzat1/build/reorder_10

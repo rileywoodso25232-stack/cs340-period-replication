@@ -1,0 +1,41 @@
+digraph "Call Graph" {
+	label="Call Graph";
+
+	Node0x13a00dd0 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 14 \{fun: __assert_fail\}}"];
+	Node0x13a00cf0 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 13 \{fun: llvm.stackrestore\}}"];
+	Node0x13a00c10 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 12 \{fun: pthread_join\}}"];
+	Node0x13a00b30 [shape=record,shape=box,label="{CallGraphNode ID: 11 \{fun: checkThread\}|{<s0>19|<s1>20}}"];
+	Node0x13a00b30:s0 -> Node0x13a005f0[color=black];
+	Node0x13a00b30:s1 -> Node0x13a00dd0[color=black];
+	Node0x13a00a50 [shape=record,shape=box,label="{CallGraphNode ID: 10 \{fun: setThread\}}"];
+	Node0x13a00970 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 9 \{fun: pthread_create\}}"];
+	Node0x13a00890 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 8 \{fun: llvm.stacksave\}}"];
+	Node0x13a007b0 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 7 \{fun: sscanf\}}"];
+	Node0x13a006d0 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 6 \{fun: exit\}}"];
+	Node0x13a001f0 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 1 \{fun: llvm.dbg.declare\}}"];
+	Node0x13a00120 [shape=record,shape=box,label="{CallGraphNode ID: 0 \{fun: gnu_dev_major\}}"];
+	Node0x13a002d0 [shape=record,shape=box,label="{CallGraphNode ID: 2 \{fun: gnu_dev_minor\}}"];
+	Node0x13a00430 [shape=record,shape=box,label="{CallGraphNode ID: 3 \{fun: gnu_dev_makedev\}}"];
+	Node0x13a00510 [shape=record,shape=box,label="{CallGraphNode ID: 4 \{fun: main\}|{<s0>1|<s1>2|<s2>3|<s3>4|<s4>5|<s5>6|<s6>7|<s7>8|<s8>9|<s9>10|<s10>11|<s11>12|<s12>13|<s13>14|<s14>15|<s15>16|<s16>17|<s17>18|<s18>21|<s19>22}}"];
+	Node0x13a00510:s0 -> Node0x13a005f0[color=black];
+	Node0x13a00510:s1 -> Node0x13a006d0[color=black];
+	Node0x13a00510:s2 -> Node0x13a007b0[color=black];
+	Node0x13a00510:s3 -> Node0x13a007b0[color=black];
+	Node0x13a00510:s4 -> Node0x13a00890[color=black];
+	Node0x13a00510:s5 -> Node0x13a00970[color=black];
+	Node0x13a00510:s6 -> Node0x13a005f0[color=black];
+	Node0x13a00510:s7 -> Node0x13a006d0[color=black];
+	Node0x13a00510:s8 -> Node0x13a00970[color=black];
+	Node0x13a00510:s9 -> Node0x13a005f0[color=black];
+	Node0x13a00510:s10 -> Node0x13a006d0[color=black];
+	Node0x13a00510:s11 -> Node0x13a00c10[color=black];
+	Node0x13a00510:s12 -> Node0x13a005f0[color=black];
+	Node0x13a00510:s13 -> Node0x13a006d0[color=black];
+	Node0x13a00510:s14 -> Node0x13a00c10[color=black];
+	Node0x13a00510:s15 -> Node0x13a005f0[color=black];
+	Node0x13a00510:s16 -> Node0x13a006d0[color=black];
+	Node0x13a00510:s17 -> Node0x13a00cf0[color=black];
+	Node0x13a00510:s18 -> Node0x13a00a50[color=blue];
+	Node0x13a00510:s19 -> Node0x13a00b30[color=blue];
+	Node0x13a005f0 [shape=record,shape=Mrecord,label="{CallGraphNode ID: 5 \{fun: fprintf\}}"];
+}

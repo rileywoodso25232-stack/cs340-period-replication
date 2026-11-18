@@ -1,0 +1,77 @@
+Writing 'callgraph_initial.dot'...
+Writing 'callgraph_final.dot'...
+==========FUNCTION: gnu_dev_major==========
+==========FUNCTION: llvm.dbg.declare==========
+==========FUNCTION: gnu_dev_minor==========
+==========FUNCTION: gnu_dev_makedev==========
+==========FUNCTION: main==========
+
+LDMU(MR_2V_1) 	pts{5 }
+	[[reorder_bad.c:25:21]]({%struct._IO_FILE*})
+
+LDMU(MR_11V_1) 	pts{12 }
+	[[reorder_bad.c:35:23]]({i32})
+
+LDMU(MR_13V_1) 	pts{15 }
+	[[reorder_bad.c:36:25]]({i32})
+
+LDMU(MR_11V_1) 	pts{12 }
+	[[reorder_bad.c:38:21]]({i32})
+
+LDMU(MR_2V_1) 	pts{5 }
+	[[reorder_bad.c:40:21]]({%struct._IO_FILE*})
+
+LDMU(MR_13V_1) 	pts{15 }
+	[[reorder_bad.c:45:21]]({i32})
+
+LDMU(MR_2V_1) 	pts{5 }
+	[[reorder_bad.c:48:21]]({%struct._IO_FILE*})
+
+LDMU(MR_11V_1) 	pts{12 }
+	[[reorder_bad.c:53:21]]({i32})
+
+LDMU(MR_33V_1) 	pts{189 }
+	[[reorder_bad.c:54:38]]({i64})
+
+LDMU(MR_2V_1) 	pts{5 }
+	[[reorder_bad.c:55:21]]({%struct._IO_FILE*})
+
+LDMU(MR_13V_1) 	pts{15 }
+	[[reorder_bad.c:60:21]]({i32})
+
+LDMU(MR_35V_1) 	pts{196 }
+	[[reorder_bad.c:61:38]]({i64})
+
+LDMU(MR_2V_1) 	pts{5 }
+	[[reorder_bad.c:62:21]]({%struct._IO_FILE*})
+==========FUNCTION: fprintf==========
+==========FUNCTION: exit==========
+==========FUNCTION: sscanf==========
+==========FUNCTION: llvm.stacksave==========
+==========FUNCTION: pthread_create==========
+==========FUNCTION: setThread==========
+4V_2 = STCHI(MR_4V_1) 	pts{24 }
+	[[reorder_bad.c:71:7]]({i32})
+
+6V_2 = STCHI(MR_6V_1) 	pts{26 }
+	[[reorder_bad.c:72:7]]({i32})
+
+==========FUNCTION: checkThread==========
+
+LDMU(MR_4V_1) 	pts{24 }
+	[[reorder_bad.c:78:13]]({i32})
+
+LDMU(MR_6V_1) 	pts{26 }
+	[[reorder_bad.c:78:23]]({i32})
+
+LDMU(MR_4V_1) 	pts{24 }
+	[[reorder_bad.c:78:35]]({i32})
+
+LDMU(MR_6V_1) 	pts{26 }
+	[[reorder_bad.c:78:45]]({i32})
+
+LDMU(MR_2V_1) 	pts{5 }
+	[[reorder_bad.c:79:17]]({%struct._IO_FILE*})
+==========FUNCTION: pthread_join==========
+==========FUNCTION: llvm.stackrestore==========
+==========FUNCTION: __assert_fail==========
