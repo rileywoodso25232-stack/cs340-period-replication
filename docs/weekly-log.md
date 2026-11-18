@@ -14,7 +14,7 @@
   [表二批次](../results/raw/local-table2-local-comparison-20261118/README.md)、
   [对比表](../results/processed/table2-paper-vs-ours.md)、
   [差异分析](table2-analysis.md)。
-- 提交/推送：尚未执行；等待确认后提交，不推送。
+- 提交/推送：已在本地提交 `e0e63d7`；按用户要求不推送。
 
 ## 2026-11-18：阶段 9 控制变量检查
 
