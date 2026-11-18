@@ -1,5 +1,31 @@
 # Weekly progress log
 
+## 2026-11-18：阶段 9 控制变量检查
+
+- 成员：1240013942 刘竞辰；DeepSeek Harness 执行整理，人工复核待完成。
+- CC1（单独跑 15265，改变是否交错）：9 完成、1 dry-run 中止、0 invalid replay，
+  完成轮全部 96/1/首次 11；正式交错批次有 1 invalid replay 和一次错误 3。
+  交错可能是因素但 n=10 不定论；dry-run 中止仍出现。
+- CC2（同/新 IPC 命名空间重放，改变状态隔离）：4 次可比较，同命名空间确认 3/4，
+  新命名空间确认 4/4；状态隔离假设不支持，早触发更像目标时序假阳性。
+- 首次 CC2 脚本 rc=126 的失败证据已归档，不用于结论。
+- 结论写入 `docs/analysis.md`；C1 仍为 partially supported（scoped）。
+- 证据：[solo](../results/raw/local-table1-15265-solo-20261118/README.md)、
+  [namespace](../results/raw/local-table1-15265-namespace-20261118/README.md)。
+- 提交/推送：尚未执行；等待确认后提交。
+
+## 2026-11-18：阶段 8 统计与 Paper vs Ours
+
+- 成员：1240013942 刘竞辰；DeepSeek Harness 执行整理，人工复核待完成。
+- 由 `summary.csv` 生成 `paper_vs_ours.csv`（增加 mode 列）与可读表 `table1-paper-vs-ours.md`：
+  18 行中 12 supported、3 partially supported、3 excluded（Serial 15265）。
+- 关键差值：Period 7911/9806 三项精确一致；Period 15265 错误调度 1.22（+22.2%）；
+  Serial 7911/9806 错误调度 7.9（-1.25%）/4.1（+2.5%）；首次与总调度全部一致。
+- C1 判定为 partially supported（scoped）；差异分析写入 `docs/analysis.md`，
+  未解释的 15265 早触发列为待阶段 9 控制变量检查。
+- 图表：`results/figures/table1-schedules.svg/.png`、`table1-time.svg/.png`。
+- 提交/推送：尚未执行；阶段 9 尚未做，分析分支任务未整体完成。
+
 ## 2026-11-18：正式表一 scoped 批次（阶段 7）
 
 - 成员：1240013942 刘竞辰；DeepSeek Harness 执行命令并辅助整理，人工复核待完成。

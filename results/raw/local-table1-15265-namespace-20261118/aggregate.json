@@ -1,0 +1,19 @@
+{
+  "trials": 5,
+  "comparable_trials": 4,
+  "same_namespace_confirmed": 3,
+  "fresh_namespace_confirmed": 4,
+  "same_namespace_statuses": [
+    "dry_run_asan_abort",
+    "confirmed",
+    "confirmed",
+    "confirmed"
+  ],
+  "fresh_namespace_statuses": [
+    "confirmed",
+    "confirmed",
+    "confirmed",
+    "confirmed"
+  ],
+  "changed_factor": "same IPC namespace/state after search vs fresh namespace"
+}

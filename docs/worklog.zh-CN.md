@@ -295,3 +295,47 @@
 - 未提交、未推送。
 - 下一步：向用户汇报阶段 7 完成情况并等确认提交；之后进入
   `analysis/local-reproduction`（阶段 8–9：Paper vs Ours、差异分析）。
+
+## 2026-11-18 23:15 | analysis/local-reproduction | 阶段 8：统计与 Paper vs Ours
+
+- 新增 `scripts/build_paper_vs_ours.py`：从 `results/processed/summary.csv` 和论文表一
+  生成 `results/processed/paper_vs_ours.csv`（增加 `mode` 列以区分 Period/Serial）与
+  可读表 `table1-paper-vs-ours.md`。
+- 对比表共 18 行（5 个方法×用例组合 × 3 指标 + Serial 15265 的 3 行排除）：
+  12 条 supported、3 条 partially supported、3 条 not evaluated (excluded)。
+  - Period 7911/9806 三项与论文完全一致；
+  - Period 15265 首次/总调度一致，错误调度 1.22 ± 0.67（+22.2%，1 次 invalid 排除）；
+  - Serial 7911 错误调度 7.9 ± 0.32（-1.25%）；9806 4.1 ± 0.32（+2.5%）；
+  - Serial 15265 排除，未填数值。
+- `docs/analysis.md` 已重写为完整差异分析：逐条记录论文值、本机值、差距、设置差异、
+  假设、证据、verdict 与局限；C1 总判定 **partially supported（scoped）**；
+  `docs/claims.md` 的 C1 verdict 同步更新。
+- 图表：本机无 matplotlib，新增标准库 SVG 生成脚本 `scripts/make_table1_figures.py`，
+  生成 `results/figures/table1-schedules.svg/.png`（三联图，均值±样本 sd，虚线论文值，标注 n）
+  与 `table1-time.svg/.png`（仅描述耗时）；SVG 经 XML 校验、PNG 由 Edge headless 渲染预览。
+- 没有运行新实验；未修改正式证据；未提交、未推送。
+- 阶段 8 完成。阶段 9（控制变量检查）尚未执行，分析分支任务尚未整体完成。
+- 下一步：向用户汇报阶段 8，并确认是继续阶段 9 还是先提交阶段 8 成果。
+
+## 2026-11-18 23:40 | analysis/local-reproduction | 阶段 9 控制变量检查
+
+- CC1（改变因素：不与其它用例交错）：新增 `scripts/linux/run_15265_solo.py`，
+  用相同驱动/目标/深度/预算单独跑 15265 十次。结果：9 完成、1 次 dry-run 中止、
+  0 次 invalid replay；完成轮全部 96 / 1 / 首次 11。正式交错批次为 9 完成、0 dry-run
+  中止、1 次 invalid replay、错误数 8 次 1 + 1 次 3。交错/上下文是早触发的可能因素，
+  但 n=10 不能定论；dry-run 中止单独跑仍出现，说明不是交错造成的。
+- CC2（改变因素：重放命名空间/状态）：新增
+  `scripts/linux/check_15265_replay_state.py`，5 次试验，每次搜索后把同一失败调度
+  分别在同 IPC 命名空间和新命名空间重放。4 次可比较：同命名空间确认 3/4，
+  新命名空间确认 4/4；同命名空间的一次失败是重放 dry-run 中止。**状态隔离假设不支持**，
+  正常搜索失败在新环境可复现，早触发更像目标时序假阳性。
+- 脚本问题：CC2 第一次运行把 Python 文件当可执行程序启动（rc=126），无实验结论；
+  已修正为 `python3 -u`，失败证据改名为
+  `local-table1-15265-namespace-20261118-attempt1-failed/` 保留，未用于结论。
+- 证据：`results/raw/local-table1-15265-solo-20261118/`（175 文件、约 1.2 MB）、
+  `results/raw/local-table1-15265-namespace-20261118/`（103 文件、约 0.75 MB），
+  各有 README、summary/aggregate、逐次日志与哈希。
+- `docs/analysis.md` 已加入 CC1/CC2 结果与 remaining uncertainty；C1 仍为
+  partially supported（scoped），未把“环境不同”当作已验证解释。
+- 没有改正式批次数据；未提交、未推送。
+- 阶段 8–9 均完成，分析分支任务结束。下一步：向用户汇报并等确认提交。

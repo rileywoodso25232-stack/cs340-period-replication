@@ -49,6 +49,12 @@ core.*
 !/results/raw/local-table1-local-runs-20261118*/**/out_*/
 !/results/raw/local-table1-local-runs-20261118*/**/out_*/Errors/
 !/results/raw/local-table1-local-runs-20261118*/**/out_*/Errors/*
+!/results/raw/local-table1-15265-solo-20261118/**/out_*/
+!/results/raw/local-table1-15265-solo-20261118/**/out_*/Errors/
+!/results/raw/local-table1-15265-solo-20261118/**/out_*/Errors/*
+!/results/raw/local-table1-15265-namespace-20261118*/**/out_*/
+!/results/raw/local-table1-15265-namespace-20261118*/**/out_*/Errors/
+!/results/raw/local-table1-15265-namespace-20261118*/**/out_*/Errors/*
 /results/raw/bulk/
 
 # Credentials and local machine settings

@@ -1,0 +1,16 @@
+{
+  "experiment_id": "local-table1-15265-solo-20261118",
+  "subject": "CVE-2017-15265",
+  "attempts": 10,
+  "changed_factor": "no interleaving",
+  "config": {
+    "depth": 5,
+    "schedule_budget": 10000,
+    "child_timeout_seconds": 5,
+    "outer_timeout_seconds": 120,
+    "replay_attempts": 3
+  },
+  "driver_sha256": "10ab60b538fae42e84a40e0f412fc2845f598ca8f990cdddccd4fc5b9df4778b",
+  "target_sha256": "ad2c3ddece7d3cc4e67ccc6011d9fa82e14ca4d3dc95d7df0ddef19065731a32",
+  "started_utc": "2026-11-18T14:53:09.387269+00:00"
+}

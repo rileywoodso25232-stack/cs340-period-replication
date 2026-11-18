@@ -1,0 +1,6 @@
+trial,search_status,schedules,error_schedules,first_bug_schedule,same_namespace_status,same_namespace_exit,fresh_namespace_status,fresh_namespace_exit
+1,completed,96,1,11,dry_run_asan_abort,-6,confirmed,-6
+2,completed,96,1,11,confirmed,-6,confirmed,-6
+3,completed,96,1,11,confirmed,-6,confirmed,-6
+4,dry_run_asan_abort,,,,not_run,,not_run,
+5,completed,96,1,11,confirmed,-6,confirmed,-6

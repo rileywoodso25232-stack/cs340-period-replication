@@ -1,5 +1,29 @@
 # AI usage record
 
+## 2026-11-18 阶段 9 控制变量检查
+
+DeepSeek Harness（deepseek-flash）编写并执行两个单因素控制实验：15265 单独重复
+（改变交错因素）与同/新 IPC 命名空间重放（改变状态隔离因素），并整理证据与差异分析。
+第一次命名空间脚本因 rc=126 失败，已归档失败证据并修正后重跑。人工复核待完成。见
+[solo](../results/raw/local-table1-15265-solo-20261118/README.md) 与
+[namespace](../results/raw/local-table1-15265-namespace-20261118/README.md)。
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-18 | DeepSeek Harness (deepseek-flash) | Two single-factor checks; evidence export; analysis update | Pending human review | n=10 and n=4; environment and driver identity not isolated |
+
+## 2026-11-18 阶段 8 统计与差异分析
+
+DeepSeek Harness（deepseek-flash）根据正式数据生成 Paper vs Ours 表、差异分析与图表，
+并更新 claims；没有产生新的实验观测。数值来自 `results/processed/summary.csv`，
+判断与局限写入 `docs/analysis.md`；人工复核待完成。见
+[Paper vs Ours](../results/processed/table1-paper-vs-ours.md) 与
+[差异分析](analysis.md)。
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-18 | DeepSeek Harness (deepseek-flash) | Paper vs Ours table, discrepancy analysis, SVG figures, claims verdict | Pending human review | Based on the scoped formal data; no new experiments; 15265 mechanism unresolved |
+
 ## 2026-11-18 阶段 7 正式表一 scoped 批次
 
 DeepSeek Harness（deepseek-flash）编写正式配置与 prepare/run/export 脚本，执行 50 次正式尝试
