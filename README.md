@@ -3,8 +3,8 @@
 本仓库用于小组复现 Cheng Wen 等人在 ICSE 2022 发表的论文
 **Controlled Concurrency Testing via Periodical Scheduling**（基于周期调度的受控并发测试）。
 
-**当前状态：环境与安装验证已完成；表一三个 CVE 的本机试跑（非正式）已完成，正式复现与 Serial 基线待进行。**
-上游运行环境与安装验证已通过；正式配置、重复次数、Serial 基线和最终用例仍需确认。
+**当前状态：环境与安装验证已完成；表一正式 scoped 数据已完成（PERIOD 三例 + Serial 两例，各 10 次），属于部分复现，分析与报告待进行。**
+正式配置、重复次数与 Serial 子集已记录；Paper vs Ours、差异分析、拓展与英文报告待完成。
 
 - 论文：https://wcventure.github.io/pdf/ICSE2022_PERIOD.pdf
 - 原作者实现：https://github.com/wcventure/PERIOD

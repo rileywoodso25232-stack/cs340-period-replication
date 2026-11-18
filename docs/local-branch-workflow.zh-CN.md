@@ -52,5 +52,5 @@ Git 分支是项目进度的保存线；Linux 独立目录是实际运行实验�
 
 ## 下一轮从哪里开始
 
-2026-11-17：阶段 6 试跑已完成（9/9 搜索完成；8 次批次内重放 + 1 次补充重放确认），证据见[主批次](../results/raw/local-table1-cve-pilot-20261117/README.md)。本分支任务已结束，等待用户确认提交后切换到 `experiments/table1-local-runs`，进入阶段 7：冻结正式配置、按论文协议重复、补 Serial 基线并写入正式测量表。
+2026-11-18：阶段 7 正式 scoped 表一已完成（PERIOD 三例 + Serial 的 7911/9806，共 50/50 次；数据写入 `results/raw/measurements.csv` 与 `results/processed/summary.csv`），证据见[正式批次](../results/raw/local-table1-local-runs-20261118-scoped/README.md)。本分支任务结束，等待用户确认提交后切换到 `analysis/local-reproduction`，进入阶段 8–9：Paper vs Ours、差异分析与控制变量检查。
 完整研究步骤仍以[分阶段研究工作流](research-workflow.zh-CN.md)为依据，交接缺口见[材料验收记录](handoff-receipt-20261116.zh-CN.md)。

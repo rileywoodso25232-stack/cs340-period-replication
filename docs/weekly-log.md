@@ -1,5 +1,20 @@
 # Weekly progress log
 
+## 2026-11-18：正式表一 scoped 批次（阶段 7）
+
+- 成员：1240013942 刘竞辰；DeepSeek Harness 执行命令并辅助整理，人工复核待完成。
+- 正式配置：深度 5、预算 10000、每例 10 次；PERIOD 三例 + Serial 的 7911/9806。
+- 结果（首次 / 总调度 / 错误调度）：PERIOD 7911 3/19/8（n=9）、9806 6/42/4（n=10）、
+  15265 11/96/1.22（n=9，1 次 invalid replay）；Serial 7911 3/19/7.9（n=10）、
+  9806 6/42/4.1（n=10）。无超时，深度 5 全部确认。
+- 差异：论文称 Period/Serial 在 CVE 基准完全相同；本机 7911/9806 的首次与总调度一致，
+  错误调度有 ±1 波动；15265 的 Period 错误数在 1/3 间波动，Serial 候选不可靠故不纳入正式对比。
+- 数据：`results/raw/measurements.csv`（288 行）、`results/processed/summary.csv`（30 组）；
+  证据：[主批次](../results/raw/local-table1-local-runs-20261118-scoped/README.md)、
+  [停止批次 1](../results/raw/local-table1-local-runs-20261118-attempt1-stopped/README.md)、
+  [停止批次 2](../results/raw/local-table1-local-runs-20261118-scoped-attempt1-stopped/README.md)。
+- 提交/推送：尚未执行；等待确认后提交，不推送。
+
 ## 2026-11-17：表一 CVE 本机试跑（阶段 6）
 
 - 成员：1240013942 刘竞辰；DeepSeek Harness 执行命令并辅助整理，人工复核待完成。

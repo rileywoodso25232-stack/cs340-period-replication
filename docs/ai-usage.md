@@ -1,5 +1,16 @@
 # AI usage record
 
+## 2026-11-18 阶段 7 正式表一 scoped 批次
+
+DeepSeek Harness（deepseek-flash）编写正式配置与 prepare/run/export 脚本，执行 50 次正式尝试
+（PERIOD 三例 + Serial 两例，各 10 次），处理 dry-run 中止、`invalid_replay`、证据导出与
+`measurements.csv`/`summary.csv` 生成，并整理日志与文档。实验在本机 WSL2（root）执行，
+两套驱动与目标哈希、逐次命令和日志均已保存；人工复核待完成。见[正式批次](../results/raw/local-table1-local-runs-20261118-scoped/README.md)。
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-18 | DeepSeek Harness (deepseek-flash) | Formal scoped Table 1 runs; 50 attempts; invalid-replay handling; evidence export; measurements and descriptive summary | Pending human review | Serial covers 2 of 3 CVEs; 15265 instability documented |
+
 ## 2026-11-17 阶段 6 表一 CVE 试跑
 
 DeepSeek Harness（deepseek-flash）审查并修正试跑脚本，执行三个 CVE × 3 次有界试跑、

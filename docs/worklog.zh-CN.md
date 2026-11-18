@@ -162,3 +162,136 @@
 - 未提交、未推送；工作区仍包含全部代码、证据和文档改动。
 - 下一步：向用户汇报阶段 6 完成情况，等确认后再 commit 并进入
   `experiments/table1-local-runs`。
+
+## 2026-11-17 23:50 | experiments/table1-cve-pilot → experiments/table1-local-runs | 阶段 6 提交与分支切换
+
+- 用户确认“全部提交到本地”。提交 `290f618`：
+  `1240013942 刘竞辰: 完成表一CVE本机试跑与15265稳定性诊断`；工作区干净，未推送。
+- 提交内容：试跑/导出/诊断/补充重放脚本、试跑配置、四份证据目录及 README、worklog、
+  weekly-log、claims、分支说明、README、AI 使用记录；共 601 个文件。
+- 字节保护：四个证据目录各加 `.gitattributes`（`* -text`），抽查
+  `search.log` 的工作区哈希与提交 blob 哈希一致（`79fbbbba…`），换行未被改写。
+- 分支：5 个后续阶段分支快进到 `290f618`；`experiments/local-ipc-validation` 保留在
+  `a246883` 作为历史；`main` 仍在 `f619615`。
+- 已切换到 `experiments/table1-local-runs`，工作区干净。
+- 下一步（阶段 7）：确认 Serial 补丁对应驱动、提取论文表一 PERIOD/Serial 数值，
+  然后冻结正式配置（每例 10 次尝试、深度 5、预算 10000、双方法）并先做单例 Serial 打通测试。
+
+## 2026-11-18 22:20 | experiments/table1-local-runs | 阶段 7 启动：论文表一结构确认
+
+- 论文表一（PDF 第 8 页）结构：CVE 基准的 8 个程序**全部只有 2 个线程**，因此
+  Period 与 Serial 在表一中合并为同一列；正文明确写 “the results for Period and Serial
+  on the CVE benchmark are exactly the same”。
+- 对本次三个用例，论文 Period/Serial 共同值为：
+  - CVE-2016-7911：首次 3 / 总调度 19 / 错误调度 8；
+  - CVE-2016-9806：6 / 42 / 4；
+  - CVE-2017-15265：11 / 96 / 1。
+- 论文协议：CVE 深度上限 5、每次最多 10000 个调度、每个程序每种方法运行 10 次。
+- Serial 补丁已确认作用于 `run_OldPDS.py`（`local-ipc-validation` 的 patch.log 可证）；
+  Period 补丁作用于 `run_PDS.py`。
+- 正式阶段计划：
+  1. 冻结 `config/table1-local-runs.json`（双方法、每例 10 次、深度 5、预算 10000）；
+  2. 写正式 prepare/run/export 脚本，先做单例 Serial 打通测试；
+  3. 跑 3 用例 × 2 方法 × 10 次，记录 dry-run 中止、重放重试与完成比例；
+  4. 导出证据、生成 summary 与 `measurements.csv`。
+- 注意：Serial 候选驱动来自组员补丁，论文身份尚未独立证明；若本机 Serial 与 Period
+  在三个 2 线程用例上一致，只能作为支持性证据，不能宣称完全等价。
+- 下一步：写正式配置与脚本。
+
+## 2026-11-18 22:40 | experiments/table1-local-runs | 正式脚本与 Serial 单例打通
+
+- 新增/修改：
+  - `config/table1-local-runs.json`：双方法（period、serial）、每例 10 次、深度 5、
+    预算 10000、子进程 5 秒、整轮 120 秒、重放最多 3 次、dry-run 中止计入分母。
+  - `scripts/linux/run_table1_formal.py`：一次 prepare 两套驱动并冻结哈希；run 按
+    方法→用例→尝试顺序执行，含搜索解析、dry-run 中止记录、首次失败重放与有界重试。
+  - `scripts/linux/export_table1_formal.py`：导出证据、生成 summary/summary_by_case/packaging。
+  - `scripts/linux/run_stage7_formal.sh`：预检 + prepare + run + export 一条龙。
+  - `.gitignore`：增加正式证据目录的 `out_*/Errors` 例外。
+- 准备结果（WSL）：`/root/cs340-period/formal/local-table1-local-runs-20261118-8t591icw/`，
+  status=prepared；period 驱动哈希 `10ab60b5…`，serial 驱动哈希 `30bae090…`；
+  3 个目标均编译并通过 ABI 检查。
+- Serial 单例打通（CVE-2016-7911，一次搜索）：首次 3 / 总调度 19 / 错误 8 / 超时 0，
+  工具耗时 11.65 秒，日志含 `End Testing!` 与 8 条失败调度；与论文 Period/Serial 列一致。
+- 下一步：后台运行完整正式批次（3 用例 × 2 方法 × 10 次），完成后导出与汇总。
+
+## 2026-11-18 22:55 | experiments/table1-local-runs | 正式批次停在 Serial 15265：失败调度不可复现
+
+- 进度：42/60 次尝试后停止（7 轮 × 6 条）。原因：Serial 的 CVE-2017-15265 第 7 次，
+  保存的失败调度重放时目标正常退出，未出现预期诊断；脚本按停止规则停下。
+- 已完成部分：
+  - Period 7911/9806：7/7 完成，均 19/8/3 与 42/4/6，重放确认；
+  - Period 15265：7 次中 6 完成、1 次 dry-run 中止，完成轮均 96/1/11；
+  - Serial 7911/9806：7/7 完成，与论文一致；
+  - Serial 15265：错误数 2、2、1、3、1、3，首次触发除第 7 次为 7 外均为 11。
+- 现场诊断（不改变批次）：
+  - 第 7 次的三条失败调度中，`000001_0000007` 连续重放 3 次均正常退出（0）；
+  - `000002_0000011` 重放确认 heap-use-after-free（目标 -6）；
+  - `000003_0000049` 重放正常退出（0）。
+  说明 Serial 候选在 15265 上会把非因果的“碰巧触发”记录为失败调度，首次触发/错误数不可靠；
+  7911、9806 未受影响。
+- 证据：`results/raw/local-table1-local-runs-20261118/`（939 文件，status=stopped_for_inspection），
+  WSL `/root/cs340-period/formal/local-table1-local-runs-20261118-h_exc5lc/`。
+- 待定：缩小正式范围、补完 60 次并记录不可复现，或暂停等组员 Serial 材料。
+- 下一步：等用户选择。
+
+## 2026-11-18 23:05 | experiments/table1-local-runs | 用户选择：缩小正式范围
+
+- 正式范围改为：PERIOD 三例各 10 次；Serial 只跑 CVE-2016-7911、CVE-2016-9806 各 10 次；
+  15265 的 Serial 作为“候选驱动不可复现”的异常分析，不进入正式对比。
+- 配置：`config/table1-local-runs.json` 改为 `experiment_id=local-table1-local-runs-20261118-scoped`，
+  新增 `method_subjects` 与 `scope_reason`；runner/export 支持按方法限制用例。
+- 旧证据：`results/raw/local-table1-local-runs-20261118/` 改名为
+  `local-table1-local-runs-20261118-attempt1-stopped/`，并补 README；不删除、不改内容。
+- 新批次预计 50 次（period 30 + serial 20），完成后导出到
+  `results/raw/local-table1-local-runs-20261118-scoped/`。
+- 下一步：重跑 prepare + 50 次尝试 + 导出。
+
+## 2026-11-18 23:10 | experiments/table1-local-runs | Scoped 批次再次停在 15265：Period 也出现不可复现早触发
+
+- Scoped 批次（PERIOD 三例 + Serial 两例）跑到 33/50 次时停止：Period 的 CVE-2017-15265
+  第 7 次搜索得到 96 总调度 / 2 错误 / 首次 7；保存的第一条失败调度（7）重放时目标正常退出，
+  未出现预期诊断，脚本按停止规则停下。
+- 前 6 次 Period 15265 均为 96/1/11 且重放确认；第 7 次是同一种“早触发 + 不可复现”模式，
+  与 Serial 15265 第 7 次一致。说明这不是 Serial 驱动专属问题，而是 15265 在少数轮次
+  会产生非因果的早触发记录；具体机制尚未定位（可能与目标内部线程时序/堆布局有关）。
+- 其他结果：Period 7911/9806、Serial 7911/9806 均与论文一致；Scoped 批次已导出到
+  `results/raw/local-table1-local-runs-20261118-scoped/`（771 文件，status=stopped_for_inspection）。
+- 证据：WSL `/root/cs340-period/formal/local-table1-local-runs-20261118-scoped-aa_3831h/`。
+- 待定：保留 15265 并按“重放无效”记账继续、正式范围再缩为 7911/9806、或先诊断假早触发。
+- 下一步：等用户选择。
+
+## 2026-11-18 23:20 | experiments/table1-local-runs | 用户选择：invalid_replay 记账并重跑
+
+- 规则：重放执行到 `Perform Reproduction!` 但未出现预期诊断的尝试记为 `invalid_replay`；
+  搜索数据保留在证据中，但不计入汇总均值，不补跑；批次继续。
+- 配置：新增 `replay_invalid_policy`，`stopping_rule` 去掉“重放不重现即停止”，保留
+  构建失败、超时、DBDS 开始后的搜索中止、重放超时、原文件变化。
+- 脚本：runner 增加 `invalid_replay` 分支与计数；exporter 增加 `invalid_replay` 列并从
+  均值中排除；measurements 转换跳过 invalid 行。
+- 归档：旧的 scoped 批次（33/50）改名为
+  `results/raw/local-table1-local-runs-20261118-scoped-attempt1-stopped/` 并补 README。
+- 下一步：重跑最终 scoped 批次（PERIOD 三例 + Serial 两例，各 10 次）。
+
+## 2026-11-18 22:45 | experiments/table1-local-runs | 阶段 7 正式批次完成
+
+- 最终 scoped 批次 50/50 次尝试完成，`status=formal_completed`，无超时，深度 5 全部确认。
+- 结果（均值 ± 样本 sd，有效 n）：
+  - period 7911：首次 3 / 总 19 / 错误 8（n=9；1 次 dry-run 中止）；
+  - period 9806：6 / 42 / 4（n=10）；
+  - period 15265：11 / 96 / 1.22 ± 0.67（n=9；1 次 invalid replay 排除）；
+  - serial 7911：3 / 19 / 7.9 ± 0.32（n=10）；
+  - serial 9806：6 / 42 / 4.1 ± 0.32（n=10）。
+- 与论文：PERIOD 的 7911/9806 三项完全一致；15265 的首次/总调度一致、错误数有 1 或 3 的波动；
+  Serial 的首次/总调度一致，错误数有 ±1 波动。论文“Period/Serial 完全相同”只被部分支持。
+- 数据入库：`results/raw/measurements.csv` 追加 288 行；`scripts/summarize.py` 生成
+  `results/processed/summary.csv`（30 组，n=9/10，样本 sd 用 n-1）。
+- 证据：`results/raw/local-table1-local-runs-20261118-scoped/`（1113 文件、约 3.8 MB，
+  含 README、manifest、逐次 summary、失败调度、packaging 哈希）；
+  WSL 完整目录 `/root/cs340-period/formal/local-table1-local-runs-20261118-scoped-h_brlt1h/`。
+- 异常：period 15265 第 9 次早触发且重放不重现，按 `invalid_replay` 保留但不计入均值；
+  serial 15265 在此前批次已证明不可靠，正式范围不含该组合。未补跑、未删除任何轮次。
+- 文档：证据 README、worklog、weekly-log、claims、分支说明、AI 使用记录已更新。
+- 未提交、未推送。
+- 下一步：向用户汇报阶段 7 完成情况并等确认提交；之后进入
+  `analysis/local-reproduction`（阶段 8–9：Paper vs Ours、差异分析）。
