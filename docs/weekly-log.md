@@ -12,7 +12,7 @@
 - 结论写入 `docs/analysis.md`；C1 仍为 partially supported（scoped）。
 - 证据：[solo](../results/raw/local-table1-15265-solo-20261118/README.md)、
   [namespace](../results/raw/local-table1-15265-namespace-20261118/README.md)。
-- 提交/推送：尚未执行；等待确认后提交。
+- 提交/推送：阶段 8–9 已在本地提交 `2d36326`；按用户要求不推送。
 
 ## 2026-11-18：阶段 8 统计与 Paper vs Ours
 
