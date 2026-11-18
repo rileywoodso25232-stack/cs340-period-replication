@@ -339,3 +339,18 @@
   partially supported（scoped），未把“环境不同”当作已验证解释。
 - 没有改正式批次数据；未提交、未推送。
 - 阶段 8–9 均完成，分析分支任务结束。下一步：向用户汇报并等确认提交。
+
+## 2026-11-18 23:50 | analysis/local-reproduction | 分析分支提交
+
+- 用户确认全部提交。本地提交 `2d36326`：
+  `1240013942 刘竞辰: 完成表一Paper对比与15265控制变量分析`；
+  367 个文件、约 24k 行新增；工作区干净。
+- 提交内容：Paper vs Ours 表与可读 Markdown、差异分析、claims、两张图、两个控制实验
+  （含失败 attempt1）、脚本、日志与文档。
+- 证据字节保护：solo/namespace/失败 attempt1 均加 `.gitattributes`（`* -text`）；
+  抽查日志 blob 哈希与工作区一致。
+- 分支：`experiments/local-extension`、`experiments/table2-local-comparison`、
+  `report/final-delivery` 快进到 `2d36326`；`table1-local-runs` 留在 `a1933be`，
+  `table1-cve-pilot` 留在 `290f618` 作为历史。
+- 未推送；远端 main 仍为 `9287fe4`。
+- 下一步：由用户决定先做表二（C2）、拓展（阶段 10–11）还是报告交付。
