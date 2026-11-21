@@ -1,5 +1,11 @@
 # AI usage record
 
+## 2026-11-21 表二 PR 主线同步
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-21 | OpenAI Codex | Merged main into the Table 2 branch, reconciled both members' records, checked evidence integrity and statistics, and prepared the pull request | Human review pending | Based on archived experiments, clean-machine rebuild remains pending |
+
 ## 2026-11-21 表二提交摘要核查
 
 | Date | Tool | Assistance | Human verification | Scope limitation |
@@ -49,13 +55,13 @@ DeepSeek Harness（deepseek-flash）根据正式数据生成 Paper vs Ours 表�
 ## 2026-11-18 阶段 7 正式表一 scoped 批次
 
 DeepSeek Harness（deepseek-flash）编写正式配置与 prepare/run/export 脚本，执行 50 次正式尝试
-（PERIOD 三例 + Serial 两例，各 10 次），处理 dry-run 中止、`invalid_replay`、证据导出与
+（PERIOD 三例 + Serial 两例，各 10 次尝试，48 次纳入统计），处理 dry-run 中止、`invalid_replay`、证据导出与
 `measurements.csv`/`summary.csv` 生成，并整理日志与文档。实验在本机 WSL2（root）执行，
 两套驱动与目标哈希、逐次命令和日志均已保存；人工复核待完成。见[正式批次](../results/raw/local-table1-local-runs-20261118-scoped/README.md)。
 
 | Date | Tool | Assistance | Human verification | Scope limitation |
 | --- | --- | --- | --- | --- |
-| 2026-11-18 | DeepSeek Harness (deepseek-flash) | Formal scoped Table 1 runs; 50 attempts; invalid-replay handling; evidence export; measurements and descriptive summary | Pending human review | Serial covers 2 of 3 CVEs; 15265 instability documented |
+| 2026-11-18 | DeepSeek Harness (deepseek-flash) | Formal scoped Table 1 runs; 50 attempts and 48 included; invalid-replay handling; evidence export; measurements and descriptive summary | Pending human review | Serial covers 2 of 3 CVEs; 15265 instability documented |
 
 ## 2026-11-17 阶段 6 表一 CVE 试跑
 
@@ -89,3 +95,15 @@ statement based on this record and the actual contribution history.
 | Date | Tool | Assistance | Human verification | Scope limitation |
 | --- | --- | --- | --- | --- |
 | 2026-10-28 | OpenAI Codex | Diagnosed Windows servicing; configured WSL2/LLVM/SVF; executed and archived real bounded smoke runs and replays; organized commit candidates | Team review pending; diagnostics and raw observations retained | Initial environment validation only; no formal replication or Serial comparison |
+
+## 2026-11-05 更新
+
+<!-- reorder3-compat-20261105 -->
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-05 | OpenAI Codex / ChatGPT | Diagnosed IPC layout mismatch; inspected archived ELF DWARF; wrote candidate adaptation, six-run comparison, summary repair and replay helpers; curated evidence and drafted documentation | User executed container commands and backups; six searches completed, both sampled failures replayed with target exit -6; local evidence hashes and repository checks passed; independent team review pending | Single reorder_3 case; candidate Serial correspondence unverified; different period ranges and initialization remain; no speedup or full-paper replication claim |
+
+The initial summary parser missed ANSI-prefixed lines and reported zero schedules. It was corrected using final Round footers without rerunning experiments. Original summaries, logs, correction audit and failed tool attempts were retained in their respective evidence/backup locations.
+
+Same-day scope also includes the earlier Docker reorder_3 search/replay and three native execution batches: ChatGPT assisted with scripts, output interpretation and write-up; the user executed commands and retained evidence. Earlier PERIOD logs remain historical pre-experiments after the IPC mismatch was identified. Final packaging also reviewed the original conversation, preserved failure excerpts, and prepared browser-upload batches; independent team review is still pending.

@@ -1,0 +1,18 @@
+[
+  "timeout",
+  "--kill-after=10s",
+  "120s",
+  "/usr/bin/python3",
+  "-u",
+  "-X",
+  "faulthandler",
+  "/workdir/cs340-runs/reorder3-compat-comparison-s_cceom_/period/driver/run_candidate.py",
+  "-y",
+  "-d",
+  "3",
+  "-f",
+  "10000",
+  "-t",
+  "5",
+  "./reorder_3_bad"
+]

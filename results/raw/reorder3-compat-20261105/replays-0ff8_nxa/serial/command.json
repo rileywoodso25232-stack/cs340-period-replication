@@ -1,0 +1,11 @@
+[
+  "timeout",
+  "--kill-after=5s",
+  "30s",
+  "/usr/bin/python3",
+  "-u",
+  "-X",
+  "faulthandler",
+  "/workdir/cs340-runs/reorder3-compat-comparison-s_cceom_/replays-0ff8_nxa/serial/runner.py",
+  "/workdir/cs340-runs/reorder3-compat-comparison-s_cceom_/serial/driver/run_candidate.py"
+]

@@ -1,0 +1,74 @@
+--- original
++++ period-candidate
+@@ -1,8 +1,9 @@
++# Candidate IPC compatibility experiment; paper Serial identity unverified.
+ #!/usr/bin/env python3
+ 
+ # This is the structrue of Share Memory class
+ SHARE_THREAD_NUM = 100
+-SHARE_ARRAY_SIZE = 1990
++SHARE_ARRAY_SIZE = 3964
+ # typedef struct Sched_Info {
+ #	uint64_t time;								// the execution time of the program (nsec)
+ #	unsigned int N;								// number of threads concerned
+@@ -50,13 +51,44 @@
+ parentArrayCopy = [0]*SHARE_THREAD_NUM
+ 
+ def setup_share_memroy():
+-    IPC_KEY, MAP_SIZE, IPC_CREAT, IPC_EXCL = 1111, sizeof(c_ulonglong) + sizeof(c_uint)*3 + sizeof(c_uint16)*(SHARE_THREAD_NUM + 3*SHARE_ARRAY_SIZE), 512, 1024
+-    shmget = cdll.LoadLibrary("libc.so.6").shmget
+-    shmat = cdll.LoadLibrary("libc.so.6").shmat
+-    shmat.restype = c_void_p
+-    shm_id = shmget(IPC_KEY, MAP_SIZE, IPC_CREAT | IPC_CREAT | 0o666)
+-    ADDR = shmat(shm_id, 0, 0)
+-    return ADDR
++    from ctypes import CDLL, get_errno, set_errno
++    class CompatSchedInfo(Structure):
++        _fields_ = [('time', c_uint64), ('N', c_uint32), ('M', c_uint32),
++                    ('bounds', c_uint32), ('kpNumArray', c_uint16*SHARE_THREAD_NUM),
++                    ('kp', c_uint16*SHARE_ARRAY_SIZE),
++                    ('kpLoc', c_uint16*SHARE_ARRAY_SIZE),
++                    ('kpOrder', c_uint16*SHARE_ARRAY_SIZE)]
++    expected = (24008, 20, 220, 8148, 16076)
++    actual = (sizeof(CompatSchedInfo), CompatSchedInfo.kpNumArray.offset,
++              CompatSchedInfo.kp.offset, CompatSchedInfo.kpLoc.offset,
++              CompatSchedInfo.kpOrder.offset)
++    if sizeof(c_void_p) != 8 or actual != expected:
++        raise RuntimeError('Unexpected candidate ABI: ' + repr(actual))
++    with open('/proc/sysvipc/shm') as ipc_file:
++        rows = [row.split() for row in ipc_file if row.strip()]
++    segments = [dict(zip(rows[0], row)) for row in rows[1:]]
++    matches = [row for row in segments if int(row['key']) == 1111]
++    if len(matches) != 1 or int(matches[0]['size']) != actual[0]:
++        raise RuntimeError('Expected existing key 1111 segment of size 24008')
++    if int(matches[0]['nattch']) != 0:
++        raise RuntimeError('Shared memory is in use; run this experiment alone')
++    libc = CDLL('libc.so.6', use_errno=True)
++    libc.shmget.argtypes = [c_int, c_size_t, c_int]
++    libc.shmget.restype = c_int
++    libc.shmat.argtypes = [c_int, c_void_p, c_int]
++    libc.shmat.restype = c_void_p
++    set_errno(0)
++    shm_id = libc.shmget(1111, sizeof(CompatSchedInfo), 0)
++    if shm_id == -1:
++        err = get_errno()
++        raise OSError(err, os.strerror(err))
++    set_errno(0)
++    address = libc.shmat(shm_id, None, 0)
++    if address is None or address == c_void_p(-1).value:
++        err = get_errno()
++        raise OSError(err, os.strerror(err))
++    print('Candidate IPC ABI: size=24008, offsets=20/220/8148/16076', flush=True)
++    return address
+ 
+ def get_info_from_share_memory(P=None, A=None, B=None, T=None, kpNumArray=None, kpYieldArray=None, kpLocArray=None, kpOrderArray=None):
+     if P != None:
+@@ -80,6 +112,8 @@
+     tmp = []
+     for t in PatternList:
+         tmp += t
++    if len(tmp) > SHARE_ARRAY_SIZE or any(v < 0 or v > 65535 for v in tmp):
++        raise ValueError('Pattern exceeds candidate IPC capacity')
+     tmparr = (c_uint16 * len(tmp))(*tmp)
+     memmove(ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*3 + sizeof(c_uint16)*SHARE_THREAD_NUM, tmparr, sizeof(c_uint16) * len(tmp))
+ 

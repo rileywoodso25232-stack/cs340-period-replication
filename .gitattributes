@@ -9,3 +9,12 @@
 *.txt text eol=lf
 *.pdf binary
 *.png binary
+
+# Preserve the original bytes of imported environment and verification records.
+environment/setup-evidence/README.md -text
+environment/setup-evidence/environment.txt -text
+results/raw/depth5-verification/README.md -text
+results/raw/depth5-verification/log-hashes.csv -text
+results/raw/depth5-verification/summary.csv -text
+results/raw/table1-verification/README.md -text
+results/raw/table1-verification/summary.csv -text

@@ -1,0 +1,32 @@
+{
+  "scope": "Candidate driver comparison on one benchmark; paper baseline correspondence unverified",
+  "binary_sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+  "abi": {
+    "threads": 100,
+    "array_capacity": 3964,
+    "array_bits": 16,
+    "size": 24008
+  },
+  "parameters": {
+    "depth_argument": 3,
+    "runs_budget": 10000,
+    "child_timeout_seconds": 5,
+    "outer_timeout_seconds": 120,
+    "repetitions": 3
+  },
+  "period_ranges_for_three_threads": {
+    "serial": [
+      3,
+      4,
+      5
+    ],
+    "period": [
+      2,
+      3,
+      4
+    ]
+  },
+  "timing_limit": "Drivers retain different runtime amplification and initialization logic. No speedup claim.",
+  "old_results": "Old 1990-capacity runs remain historical pre-experiments; not replaced or pooled.",
+  "ordering": "serial/period alternated, one process at a time"
+}

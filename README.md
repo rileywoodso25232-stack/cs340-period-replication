@@ -3,8 +3,24 @@
 本仓库用于小组复现 Cheng Wen 等人在 ICSE 2022 发表的论文
 **Controlled Concurrency Testing via Periodical Scheduling**（基于周期调度的受控并发测试）。
 
-**当前状态：环境与安装验证已完成；表一正式 scoped 数据、表二 reorder 子集、Paper vs Ours、差异分析与控制变量检查已完成，属于部分复现；拓展与英文报告待进行。**
-正式配置、重复次数与子集已记录；C1/C2 均判定为 partially supported（scoped），15265 的早触发机制仍未完全定位。
+**当前发布范围截至表二。Docker 与 WSL2 两条环境路线、表一正式 scoped 批次、表二 reorder 子集、统计和差异分析已有证据，整体为部分复现。**
+
+刘竞辰的正式表一共 **50 次尝试、48 次纳入统计**，一次 dry-run 中止与一次无效重放均留存。
+表二覆盖 reorder_3/4/5/10，PERIOD 与 Serial 候选各 3 次，共 24 次搜索，21 次检出并重放确认、3 次未检出。
+C1/C2 均为 partially supported（scoped）。Serial reorder_5 的错误调度均值为 816.67，论文值为 816。
+15265 的早触发机制仍未完全定位。拓展与交付整理安排在下周发布。
+
+- [表二结果与对照](results/processed/table2-paper-vs-ours.md) · [提交摘要与更正](docs/table2-submission-summary.zh-CN.md)
+- [本机正式表一](results/raw/local-table1-local-runs-20261118-scoped/README.md) · [成员贡献](docs/team.md)
+
+### 吴明阳的早期表一记录
+
+11 月 13 日的运行记录保留为原始观测。原驱动与插桩程序的共享内存布局存在差异。11 月 14 日使用兼容驱动，以深度上限 3 对 Table 1 的三个选定用例各复核三轮，九轮均完成且无超时。三个用例每轮的总调度数／错误交错数分别为 19／8、42／4、96／1。
+
+吴明阳的这一批对照覆盖 Table 1 中三个用例的 PERIOD 列。每例三轮、深度上限 3，与论文第 4.1.3 节所述的每个程序运行十次、CVE 基准深度上限 5 有差异。另有一批深度 5 检查，十轮尝试中九轮完成、一轮中止。该批的具体驱动版本待核实，结果单独汇总。
+
+- [Table 1 深度 3 复核](results/raw/table1-verification/README.md)
+- [深度 5 检查](results/raw/depth5-verification/README.md)
 
 - 论文：https://wcventure.github.io/pdf/ICSE2022_PERIOD.pdf
 - 原作者实现：https://github.com/wcventure/PERIOD
@@ -18,8 +34,8 @@
 首次发现缺陷所需的调度数量、总调度数量、触发缺陷的调度数量；实际运行耗时另行记录。
 最终用例子集应覆盖不同缺陷类型和线程数量，并在正式收集数据前完成选择与记录。
 
-计划将直接运行程序（Native）作为本地基线。Serial 等其他基线仍需检查是否可用。
-在相同或可比设置下完成实验之前，不能得出 PERIOD 优于其他方法的结论。
+本机已使用 IPC 兼容 Serial 候选开展限定子集对照，驱动与论文基线的完整对应关系仍待证明。
+Native 补充记录按组员独立批次引用，主张和差异分析覆盖已声明的配置及用例范围。
 具体研究主张见[复现主张清单](docs/claims.md)。
 
 ## 目录说明
@@ -72,7 +88,7 @@ python scripts/fetch_upstream.py
 仅使用 Docker 不能固定宿主机内核；还需记录宿主机／虚拟机内核和容器镜像摘要。
 
 搭建过程中必须实际验证编译、运行命令，并记录耗时。
-当前仓库骨架尚不能证明研究工具可以在全新机器上一键复现。
+目前已在 WSL2 + Docker 和 WSL2 直接构建两条路线完成初步验证。按文档在干净环境中重新构建并运行主实验仍待验证。
 
 ## 测量与分析
 

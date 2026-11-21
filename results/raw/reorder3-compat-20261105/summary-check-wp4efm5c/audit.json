@@ -1,0 +1,31 @@
+{
+  "reason": "Old parser missed ANSI-prefixed test lines; counts now use the final Round footer",
+  "raw_logs": [
+    {
+      "log": "serial/group-1/search.log",
+      "sha256": "8852f1a6f35450635b525c34f897421c28e0989d5411938020001e0766e2efbf"
+    },
+    {
+      "log": "serial/group-2/search.log",
+      "sha256": "f9858727aab2e55ffa15b2bf6ddffdabd3061b044d0717b2343364dab12106de"
+    },
+    {
+      "log": "serial/group-3/search.log",
+      "sha256": "12a8f96df2db6d6fc828ab94daf640cdceaa1b770b744f074db912e2e1636fd7"
+    },
+    {
+      "log": "period/group-1/search.log",
+      "sha256": "28a58faa5aeeaddc5d6d341edd1ba53da06e348c39ac4fff40a818f2d9da8f16"
+    },
+    {
+      "log": "period/group-2/search.log",
+      "sha256": "5f74710ebe5edb4a75c54e02759a7ab717817c585ab6985fde26a480ab3644a7"
+    },
+    {
+      "log": "period/group-3/search.log",
+      "sha256": "f4aa10de42e824c950c66fb3a2e765eab4a89ba0297e177481fee5a18b989b19"
+    }
+  ],
+  "experiments_rerun": false,
+  "original_summary_preserved": true
+}

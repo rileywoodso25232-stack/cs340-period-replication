@@ -1,0 +1,128 @@
+{
+  "verified_full_backup_entries": 163,
+  "full_backup": "C:\\Users\\19516\\Documents\\cs340-period-replication\\reorder3-compat-backup-20261105-182427-846",
+  "omitted_files": [
+    {
+      "path": "period/group-1/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "period/group-2/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "period/group-3/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "period/driver/__pycache__/bp_sched.cpython-36.pyc",
+      "sha256": "d801bd55c9600b857eac2303043421b576f2892c59f2f911451b045a90169137",
+      "bytes": 4315
+    },
+    {
+      "path": "period/driver/__pycache__/external_def.cpython-36.pyc",
+      "sha256": "966d1490b6c618ee367ca16cf81f3f629e0895b428f02433532e850b95eaeef1",
+      "bytes": 5543
+    },
+    {
+      "path": "period/driver/__pycache__/interleaving.cpython-36.pyc",
+      "sha256": "c91bacab1aedacf8ce024585116c6ec1fd9c0e13b402539a677a6feeb521784b",
+      "bytes": 6824
+    },
+    {
+      "path": "period/driver/__pycache__/ipc.cpython-36.pyc",
+      "sha256": "95cd35d4f0573185752ca5ece7d70f05b9456f01c2acb6bc2e330335c6d209c7",
+      "bytes": 6670
+    },
+    {
+      "path": "period/driver/__pycache__/pds.cpython-36.pyc",
+      "sha256": "02a06a411e9057b0ed1e79e404ab56466126e3f8fb1400fa8bff0b47d65d349e",
+      "bytes": 602
+    },
+    {
+      "path": "period/driver/__pycache__/sbp_sched.cpython-36.pyc",
+      "sha256": "656987aa297c63759813eae9fce2a3e293c4c7b8e40930114696dcd9feea506b",
+      "bytes": 7372
+    },
+    {
+      "path": "period/driver/__pycache__/sbp_sched_mixed_end.cpython-36.pyc",
+      "sha256": "5caf46d93cf9a8e7e8000b5092204cc5f742dfeb1753784f25b5003f6520bc1a",
+      "bytes": 5584
+    },
+    {
+      "path": "period/driver/__pycache__/sched.cpython-36.pyc",
+      "sha256": "a6e17a4facc5762614190de4130add85ae3ea2f99f5907f64328a75118616102",
+      "bytes": 3260
+    },
+    {
+      "path": "replays-0ff8_nxa/period/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "replays-0ff8_nxa/serial/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "serial/group-1/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "serial/group-2/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "serial/group-3/reorder_3_bad",
+      "sha256": "ed2d13809b87a00eaaba76ac0f1faf4871a489a0960993e5963dc89b4bb13db9",
+      "bytes": 419896
+    },
+    {
+      "path": "serial/driver/__pycache__/bp_sched.cpython-36.pyc",
+      "sha256": "0caf99fb793ae97ca0072d0ae400de4f94a3b5b45d7040074cd92241686baa71",
+      "bytes": 4315
+    },
+    {
+      "path": "serial/driver/__pycache__/external_def.cpython-36.pyc",
+      "sha256": "cbdee104645594bee3a84e60af9c3ad1413cc0c1c2a104a7b82a2daeae5a743a",
+      "bytes": 5543
+    },
+    {
+      "path": "serial/driver/__pycache__/interleaving.cpython-36.pyc",
+      "sha256": "8f5972ea6dfab56d1e70e6159e52af5c15ce09dd0c43c6ddca6fedf17f27a3fa",
+      "bytes": 6824
+    },
+    {
+      "path": "serial/driver/__pycache__/ipc.cpython-36.pyc",
+      "sha256": "625733c42839080e1c98cf0ac7a7718f3e8a7c0b0f3d53731132d4b07a68b42b",
+      "bytes": 6670
+    },
+    {
+      "path": "serial/driver/__pycache__/pds.cpython-36.pyc",
+      "sha256": "e1b67c32441b7b4123f424a0ec7bf8f3d8a2f56c738e50c78fa8da97bbe86d2c",
+      "bytes": 602
+    },
+    {
+      "path": "serial/driver/__pycache__/sbp_sched.cpython-36.pyc",
+      "sha256": "d50f856445dac4a71c5a7aac0894fecb70ed3aef4ca645c12b5ace3e88fb6697",
+      "bytes": 7372
+    },
+    {
+      "path": "serial/driver/__pycache__/sbp_sched_mixed_end.cpython-36.pyc",
+      "sha256": "9bb36d46dee8e060be7a75e4eac2f49e0380a450600a0a11c0f79e3ba09c8f49",
+      "bytes": 5584
+    },
+    {
+      "path": "serial/driver/__pycache__/sched.cpython-36.pyc",
+      "sha256": "bf0640db5a5003ab84734b7e744b4592950c2a6c9ea70d477b3d8fb7c0735070",
+      "bytes": 3260
+    }
+  ],
+  "hashes": "hashes.sha256 covers packaged files; hashes.full-backup.sha256 preserves original manifests including omitted binaries",
+  "binary_replay": "Restore the exact SHA256-matching target from the complete local backup before replay"
+}

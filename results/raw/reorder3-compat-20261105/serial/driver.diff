@@ -1,0 +1,122 @@
+--- original
++++ serial-candidate
+@@ -1,17 +1,18 @@
++# Candidate IPC compatibility experiment; paper Serial identity unverified.
+ #!/usr/bin/env python3
+ 
+ # This is the structrue of Share Memory class
+ SHARE_THREAD_NUM = 100
+-SHARE_ARRAY_SIZE = 1990
++SHARE_ARRAY_SIZE = 3964
+ # typedef struct Sched_Info {
+ #	uint64_t time;								// the execution time of the program (nsec)
+ #	unsigned int N;								// number of threads concerned
+ #	unsigned int M;								// number of kep points per thread
+ #	unsigned int TestedPeriod;					// It took several period in testing engine
+-#	unsigned int kpNumArray[SHARE_THREAD_NUM];	// the specific kpNum of each My_tid Thread, only consider almost 10 thread
+-#	unsigned int kp[SHARE_ARRAY_SIZE];			// how many times should a thread yield before a kp
+-#	unsigned int kpLoc[SHARE_ARRAY_SIZE];		// the hash ID of Key Point
+-#	unsigned int kpOrder[SHARE_ARRAY_SIZE];		// recored the order of key points
++#	uint16_t kpNumArray[SHARE_THREAD_NUM];	// the specific kpNum of each My_tid Thread, only consider almost 10 thread
++#	uint16_t kp[SHARE_ARRAY_SIZE];			// how many times should a thread yield before a kp
++#	uint16_t kpLoc[SHARE_ARRAY_SIZE];		// the hash ID of Key Point
++#	uint16_t kpOrder[SHARE_ARRAY_SIZE];		// recored the order of key points
+ # } sched_info;
+ 
+ # =================================================================================
+@@ -50,13 +51,44 @@
+ parentArrayCopy = [0]*SHARE_THREAD_NUM
+ 
+ def setup_share_memroy():
+-    IPC_KEY, MAP_SIZE, IPC_CREAT, IPC_EXCL = 1111, sizeof(c_ulonglong) + sizeof(c_uint)*(3+SHARE_THREAD_NUM+3*SHARE_ARRAY_SIZE), 512, 1024
+-    shmget = cdll.LoadLibrary("libc.so.6").shmget
+-    shmat = cdll.LoadLibrary("libc.so.6").shmat
+-    shmat.restype = c_void_p
+-    shm_id = shmget(IPC_KEY, MAP_SIZE, IPC_CREAT | IPC_CREAT | 0o666)
+-    ADDR = shmat(shm_id, 0, 0)
+-    return ADDR
++    from ctypes import CDLL, get_errno, set_errno
++    class CompatSchedInfo(Structure):
++        _fields_ = [('time', c_uint64), ('N', c_uint32), ('M', c_uint32),
++                    ('bounds', c_uint32), ('kpNumArray', c_uint16*SHARE_THREAD_NUM),
++                    ('kp', c_uint16*SHARE_ARRAY_SIZE),
++                    ('kpLoc', c_uint16*SHARE_ARRAY_SIZE),
++                    ('kpOrder', c_uint16*SHARE_ARRAY_SIZE)]
++    expected = (24008, 20, 220, 8148, 16076)
++    actual = (sizeof(CompatSchedInfo), CompatSchedInfo.kpNumArray.offset,
++              CompatSchedInfo.kp.offset, CompatSchedInfo.kpLoc.offset,
++              CompatSchedInfo.kpOrder.offset)
++    if sizeof(c_void_p) != 8 or actual != expected:
++        raise RuntimeError('Unexpected candidate ABI: ' + repr(actual))
++    with open('/proc/sysvipc/shm') as ipc_file:
++        rows = [row.split() for row in ipc_file if row.strip()]
++    segments = [dict(zip(rows[0], row)) for row in rows[1:]]
++    matches = [row for row in segments if int(row['key']) == 1111]
++    if len(matches) != 1 or int(matches[0]['size']) != actual[0]:
++        raise RuntimeError('Expected existing key 1111 segment of size 24008')
++    if int(matches[0]['nattch']) != 0:
++        raise RuntimeError('Shared memory is in use; run this experiment alone')
++    libc = CDLL('libc.so.6', use_errno=True)
++    libc.shmget.argtypes = [c_int, c_size_t, c_int]
++    libc.shmget.restype = c_int
++    libc.shmat.argtypes = [c_int, c_void_p, c_int]
++    libc.shmat.restype = c_void_p
++    set_errno(0)
++    shm_id = libc.shmget(1111, sizeof(CompatSchedInfo), 0)
++    if shm_id == -1:
++        err = get_errno()
++        raise OSError(err, os.strerror(err))
++    set_errno(0)
++    address = libc.shmat(shm_id, None, 0)
++    if address is None or address == c_void_p(-1).value:
++        err = get_errno()
++        raise OSError(err, os.strerror(err))
++    print('Candidate IPC ABI: size=24008, offsets=20/220/8148/16076', flush=True)
++    return address
+ 
+ def get_info_from_share_memory(P=None, A=None, B=None, T=None, kpNumArray=None, kpYieldArray=None, kpLocArray=None, kpOrderArray=None):
+     if P != None:
+@@ -68,20 +100,22 @@
+     if T != None:
+         memmove(byref(T), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*2, sizeof(c_uint))
+     if kpNumArray != None:
+-        memmove(byref(kpNumArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*3, sizeof(c_uint)*SHARE_THREAD_NUM)
++        memmove(byref(kpNumArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*3, sizeof(c_uint16)*SHARE_THREAD_NUM)
+     if kpYieldArray != None:
+-        memmove(byref(kpYieldArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*(3+SHARE_THREAD_NUM), sizeof(c_uint)*SHARE_ARRAY_SIZE)
++        memmove(byref(kpYieldArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*3 + sizeof(c_uint16)*(SHARE_THREAD_NUM), sizeof(c_uint16)*(SHARE_ARRAY_SIZE))
+     if kpLocArray != None:
+-        memmove(byref(kpLocArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*(3+SHARE_THREAD_NUM+SHARE_ARRAY_SIZE), sizeof(c_uint)*SHARE_ARRAY_SIZE)
++        memmove(byref(kpLocArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*3 + sizeof(c_uint16)*(SHARE_THREAD_NUM + SHARE_ARRAY_SIZE), sizeof(c_uint16)*SHARE_ARRAY_SIZE)
+     if kpOrderArray != None:
+-        memmove(byref(kpOrderArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*(3+SHARE_THREAD_NUM+2*SHARE_ARRAY_SIZE), sizeof(c_uint)*SHARE_ARRAY_SIZE)
++        memmove(byref(kpOrderArray), ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*3 + sizeof(c_uint16)*(SHARE_THREAD_NUM + 2*SHARE_ARRAY_SIZE), sizeof(c_uint16)*SHARE_ARRAY_SIZE)
+ 
+ def memmove_pattern_list(PatternList):
+     tmp = []
+     for t in PatternList:
+         tmp += t
+-    tmparr = (c_uint * len(tmp))(*tmp)
+-    memmove(ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*(3+SHARE_THREAD_NUM), tmparr, sizeof(c_uint) * len(tmp))
++    if len(tmp) > SHARE_ARRAY_SIZE or any(v < 0 or v > 65535 for v in tmp):
++        raise ValueError('Pattern exceeds candidate IPC capacity')
++    tmparr = (c_uint16 * len(tmp))(*tmp)
++    memmove(ADDR + sizeof(c_ulonglong) + sizeof(c_uint)*3 + sizeof(c_uint16)*SHARE_THREAD_NUM, tmparr, sizeof(c_uint16) * len(tmp))
+ 
+ # create subprocess according to the value of check_STDOUT and check_STDERR
+ def create_DBDS_subprocess(check_STDOUT, check_STDERR):
+@@ -380,10 +414,10 @@
+ A = c_uint(0)
+ B = c_uint(0)
+ T = c_uint(0)
+-kpNumArray = (c_uint*SHARE_THREAD_NUM)(0)
+-kpYieldArray = (c_uint*SHARE_ARRAY_SIZE)(0)
+-kpLocArray = (c_uint*SHARE_ARRAY_SIZE)(0)
+-kpOrderArray = (c_uint*SHARE_ARRAY_SIZE)(0)
++kpNumArray = (c_uint16*SHARE_THREAD_NUM)(0)
++kpYieldArray = (c_uint16*SHARE_ARRAY_SIZE)(0)
++kpLocArray = (c_uint16*SHARE_ARRAY_SIZE)(0)
++kpOrderArray = (c_uint16*SHARE_ARRAY_SIZE)(0)
+ 
+ get_info_from_share_memory(P,A,B,T,kpNumArray,None,None,None)
+ Period = P.value

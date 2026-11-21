@@ -1,0 +1,42 @@
+Terminal transcript excerpt supplied by user; not an exported raw debug.log.
+
+> root@24d4173aa075:/workdir/PERIOD# task_serial="/workdir/cs340-runs/serial-check-$(date -u +%Y%m%dT%H%M%S)-$$"
+> root@24d4173aa075:/workdir/PERIOD# mkdir -p "$task_serial"
+> root@24d4173aa075:/workdir/PERIOD# cp /workdir/PERIOD/evaluation/CS/reorder_3/{reorder_3_bad,ConConfig.reorder_3_bad,mempair.reorder_3_bad.npz} "$task_serial/"
+> root@24d4173aa075:/workdir/PERIOD# cd "$task_serial"
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# ulimit -c 0
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911#
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# sha256sum reorder_3_bad /workdir/PERIOD/tool/DBDS/run_OldPDS.py > hashes.sha256
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# printf '%s\n' 'timeout --kill-after=10s 120s python3 /workdir/PERIOD/tool/DBDS/run_OldPDS.py -y -d 3 -f 10000 -t 5 ./reorder_3_bad' > command.txt
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911#
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# timeout --kill-after=10s 120s python3 /workdir/PERIOD/tool/DBDS/run_OldPDS.py -y -d 3 -f 10000 -t 5 ./reorder_3_bad > search.log 2>&1
+> Segmentation fault
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# echo $? > search.exit
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# cat search.exit
+> 139
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# tail -35 search.log
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911#
+
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# mkdir -p "$task_debug"
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# cp /workdir/PERIOD/evaluation/CS/reorder_3/{reorder_3_bad,ConConfig.reorder_3_bad,mempair.reorder_3_bad.npz} "$task_debug/"
+> root@24d4173aa075:/workdir/cs340-runs/serial-check-20261105T093942-12911# cd "$task_debug"
+> root@24d4173aa075:/workdir/cs340-runs/serial-debug-20261105T094106-12911#
+> root@24d4173aa075:/workdir/cs340-runs/serial-debug-20261105T094106-12911# timeout --kill-after=10s 120s python3 -u -X faulthandler /workdir/PERIOD/tool/DBDS/run_OldPDS.py -y -d 3 -f 10000 -t 5 ./reorder_3_bad > debug.log 2>&1
+> Segmentation fault
+> root@24d4173aa075:/workdir/cs340-runs/serial-debug-20261105T094106-12911# echo $? > debug.exit
+> root@24d4173aa075:/workdir/cs340-runs/serial-debug-20261105T094106-12911# cat debug.exit
+> 139
+> root@24d4173aa075:/workdir/cs340-runs/serial-debug-20261105T094106-12911# tail -80 debug.log
+> opts: [('-y', ''), ('-d', '3'), ('-f', '10000'), ('-t', '5')]
+> args: ['./reorder_3_bad']
+> bugDepth: 3
+> runs_limit: 10000
+> subprocessTimeout: 5
+>
+> Perform Dry Run!
+> Fatal Python error: Segmentation fault
+>
+> Current thread 0x0000761d13227740 (most recent call first):
+>   File "/workdir/PERIOD/tool/DBDS/run_OldPDS.py", line 375 in <module>
+> root@24d4173aa075:/workdir/cs340-runs/serial-debug-20261105T094106-12911#
+

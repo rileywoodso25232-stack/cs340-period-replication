@@ -1,6 +1,13 @@
 # Weekly progress log
 
+以下按实际工作日期保留双方记录。各阶段条目中的状态对应记录当时，当前发布范围截至表二。
+本机表一为 50 次尝试、48 次纳入统计。表二加入后，测量记录共 429 行、统计共 77 组。
+本次 PR 同步主线并保留双方材料，拓展与交付发布安排在下周。
+
 ## 2026-11-21：表二提交摘要复核
+
+- 摘要与贡献更正已于本日推送，提交为 [0e98854](https://github.com/rileywoodso25232-stack/cs340-period-replication/commit/0e9885498246df2abd89ed3a4d19f104a826608c)，已从 GitHub 回读核验。
+- 本次按用户要求把主线 9287fe4 合入表二分支，解决 README、AI 使用记录和周报冲突，双方原始证据按来源保留。PR 的说明覆盖本分支累计的 IPC、表一、分析和表二工作。
 
 - 成员为 1240013942 刘竞辰，OpenAI Codex 辅助核查提交正文及归档数据。
 - 更正 `e0e63d7` 正文中“Serial reorder_3/5 一致”的表述。reorder_5 的首次与总调度一致，错误调度均值为 816.67，论文为 816，详情见[提交摘要与更正](table2-submission-summary.zh-CN.md)。
@@ -37,7 +44,7 @@
 - 结论写入 `docs/analysis.md`；C1 仍为 partially supported（scoped）。
 - 证据：[solo](../results/raw/local-table1-15265-solo-20261118/README.md)、
   [namespace](../results/raw/local-table1-15265-namespace-20261118/README.md)。
-- 提交/推送：阶段 8–9 已在本地提交 `2d36326`；按用户要求不推送。
+- 阶段 8–9 提交为 `2d36326`，日志提交为 `66f32f5`、`60a35e2`，随表二累计分支发布。
 
 ## 2026-11-18：阶段 8 统计与 Paper vs Ours
 
@@ -47,14 +54,14 @@
 - 关键差值：Period 7911/9806 三项精确一致；Period 15265 错误调度 1.22（+22.2%）；
   Serial 7911/9806 错误调度 7.9（-1.25%）/4.1（+2.5%）；首次与总调度全部一致。
 - C1 判定为 partially supported（scoped）；差异分析写入 `docs/analysis.md`，
-  未解释的 15265 早触发列为待阶段 9 控制变量检查。
+  15265 早触发随后完成阶段 9 控制变量检查，具体机制仍未定位。
 - 图表：`results/figures/table1-schedules.svg/.png`、`table1-time.svg/.png`。
-- 提交/推送：尚未执行；阶段 9 尚未做，分析分支任务未整体完成。
+- 阶段 8 的统计与随后完成的阶段 9 控制检查已一并提交于 `2d36326`。
 
 ## 2026-11-18：正式表一 scoped 批次（阶段 7）
 
 - 成员：1240013942 刘竞辰；DeepSeek Harness 执行命令并辅助整理，人工复核待完成。
-- 正式配置：深度 5、预算 10000、每例 10 次；PERIOD 三例 + Serial 的 7911/9806。
+- 正式配置：深度 5、预算 10000、每组固定 10 次尝试，覆盖 PERIOD 三例及 Serial 的 7911/9806，共 50 次尝试、48 次纳入统计。
 - 结果（首次 / 总调度 / 错误调度）：PERIOD 7911 3/19/8（n=9）、9806 6/42/4（n=10）、
   15265 11/96/1.22（n=9，1 次 invalid replay）；Serial 7911 3/19/7.9（n=10）、
   9806 6/42/4.1（n=10）。无超时，深度 5 全部确认。
@@ -64,7 +71,7 @@
   证据：[主批次](../results/raw/local-table1-local-runs-20261118-scoped/README.md)、
   [停止批次 1](../results/raw/local-table1-local-runs-20261118-attempt1-stopped/README.md)、
   [停止批次 2](../results/raw/local-table1-local-runs-20261118-scoped-attempt1-stopped/README.md)。
-- 提交/推送：尚未执行；等待确认后提交，不推送。
+- 阶段 7 提交为 `a1933be`，随表二累计分支发布。
 
 ## 2026-11-17：表一 CVE 本机试跑（阶段 6）
 
@@ -76,7 +83,7 @@
 - 15265 的 dry-run UAF 单独诊断：完整搜索 10 次中 4 次 dry-run 中止，完成 6 次均为 96/1/11；最小预算探针 0/10。
 - 证据：[主批次](../results/raw/local-table1-cve-pilot-20261117/README.md)、[attempt1](../results/raw/local-table1-cve-pilot-20261117-attempt1-stopped/README.md)、[诊断](../results/raw/local-table1-15265-diagnostic-20261117/README.md)、[补充重放](../results/raw/local-table1-cve-pilot-20261117-replay-supplement/README.md)。
 - 这是试跑，不是正式复现：每例 3 次（论文 10 次）、只有 PERIOD、尚无 Serial；正式配置未冻结。
-- 提交/推送：尚未执行；等待确认后提交。
+- 阶段 6 提交为 `290f618`，随表二累计分支发布。
 
 ## 2026-11-15：本机 IPC 兼容候选验收
 
@@ -85,7 +92,7 @@
 - 复用吴明阳 IPC 补丁，在独立 Linux 目录与 IPC 命名空间验证。PERIOD 单次搜索 27 调度/6 失败，Serial 候选单次 30/10，均无超时；各首条失败重放确认 reorder_bad.c:80 断言，目标退出 -6，驱动退出 0。
 - 保存命令、日志、全部 16 条失败调度、驱动副本、哈希及原文件前后不变检查。[证据](../results/raw/local-ipc-validation-20261115/README.md)。
 - 此轮是兼容性验收，不计为新漏洞或正式多次复现；CVE 预实验、组员补证据和正式 Serial 对应关系仍待完成。
-- 提交/推送：尚未执行，不能以本条代替实际 GitHub 历史。
+- 本机 IPC 验证提交为 `a246883`，随表二累计分支发布。
 
 Record real work and the actual push/PR evidence. This file is not a substitute
 for timely GitHub history, and it does not itself certify a passed weekly check.
@@ -124,3 +131,39 @@ for timely GitHub history, and it does not itself certify a passed weekly check.
 - 根据组员建议，核对主分支 Docker 环境说明和实际 ASAN 重放日志，区分两条环境路线与两位成员的贡献。
 - 将环境 README 改为全组入口，将本机操作说明移入刘竞辰的环境记录；保留全部原始预实验数据，修正过时的“尚未验证”状态。
 - 本次为文档澄清，没有新增实验，也没有合并或改写组员的材料。
+
+## 2026-11-05：reorder_3 兼容候选驱动对照与失败重放
+
+<!-- reorder3-compat-20261105 -->
+
+- 执行成员：1240014957 吴明阳；容器命令由本人执行，AI 辅助及复核状态见 ai-usage.md。
+- 排查旧串行驱动退出码 139；核验目标二进制 DWARF 布局，将双方独立副本的共享内存布局统一为 100/3964/uint16，原文件与失败记录保留。
+- 在相同目标、深度参数、运行预算和超时配置下，交替执行双方各三轮：Serial 每轮 30 个调度、10 个失败调度、0 超时；PERIOD 每轮 27 个调度、6 个失败调度、0 超时。
+- 双方各重放首轮第一条保存失败调度，均重现 reorder_bad.c:80 的断言，目标退出码 -6；重放驱动退出码均为 0。
+- 修正汇总脚本未处理颜色控制码而误记 schedules=0 的问题；原始搜索日志未改变，未为汇总修正重跑实验，原表及修正表均保留。
+- 入库材料保留日志、配置、失败调度、源码快照、补丁、许可证与哈希；二进制和缓存保留于完整本地备份。
+- 结果及原始证据：[本轮说明](../results/raw/reorder3-compat-20261105/README.md)。
+- 限制：本轮为单用例候选驱动验证；双方实际周期范围与初始化逻辑仍不同，不计算加速比，不宣称完整论文 Serial 基线或整体复现完成。多条失败调度不计为多个缺陷。
+- 验证：本轮材料复制后仓库检查已通过；本条写入后应再次运行检查。组员独立复核待完成。
+- 提交/PR/推送：待实际提交和推送后补充链接，本记录不作为已推送证据。
+
+### 同日此前完成的预实验与 Native 补充对照
+
+- Docker 单次验证：reorder_3 搜索 27 个调度、6 个失败调度、0 超时，保存失败调度并重放确认第 80 行断言。
+- Native 补充对照：三组各 1000 次原生执行，均 0 断言、0 超时、0 其他运行错误；对应旧 PERIOD 三组各 27 个调度、6 个失败调度、0 超时。
+- 后续发现旧 Python 驱动数组布局与目标运行时不一致，上述 PERIOD 数据留作历史预实验，不与修复后结果合并。Native 是本次自定义配置，未宣称复现论文全部基线。
+- 证据：[Docker 预实验](../results/raw/docker-reorder3-20261105/README.md)、[Native 补充对照](../results/raw/reorder3-native-period-20261105/README.md)。
+- 今日提交采用 GitHub 网页分批上传并创建同一个 PR；本地 Git 暂存状态不作为已上传证明。PR 链接待创建后补充。
+### 2026-11-07 后续更新
+
+- 11 月 5 日的实验材料已通过 [PR #3](https://github.com/rileywoodso25232-stack/cs340-period-replication/pull/3) 合并至 `main`，罗力汗完成了 PR 审核。
+
+## 2026-11-13：表 1 子集进展
+
+- 吴明阳已将三个选定用例的 PERIOD 运行记录推送到实验分支，每个用例独立运行三次。
+- 已更新根目录 README。统计汇总、论文原值对照和组员复核待完成。
+
+## 2026-11-14：Table 1 子集复核与深度 5 检查
+- Table 1 深度 3 复核：三个用例各三轮，九轮全部完成，零超时。逐轮数据见 [复核说明和统计](../results/raw/table1-verification/README.md)。
+- 深度 5 检查：十轮尝试，九轮完成，完成轮次零超时。15265 第 2 轮因 ASan 报错中止，保留在逐轮表中，排除出完成轮次统计。十份原始日志已在本地核对 SHA-256，具体驱动版本待核实。见 [深度 5 说明、统计和校验记录](../results/raw/depth5-verification/README.md)。
+- 计时口径：7911 的 11 月 13 日原始第 1 轮墙钟时间包含等待按键，排除出耗时比较。原始日志和调度计数保留。组员独立复核待完成。
