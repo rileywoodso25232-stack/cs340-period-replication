@@ -1,0 +1,9 @@
+Experiment: Serial-compatible Table 1 baseline
+Date: 20261121-151554
+Depth: 5
+Per-test timeout: 5 seconds
+Search limit: 10000
+Target: 10 completed runs per CVE
+Maximum attempts: 15 per CVE
+All attempts are retained.
+Completed runs are not excluded based on observed errors.
