@@ -52,6 +52,7 @@ C2 为 partially supported（scoped）。结论覆盖四个 AF、缺陷深度 2 
 
 ## PR 主线同步
 
+本次 PR 为 [#5](https://github.com/rileywoodso25232-stack/cs340-period-replication/pull/5)，主线同步提交为 `b16e2e0`，当前开放待审阅。
 本次把主线 `9287fe4` 合入表二分支，保留双方的环境、实验、周报及 AI 使用记录。
 README 分别给出吴明阳的早期表一验证和刘竞辰的本机正式批次与表二子集入口。
 导入记录保留来源 Git blob 的原始字节，换行保护通过逐路径属性声明。

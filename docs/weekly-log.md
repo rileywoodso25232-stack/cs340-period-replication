@@ -6,6 +6,7 @@
 
 ## 2026-11-21：表二提交摘要复核
 
+- [PR #5](https://github.com/rileywoodso25232-stack/cs340-period-replication/pull/5) 已发起，目标为 `main`。主线同步提交为 [b16e2e0](https://github.com/rileywoodso25232-stack/cs340-period-replication/commit/b16e2e007df7e5acc6fa3e45eb0622602e85be82)，README、AI 使用记录和周报三处冲突已解决，双方记录与原始证据已核对保留。PR 处于开放审阅状态。
 - 摘要与贡献更正已于本日推送，提交为 [0e98854](https://github.com/rileywoodso25232-stack/cs340-period-replication/commit/0e9885498246df2abd89ed3a4d19f104a826608c)，已从 GitHub 回读核验。
 - 本次按用户要求把主线 9287fe4 合入表二分支，解决 README、AI 使用记录和周报冲突，双方原始证据按来源保留。PR 的说明覆盖本分支累计的 IPC、表一、分析和表二工作。
 
