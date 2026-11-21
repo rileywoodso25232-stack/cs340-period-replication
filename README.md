@@ -28,6 +28,31 @@ C1/C2 均为 partially supported（scoped）。Serial reorder_5 的错误调度�
 - 小组仓库：https://github.com/rileywoodso25232-stack/cs340-period-replication
 - 初次使用 GitHub，请先阅读[中文上手指南](GETTING_STARTED.zh-CN.md)。
 
+### Table 1 最终实验归档（2026-11-21）
+
+在已有的 scoped Table 1 实验基础上，本分支进一步归档了三项 CVE 的 PERIOD、Serial-compatible 和 Native 实验材料。
+
+本次归档包括：
+
+- **PERIOD**：深度 5、搜索上限 10,000，三个 CVE 共 30 次完成运行，另保留一次中止记录。
+- **Serial-compatible**：深度 5、搜索上限 10,000，三个 CVE 共 30 次完成运行。候选驱动经过共享内存兼容性修复，尚不能认定与论文原始实现完全等价。
+- **Native**：三个 CVE，每例三组、每组 10,000 次执行，共 90,000 条执行记录。ASan 确认错误与未分类退出分别统计，不将两者混为一谈。
+
+**归档文件导航：**
+
+- [Table 1 完整说明](docs/table1-final/README.md)
+- [最终统计、论文对照及审计结果](results/processed/table1-final/)
+- [PERIOD 正式实验与 depth-5 审计](results/raw/table1-period-formal-20261121/)
+- [Serial-compatible 正式实验](results/raw/table1-serial-formal-20261121/)
+- [Native 原始实验记录](results/raw/native-cve-2026-11-14/)
+- [Serial 驱动来源与兼容性修改](docs/table1-final/driver-provenance/README.md)
+- [SHA256 完整性清单](results/audit/table1-final/PACKAGE-SHA256.txt)
+- [归档与校验日志](docs/weekly-log.md)
+
+**完整性验收：** 2026 年 11 月 21 日，对 `table1-integration` 分支执行归档核验。清单记录 785 个文件，785 个 SHA256 全部匹配，失败数为 0。
+
+该结果证明归档文件与校验清单一致，不代表所有实验指标与论文完全一致。实验结论必须结合对应批次、实验配置、候选驱动和已记录的偏差分别解释。
+
 ## 复现范围
 
 计划缩小实验规模，复现论文表 1 和表 2 中选定的部分行。测量指标包括：
