@@ -1,0 +1,10 @@
+﻿benchmark,depth,metric,n,mean,sample_sd,paper_value,absolute_gap,relative_gap_percent,numeric_match
+CVE-2016-7911,5,first_error,10,3.0,0.0,3,0.0,0.0,True
+CVE-2016-7911,5,schedules,10,19.0,0.0,19,0.0,0.0,True
+CVE-2016-7911,5,error_interleavings,10,8.0,0.0,8,0.0,0.0,True
+CVE-2016-9806,5,first_error,10,6.4,1.264911,6,0.4,6.666667,False
+CVE-2016-9806,5,schedules,10,42.0,0.0,42,0.0,0.0,True
+CVE-2016-9806,5,error_interleavings,10,3.9,0.316228,4,-0.1,-2.5,False
+CVE-2017-15265,5,first_error,10,11.0,0.0,11,0.0,0.0,True
+CVE-2017-15265,5,schedules,10,96.0,0.0,96,0.0,0.0,True
+CVE-2017-15265,5,error_interleavings,10,1.0,0.0,1,0.0,0.0,True

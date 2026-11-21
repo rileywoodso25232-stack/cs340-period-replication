@@ -1,0 +1,10 @@
+﻿benchmark,depth,metric,n,mean,sample_sd
+CVE-2016-7911,5,first_error,10,3.0,0.0
+CVE-2016-7911,5,schedules,10,19.0,0.0
+CVE-2016-7911,5,error_interleavings,10,8.0,0.0
+CVE-2016-9806,5,first_error,10,6.4,1.264911
+CVE-2016-9806,5,schedules,10,42.0,0.0
+CVE-2016-9806,5,error_interleavings,10,3.9,0.316228
+CVE-2017-15265,5,first_error,10,11.0,0.0
+CVE-2017-15265,5,schedules,10,96.0,0.0
+CVE-2017-15265,5,error_interleavings,10,1.0,0.0
