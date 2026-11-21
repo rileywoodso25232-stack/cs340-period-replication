@@ -1,0 +1,8 @@
+Batch: depth5-controlled-20261121-134227
+UTC: 2026-11-21T05:42:28Z
+Root: /workdir/PERIOD
+Upstream commit: cb8deb9a176e5bb292d70d46557dd61dc0e98069
+Kernel: 6.18.33.2-microsoft-standard-WSL2
+gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+clang version 10.0.0 
+Python 3.6.9

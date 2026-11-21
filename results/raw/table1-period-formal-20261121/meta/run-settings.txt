@@ -1,0 +1,10 @@
+Experiment: Controlled PERIOD Depth 5
+Depth: 5
+Driver option: -d 5
+Skip interactive confirmation: -y
+Maximum driver runs: -f 10000
+Planned completed repetitions: 10 per CVE
+Benchmarks:
+CVE-2016-7911
+CVE-2016-9806
+CVE-2017-15265
