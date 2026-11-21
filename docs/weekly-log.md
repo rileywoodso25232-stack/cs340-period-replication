@@ -3,6 +3,18 @@
 以下按实际工作日期保留双方记录。各阶段条目中的状态对应记录当时，当前发布范围截至表二。
 本机表一为 50 次尝试、48 次纳入统计。表二加入后，测量记录共 429 行、统计共 77 组。
 本次 PR 同步主线并保留双方材料，拓展与交付发布安排在下周。
+## 2026-11-21：Table 1 最终归档与完整性验收
+
+- 完成 Table 1 最终实验材料的分批归档，保留 PERIOD、Serial、Native 的原始实验数据、处理结果及审计证据。
+- 吴明阳（1240014957）负责整理并上传 Table 1 实验证据，采用分批提交方式保留原始材料和 Git 历史。
+- 罗力汗（1240014507，GitHub：Luolihan663）完成两批材料的 GitHub 提交：
+  - Batch-01：3 个 depth-5 审计 CSV，提交 `8c9d1b0`。
+  - Batch-02：5 个 Table 1 处理结果及审计文件，提交 `82c26c4`。
+- Batch-02 初次上传路径不正确，随后通过补充提交将文件放入 `results/processed/table1-final/`，并清理仓库根目录的重复副本。
+- 吴明阳恢复缺失的 `docs/table1-final/README.md`，提交 `9e78249`。
+- 使用 `results/audit/table1-final/PACKAGE-SHA256.txt` 核对 GitHub `table1-integration` 分支中的文件：785 条清单记录全部通过 SHA256 验证，失败数为 0。
+- 本次完成的是归档完整性验证，不代表所有实验结果均与论文完全一致。实验结论及限制仍以 `docs/claims.md` 和 `docs/analysis.md` 为准。
+- 后续工作：完善文档索引、检查实验偏差记录、准备 Presentation 和 Final Report。
 
 ## 2026-11-21：表二提交摘要复核
 
