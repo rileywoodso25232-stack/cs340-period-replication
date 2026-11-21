@@ -1,1 +1,2 @@
 upstream_commit,file_path,change_description,reason,patch_path,group_commit
+unverified,PERIOD/tool/DBDS/run_OldPDS.py,Adapt shared memory ABI layout and uint16 arrays; add segment validation and safer libc access,Match locally compiled runtime ABI while preserving the observed scheduling search logic,docs/table1-final/driver-provenance/serial-compat.diff,643ab140fd9e614db3175511025ad1dbfc06d376
