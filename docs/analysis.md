@@ -181,3 +181,77 @@ No claim is made about the paper's full CVE benchmark or about method superiorit
 - Schedule counts, buggy counts and timing are reported separately.
 - No significance test is claimed: the paper gives no per-run raw data or SDs.
 - Exploratory diagnostics are separate from the formal batch.
+
+## Supplementary Table 1 archive — 2026-11-21
+
+This section documents an independent Table 1 experiment archive. It supplements, but does not replace or pool with, the `local-table1-local-runs-20261118-scoped` experiment analyzed above.
+
+### Experimental scope
+
+The additional archive covers CVE-2016-7911, CVE-2016-9806, and CVE-2017-15265.
+
+- PERIOD: depth 5, search budget 10,000, 30 completed runs across three CVEs; one additional aborted attempt was retained.
+- Serial-compatible: depth 5, search budget 10,000, 30 completed runs using a shared-memory-compatible candidate driver.
+- Native: three groups of 10,000 executions per CVE, totaling 90,000 execution records, with AddressSanitizer used for error identification.
+
+### Controlled scheduling results
+
+The following values represent mean schedules to first bug / total schedules / buggy schedules. The paper's three reference values are listed first.
+
+| CVE | Paper | PERIOD (new) | Serial-compatible (new) |
+| --- | --- | --- | --- |
+| 2016-7911 | 3 / 19 / 8 | 3 / 19 / 8 | 3 / 19 / 8.2 |
+| 2016-9806 | 6 / 42 / 4 | 6.4 / 42 / 3.9 | 6 / 42 / 4 |
+| 2017-15265 | 11 / 96 / 1 | 11 / 96 / 1 | 11 / 96 / 1.2 |
+
+Among the 18 controlled-method numerical comparisons, 14 match the paper and four differ.
+
+The differences are:
+
+- PERIOD, CVE-2016-9806: first-bug schedules 6.4 versus 6 (+0.4, +6.67%); buggy schedules 3.9 versus 4 (-0.1, -2.5%).
+- Serial-compatible, CVE-2016-7911: buggy schedules 8.2 versus 8 (+0.2, +2.5%).
+- Serial-compatible, CVE-2017-15265: buggy schedules 1.2 versus 1 (+0.2, +20%).
+
+All six controlled-method groups reproduce the paper's total schedule counts. These numerical agreements do not establish full implementation equivalence.
+
+### Relationship to the earlier scoped experiment
+
+The earlier formal scoped batch contained 50 attempts and 48 observations included in the corresponding statistical analysis. The new archive contains 60 completed controlled-method runs, covering Serial-compatible results for all three selected CVEs.
+
+The earlier experiment excluded Serial on CVE-2017-15265 because of non-reproducible candidate-driver behavior. The new archive records ten completed Serial-compatible runs for this CVE, with a mean buggy-schedule count of 1.2.
+
+This is additional evidence from a separate configuration and execution batch. It does not retroactively validate the excluded earlier runs or demonstrate that the earlier replay instability has been eliminated.
+
+### Native baseline and classification limitations
+
+The Native measurements are uncontrolled executions rather than controlled scheduling trials. Their execution counts must not be directly equated with PERIOD or Serial schedule counts.
+
+Across 90,000 Native execution records:
+
+- 115 errors were identified by AddressSanitizer.
+- Another 68 executions of CVE-2017-15265 exited with code 1 without an ASan identification flag.
+- These 68 exits remain unclassified and are excluded from the ASan-confirmed error count.
+- No exit-code-124 timeouts were recorded.
+
+The retained evidence does not establish the cause of the 68 unclassified exits. Native comparisons are therefore descriptive and protocol-dependent.
+
+### Interpretation and limitations
+
+The supplementary archive supports the reproducibility of several reported Table 1 scheduling counts, but does not prove complete equivalence with the original paper.
+
+The Serial-compatible driver includes shared-memory ABI repairs. The source comparison did not identify scheduling-search algorithm changes, but full behavioral equivalence has not been established.
+
+The local environment and execution protocols differ from the original experiment. The numerical results should be interpreted within the declared experimental scope. No pooled statistical estimate is computed across the earlier and newer batches.
+
+**Updated C1 assessment: partially supported (scoped).** The new evidence strengthens coverage of the selected CVEs without removing the documented methodological limitations.
+
+### Evidence and integrity
+
+- [Final archive overview](table1-final/README.md)
+- [Processed summary](../results/processed/table1-final/summary.csv)
+- [Paper vs. Ours](../results/processed/table1-final/paper-vs-ours.csv)
+- [Native exit audit](../results/processed/table1-final/native-exit-audit.md)
+- [Serial driver provenance](table1-final/driver-provenance/README.md)
+- [Package SHA256 manifest](../results/audit/table1-final/PACKAGE-SHA256.txt)
+
+On 2026-11-21, all 785 file entries in the package manifest were verified against the GitHub `table1-integration` branch: 785 passed, zero failed. This establishes byte-level archive integrity, not experimental or statistical correctness.
