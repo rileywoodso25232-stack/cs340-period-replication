@@ -1,5 +1,15 @@
 # AI usage record
 
+## 2026-11-21 表二提交摘要核查
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-21 | OpenAI Codex | Compared commit messages with archived results, corrected the Serial reorder_5 summary, and drafted provenance, member contributions and publication records | Human review pending | Uses archived experiments and existing statistics, summary and documentation correction only |
+
+核对发现 `e0e63d7` 把 Serial reorder_5 简写为与论文一致，现补充其错误调度均值
+816.67 对论文 816 的差异，并记录 21 次检出和 3 次未检出。
+相关说明见[提交摘要与更正](table2-submission-summary.zh-CN.md)。
+
 ## 2026-11-19 表二 reorder 子集（C2）
 
 DeepSeek Harness（deepseek-flash）编写表二配置、运行/导出脚本与测量/对比脚本，

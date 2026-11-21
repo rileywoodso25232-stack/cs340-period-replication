@@ -1,5 +1,14 @@
 # Weekly progress log
 
+## 2026-11-21：表二提交摘要复核
+
+- 成员为 1240013942 刘竞辰，OpenAI Codex 辅助核查提交正文及归档数据。
+- 更正 `e0e63d7` 正文中“Serial reorder_3/5 一致”的表述。reorder_5 的首次与总调度一致，错误调度均值为 816.67，论文为 816，详情见[提交摘要与更正](table2-submission-summary.zh-CN.md)。
+- 统一最终批次为 24 次搜索、21 次检出并重放确认、3 次未检出、零超时。C2 保持部分支持，候选驱动和缩小范围的局限保留。
+- 补充吴明阳的 IPC 兼容补丁与早期验证基础，以及刘竞辰本机重复对照、统计和差异分析的增量。
+- 本周安排发布表二累计分支，拓展与交付整理留待下周。此条为发布安排，实际提交和推送以 Git 历史为准。
+- 发布入口为 [experiments/table2-local-comparison](https://github.com/rileywoodso25232-stack/cs340-period-replication/tree/experiments/table2-local-comparison)，主要实验提交为 [e0e63d7](https://github.com/rileywoodso25232-stack/cs340-period-replication/commit/e0e63d777b96e534611fd2fd7721326c64cf83b1)。[成员贡献表](team.md)记录组员基础与本机增量，摘要更正在后续提交中明确保留。
+
 ## 2026-11-19：表二 reorder 子集（C2）
 
 - 成员：1240013942 刘竞辰；DeepSeek Harness 执行整理，人工复核待完成。
@@ -14,7 +23,7 @@
   [表二批次](../results/raw/local-table2-local-comparison-20261118/README.md)、
   [对比表](../results/processed/table2-paper-vs-ours.md)、
   [差异分析](table2-analysis.md)。
-- 提交/推送：已在本地提交 `e0e63d7`；按用户要求不推送。
+- 阶段提交为 `e0e63d7`，日志提交为 `140115b`、`a45a514`。11 月 19 日记录时均为本地状态，后续发布安排见上方 11 月 21 日记录。
 
 ## 2026-11-18：阶段 9 控制变量检查
 
