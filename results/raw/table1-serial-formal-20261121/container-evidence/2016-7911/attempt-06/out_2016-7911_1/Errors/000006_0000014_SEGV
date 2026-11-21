@@ -1,0 +1,19 @@
+[[1, 2, 0, 0], [0, 2, 0, 0]]
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==15821==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000004 (pc 0x0000004de9cf bp 0x000000000000 sp 0x7e38895fee50 T1)
+==15821==The signal is caused by a READ memory access.
+==15821==Hint: address points to the zero page.
+    #0 0x4de9cf  (/workdir/cs340-runs/table1-serial-d5-20261121-151554/2016-7911/attempt-06/2016-7911+0x4de9cf)
+    #1 0x4de90f  (/workdir/cs340-runs/table1-serial-d5-20261121-151554/2016-7911/attempt-06/2016-7911+0x4de90f)
+    #2 0x7e388d2c76da  (/lib/x86_64-linux-gnu/libpthread.so.0+0x76da)
+    #3 0x7e388c2a561e  (/lib/x86_64-linux-gnu/libc.so.6+0x12161e)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/workdir/cs340-runs/table1-serial-d5-20261121-151554/2016-7911/attempt-06/2016-7911+0x4de9cf) 
+Thread T1 created by T0 here:
+    #0 0x48c76a  (/workdir/cs340-runs/table1-serial-d5-20261121-151554/2016-7911/attempt-06/2016-7911+0x48c76a)
+    #1 0x4debc8  (/workdir/cs340-runs/table1-serial-d5-20261121-151554/2016-7911/attempt-06/2016-7911+0x4debc8)
+    #2 0x7e388c1a5c86  (/lib/x86_64-linux-gnu/libc.so.6+0x21c86)
+
+==15821==ABORTING
