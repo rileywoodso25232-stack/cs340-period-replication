@@ -1,0 +1,38 @@
+{
+  "experiment_id": "local-table1-local-runs-20261118-scoped",
+  "status": "formal-local-subset",
+  "claim_id": "C1",
+  "scope": "PERIOD on all three reviewed CVEs; Serial only on CVE-2016-7911 and CVE-2016-9806",
+  "scope_reason": "The candidate Serial driver records non-reproducible failure schedules for CVE-2017-15265 (schedules 7 and 49 did not replay; only schedule 11 did). PERIOD also produced one non-reproducible early schedule for that case, so any attempt whose replay runs but does not reproduce is recorded as invalid_replay, kept for audit, and excluded from aggregate metrics without replacement.",
+  "subjects": ["CVE-2016-7911", "CVE-2016-9806", "CVE-2017-15265"],
+  "method_subjects": {
+    "period": ["CVE-2016-7911", "CVE-2016-9806", "CVE-2017-15265"],
+    "serial": ["CVE-2016-7911", "CVE-2016-9806"]
+  },
+  "methods": [
+    {
+      "name": "period",
+      "driver": "run_PDS.py",
+      "patch": "src/patches/teammate-ipc-compat/period.diff"
+    },
+    {
+      "name": "serial",
+      "driver": "run_OldPDS.py",
+      "patch": "src/patches/teammate-ipc-compat/serial.diff"
+    }
+  ],
+  "depth": 5,
+  "schedule_budget": 10000,
+  "attempts_per_subject": 10,
+  "child_timeout_seconds": 5,
+  "outer_timeout_seconds": 120,
+  "replay_attempts": 3,
+  "ordering": "attempt-major; method-major; method subjects in listed order; sequential",
+  "interactive": false,
+  "deep_search_mode": "upstream default prefix filtering; no -z",
+  "replay": "first saved failure of every completed search; a replay dry-run ASan abort is retried up to 3 attempts and every attempt is kept",
+  "dry_run_abort_policy": "aborted_at_dry_run counts in the attempt denominator; it is not replayed and not replaced",
+  "replay_invalid_policy": "a replay that runs to Perform Reproduction! but does not show the expected diagnostic is recorded as invalid_replay; its search row is kept for audit, excluded from aggregate metrics, and no replacement run is made",
+  "replay_unverified_policy": "if all replay attempts abort in dry run, record replay_unverified and continue; report the count",
+  "stopping_rule": "stop for inspection on build failure, timeout, search abort after DBDS started, replay timeout, or changed originals"
+}

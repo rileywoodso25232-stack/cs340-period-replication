@@ -1,0 +1,14 @@
+{
+  "exit_code": 0,
+  "outer_timeout": false,
+  "wrapper_elapsed_seconds": 118.92435705700018,
+  "end_utc": "2026-11-18T15:43:25.023689+00:00",
+  "schedules": 2350,
+  "error_schedules": 90,
+  "timeouts": 0,
+  "tool_elapsed_seconds": 118.8152,
+  "first_bug_schedule": 27,
+  "found": true,
+  "effective_depth_confirmed": true,
+  "validation_issue": null
+}

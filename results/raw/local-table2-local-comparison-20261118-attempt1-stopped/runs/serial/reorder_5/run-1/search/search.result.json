@@ -1,0 +1,7 @@
+{
+  "exit_code": -9,
+  "outer_timeout": true,
+  "wrapper_elapsed_seconds": 300.00112956,
+  "end_utc": "2026-11-18T15:38:22.034287+00:00",
+  "validation_issue": "incomplete_search"
+}

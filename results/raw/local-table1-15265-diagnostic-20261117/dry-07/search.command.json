@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "unshare",
+    "--ipc",
+    "--fork",
+    "/usr/bin/python3",
+    "-u",
+    "/root/cs340-period/pilots/local-table1-cve-pilot-20261117-198pg1ik/observe_driver.py",
+    "/root/cs340-period/pilots/local-table1-cve-pilot-20261117-198pg1ik/driver/run_PDS.py",
+    "-y",
+    "-d",
+    "5",
+    "-f",
+    "1",
+    "-t",
+    "5",
+    "./2017-15265"
+  ],
+  "budget": 1,
+  "cwd": "/root/cs340-period/pilots/15265-diagnostic-7rlbtx03/dry-07",
+  "start_utc": "2026-11-16T17:01:20.048901+00:00",
+  "timeout_seconds": 120
+}

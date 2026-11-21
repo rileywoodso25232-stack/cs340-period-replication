@@ -1,0 +1,6 @@
+method,case,total_attempts,completed,aborted_at_dry_run,replay_unverified,search_valid,mean_schedules,sd_schedules,mean_error_schedules,sd_error_schedules,mean_first_bug_schedule,sd_first_bug_schedule,mean_tool_elapsed_seconds,sd_tool_elapsed_seconds
+period,CVE-2016-7911,7,7,0,0,7,19.0,0.0,8.0,0.0,3.0,0.0,8.080702857142857,1.7553192468011272
+period,CVE-2016-9806,7,7,0,0,7,42.0,0.0,4.0,0.0,6.0,0.0,4.820581428571429,1.1173836159443866
+period,CVE-2017-15265,7,6,0,0,7,96.0,0.0,1.1428571428571428,0.37796447300922725,10.428571428571429,1.511857892036909,3.371451428571428,1.2258691946183677
+serial,CVE-2016-7911,6,6,0,0,6,19.0,0.0,8.0,0.0,3.0,0.0,8.671443333333334,2.023768349872748
+serial,CVE-2016-9806,6,6,0,0,6,42.0,0.0,4.0,0.0,6.0,0.0,4.781013333333333,1.4608519252910839

@@ -1,0 +1,6 @@
+trial,search_status,schedules,error_schedules,first_bug_schedule,same_namespace_status,same_namespace_exit,fresh_namespace_status,fresh_namespace_exit
+1,no_search_log,,,,not_run,,not_run,
+2,no_search_log,,,,not_run,,not_run,
+3,no_search_log,,,,not_run,,not_run,
+4,no_search_log,,,,not_run,,not_run,
+5,no_search_log,,,,not_run,,not_run,

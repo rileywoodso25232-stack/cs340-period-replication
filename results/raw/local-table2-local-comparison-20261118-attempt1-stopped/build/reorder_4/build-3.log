@@ -1,0 +1,6 @@
+[DEBUG] The ConConfig file was successfully opened.
+[DEBUG] The file is /root/cs340-period/table2/local-table2-local-comparison-20261118-x32mzat1/build/reorder_4/ConConfig.reorder_4_bad
+[DEBUG]
+[DEBUG] Instrumentation for reorder_bad.c:71
+[DEBUG] Instrumentation for reorder_bad.c:72
+[DEBUG] Instrumentation for reorder_bad.c:78

@@ -1,0 +1,2 @@
+{"pid": 68635, "args": ["sudo", "Dry_Run=1", "DBDS_Run=0", "NO_Trace=1", "ASAN_OPTIONS=abort_on_error=1:detect_leaks=0", "TSAN_OPTIONS=report_bugs=0", "./reorder_5_bad"], "returncode": 0}
+{"pid": 68642, "args": ["sudo", "Dry_Run=0", "DBDS_Run=1", "ASAN_OPTIONS=abort_on_error=1:detect_leaks=0", "TSAN_OPTIONS=report_bugs=1", "./reorder_5_bad"], "returncode": -6}

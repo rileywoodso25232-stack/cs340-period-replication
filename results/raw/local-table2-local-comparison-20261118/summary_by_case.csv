@@ -1,0 +1,9 @@
+method,case,total_attempts,completed,not_found,aborted_at_dry_run,invalid_replay,replay_unverified,search_valid,mean_schedules,sd_schedules,mean_error_schedules,sd_error_schedules,mean_first_bug_schedule,sd_first_bug_schedule,mean_tool_elapsed_seconds,sd_tool_elapsed_seconds
+period,reorder_3,3,3,0,0,0,0,3,27.0,0.0,6.0,0.0,6.0,0.0,1.72217,0.2142759041516334
+period,reorder_4,3,3,0,0,0,0,3,100.0,0.0,12.0,0.0,9.0,0.0,5.17671,0.3806423062403859
+period,reorder_5,3,3,0,0,0,0,3,225.0,0.0,20.0,0.0,12.0,0.0,10.89813,0.26993429422731696
+period,reorder_10,3,3,0,0,0,0,3,2350.0,0.0,90.0,0.0,27.0,0.0,120.84546333333333,1.758434162154875
+serial,reorder_3,3,3,0,0,0,0,3,30.0,0.0,10.0,0.0,10.0,0.0,3.1149766666666667,0.36170292925733044
+serial,reorder_4,3,3,0,0,0,0,3,384.0,0.0,90.0,0.0,47.0,0.0,32.58188,2.348239605917588
+serial,reorder_5,3,3,0,0,0,0,3,5040.0,0.0,816.6666666666666,2.0816659994661326,283.0,0.0,349.78080666666665,14.837253537421706
+serial,reorder_10,3,0,3,0,0,0,3,10001.0,0.0,0.0,0.0,,,125.05371666666667,5.081030103043405

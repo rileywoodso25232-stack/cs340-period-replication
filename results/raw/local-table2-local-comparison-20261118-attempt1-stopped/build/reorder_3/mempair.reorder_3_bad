@@ -1,0 +1,4 @@
+reorder_bad.c:71 reorder_bad.c:71 W W 4108 4108
+reorder_bad.c:71 reorder_bad.c:78 W R 4108 42144
+reorder_bad.c:72 reorder_bad.c:72 W W 18904 18904
+reorder_bad.c:72 reorder_bad.c:78 W R 18904 42144

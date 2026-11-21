@@ -1,0 +1,14 @@
+g++	4:7.4.0-1ubuntu2.3
+gcc	4:7.4.0-1ubuntu2.3
+libc6:amd64	2.27-3ubuntu1.6
+python-numpy	1:1.13.3-2ubuntu1
+python3	3.6.7-1~18.04
+clang version 10.0.0 
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/bin
+gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+

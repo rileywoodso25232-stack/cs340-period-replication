@@ -33,10 +33,31 @@ core.*
 *.tgz
 *.zip
 **/out_*/
+!/results/raw/local-ipc-validation-20261115/**/out_*/
+!/results/raw/local-ipc-validation-20261115/**/out_*/Errors/
+!/results/raw/local-ipc-validation-20261115/**/out_*/Errors/*
 # Keep the small, observed failure schedules needed to replay this validation.
 !/results/raw/local-smoke-20261028/**/out_*/
 !/results/raw/local-smoke-20261028/**/out_*/Errors/
 !/results/raw/local-smoke-20261028/**/out_*/Errors/*
+!/results/raw/local-table1-cve-pilot-20261117*/**/out_*/
+!/results/raw/local-table1-cve-pilot-20261117*/**/out_*/Errors/
+!/results/raw/local-table1-cve-pilot-20261117*/**/out_*/Errors/*
+!/results/raw/local-table1-15265-diagnostic-20261117/**/out_*/
+!/results/raw/local-table1-15265-diagnostic-20261117/**/out_*/Errors/
+!/results/raw/local-table1-15265-diagnostic-20261117/**/out_*/Errors/*
+!/results/raw/local-table1-local-runs-20261118*/**/out_*/
+!/results/raw/local-table1-local-runs-20261118*/**/out_*/Errors/
+!/results/raw/local-table1-local-runs-20261118*/**/out_*/Errors/*
+!/results/raw/local-table1-15265-solo-20261118/**/out_*/
+!/results/raw/local-table1-15265-solo-20261118/**/out_*/Errors/
+!/results/raw/local-table1-15265-solo-20261118/**/out_*/Errors/*
+!/results/raw/local-table1-15265-namespace-20261118*/**/out_*/
+!/results/raw/local-table1-15265-namespace-20261118*/**/out_*/Errors/
+!/results/raw/local-table1-15265-namespace-20261118*/**/out_*/Errors/*
+!/results/raw/local-table2-local-comparison-20261118*/**/out_*/
+!/results/raw/local-table2-local-comparison-20261118*/**/out_*/Errors/
+!/results/raw/local-table2-local-comparison-20261118*/**/out_*/Errors/*
 /results/raw/bulk/
 
 # Credentials and local machine settings

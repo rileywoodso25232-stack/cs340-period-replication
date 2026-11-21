@@ -1,0 +1,14 @@
+{
+  "exit_code": 0,
+  "outer_timeout": false,
+  "wrapper_elapsed_seconds": 0.36616810299983626,
+  "end_utc": "2026-11-18T16:03:27.313458+00:00",
+  "observed_child_exits": [
+    0,
+    -6
+  ],
+  "last_child_exit": -6,
+  "diagnostic_confirmed": true,
+  "dry_run_abort": false,
+  "status": "confirmed"
+}

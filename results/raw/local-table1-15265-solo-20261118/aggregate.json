@@ -1,0 +1,32 @@
+{
+  "attempts": 10,
+  "counts": {
+    "completed": 9,
+    "aborted_at_dry_run": 1,
+    "invalid_replay": 0,
+    "replay_unverified_at_dry_run": 0,
+    "needs_inspection": 0
+  },
+  "completed_error_values": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "completed_first_values": [
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11
+  ]
+}

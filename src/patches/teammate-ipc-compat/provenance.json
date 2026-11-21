@@ -1,0 +1,22 @@
+{
+  "commit": "9287fe43e351c650e6d48311e9368062b07f07e6",
+  "contributor": "1240014957 吴明阳",
+  "status": "Imported for reuse; not applied to local upstream; dynamic validation pending",
+  "files": [
+    {
+      "source": "https://github.com/rileywoodso25232-stack/cs340-period-replication/blob/9287fe43e351c650e6d48311e9368062b07f07e6/results/raw/reorder3-compat-20261105/period/driver.diff",
+      "source_git_blob": "fc096f11cac2d3d820bda28b66e967d46a574d06",
+      "local_path": "src/patches/teammate-ipc-compat/period.diff"
+    },
+    {
+      "source": "https://github.com/rileywoodso25232-stack/cs340-period-replication/blob/9287fe43e351c650e6d48311e9368062b07f07e6/results/raw/reorder3-compat-20261105/serial/driver.diff",
+      "source_git_blob": "f14fc5c69171f56a6880a333d75d3b8783b51a53",
+      "local_path": "src/patches/teammate-ipc-compat/serial.diff"
+    },
+    {
+      "source": "https://github.com/rileywoodso25232-stack/cs340-period-replication/blob/9287fe43e351c650e6d48311e9368062b07f07e6/results/raw/reorder3-compat-20261105/LICENSE.PERIOD.txt",
+      "source_git_blob": "764574a40e8ec55abbb31ebc0e0369967a001634",
+      "local_path": "src/patches/teammate-ipc-compat/LICENSE.txt"
+    }
+  ]
+}

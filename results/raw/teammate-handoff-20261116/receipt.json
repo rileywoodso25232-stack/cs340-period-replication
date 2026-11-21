@@ -1,0 +1,29 @@
+{
+  "zip_sha256": "7cbe0c311375fe456c3a2d1f932cd7b96aeed1f8ca14a3698664ea3090c73210",
+  "files": {
+    "00-先看这里.md": "0d2d8bb90d89b813fa16998561fdc511b0d3c1aad8a8de8b3162f3f7837cabbe",
+    "depth5-verification/log-hashes.csv": "5b92965fad8d2cbdcf10a358c714feda64a88a43e2d65191e507471bcd7e9bb1",
+    "depth5-verification/README.md": "cdf100b0da301293d669a69e7a01495cea7f81529e06a0dbbb86baab7b267615",
+    "depth5-verification/summary.csv": "8581bcc5c912e91c61d1da5534473ad08a93ab99c1accedea55916899d28b4e8",
+    "depth5-verification/日志统计摘录与索引.csv": "cd17c4af7788dd86f59df6080923529930cadf172879e99cbffea81af32c35d1",
+    "table1-verification/README.md": "c792d9ecb59a05d5aa843020d07c99e51febc07a14cb16d41ad7234e92ffa644",
+    "table1-verification/summary.csv": "0737e26572e8646a65b39600d2b9c10c44358e2d653d40385ce1d66bc16869c0",
+    "table1-verification/日志统计摘录与索引.csv": "301bfa81d5ddc32436c636c3624f570c8c6bd6cb16d6f7fca5ac0564623af796"
+  },
+  "checks": [
+    {
+      "batch": "table1-verification",
+      "rows": 9,
+      "completed": 9,
+      "summary_matches_supplied_excerpt": true
+    },
+    {
+      "batch": "depth5-verification",
+      "rows": 10,
+      "completed": 9,
+      "summary_matches_supplied_excerpt": true
+    }
+  ],
+  "original_log_hashes_verified": false,
+  "limitation": "Original logs absent; only supplied summary/excerpt/index consistency checked."
+}

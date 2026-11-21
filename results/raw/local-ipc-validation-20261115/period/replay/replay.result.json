@@ -1,0 +1,10 @@
+{
+  "driver_exit": 0,
+  "outer_timeout": false,
+  "wrapper_elapsed_seconds": 0.4170090170000007,
+  "observed_child_exits": [
+    0,
+    -6
+  ],
+  "assertion_reproduced": true
+}

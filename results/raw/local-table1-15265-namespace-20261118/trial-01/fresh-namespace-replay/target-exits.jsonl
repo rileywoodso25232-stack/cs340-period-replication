@@ -1,0 +1,2 @@
+{"pid": 422, "args": ["sudo", "Dry_Run=1", "DBDS_Run=0", "NO_Trace=1", "ASAN_OPTIONS=abort_on_error=1:detect_leaks=0", "TSAN_OPTIONS=report_bugs=0", "./2017-15265"], "returncode": 0}
+{"pid": 426, "args": ["sudo", "Dry_Run=0", "DBDS_Run=1", "ASAN_OPTIONS=abort_on_error=1:detect_leaks=0", "TSAN_OPTIONS=report_bugs=1", "./2017-15265"], "returncode": -6}

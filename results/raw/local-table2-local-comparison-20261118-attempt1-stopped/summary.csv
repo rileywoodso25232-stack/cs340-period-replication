@@ -1,0 +1,8 @@
+method,case,attempt,status,schedules,error_schedules,timeouts,first_bug_schedule,tool_elapsed_seconds,search_wrapper_seconds,replay_status,replay_tries,replay_child_exit,replay_wrapper_seconds,validation_issue
+period,reorder_3,1,completed,27,6,0,6,1.97994,2.071291207999991,confirmed,1,-6,0.3154421320000438,
+period,reorder_4,1,completed,100,12,0,9,4.71626,4.777766202000009,confirmed,1,-6,0.4659523619999959,
+period,reorder_5,1,completed,225,20,0,12,10.53658,10.597726563000037,confirmed,1,-6,0.41595375200000717,
+period,reorder_10,1,completed,2350,90,0,27,119.34925,119.42859840900002,confirmed,1,-6,0.46635961299989503,
+serial,reorder_3,1,completed,30,10,0,10,2.98827,3.0745362430000114,confirmed,1,-6,0.3660881130000462,
+serial,reorder_4,1,completed,384,90,0,47,34.06601,34.16603460199997,confirmed,1,-6,0.41634144599993306,
+serial,reorder_5,1,needs_inspection,,,,,,300.00112956,,0,,,incomplete_search

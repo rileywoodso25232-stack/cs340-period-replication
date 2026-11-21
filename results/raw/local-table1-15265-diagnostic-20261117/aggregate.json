@@ -1,0 +1,37 @@
+{
+  "dry_run_asan_aborts": 0,
+  "dry_run_total": 10,
+  "full_completed": 6,
+  "full_dry_run_asan_aborts": 4,
+  "full_error_values": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "full_errors_mean": 1.0,
+  "full_errors_sd": 0.0,
+  "full_first_bug_mean": 11.0,
+  "full_first_bug_sd": 0.0,
+  "full_first_bug_values": [
+    11,
+    11,
+    11,
+    11,
+    11,
+    11
+  ],
+  "full_schedule_values": [
+    96,
+    96,
+    96,
+    96,
+    96,
+    96
+  ],
+  "full_schedules_mean": 96.0,
+  "full_schedules_sd": 0.0,
+  "full_total": 10
+}

@@ -1,0 +1,1921 @@
+{
+  "experiment_id": "local-table1-local-runs-20261118-scoped",
+  "config_sha256": "3612a54fadb4616c651cb3d98aaf3d5d5f5579447bd3559dd53ce6526add2a4a",
+  "runner_sha256": "56d11cf98340ebb7e71504c97d78bbada235c119772c1005c8059f95832cf204",
+  "upstream_commit": "cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+  "kernel": "6.18.58.1-microsoft-standard-WSL2",
+  "python": "3.6.9 (default, Mar 10 2023, 16:46:00) \n[GCC 8.4.0]",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "methods": {
+    "period": {
+      "driver": "run_PDS.py",
+      "driver_sha256": "10ab60b538fae42e84a40e0f412fc2845f598ca8f990cdddccd4fc5b9df4778b",
+      "patch": "src/patches/teammate-ipc-compat/period.diff",
+      "patch_sha256": "43fb31671b903f17ec06c93fb5e0b4e5afc86e5c2de12e9c6ff2e944015fa4ed",
+      "protected_ast_unchanged": true
+    },
+    "serial": {
+      "driver": "run_OldPDS.py",
+      "driver_sha256": "30bae09077dbcc9bfa471accb534f4667bc59147a1ed8775d3798535609ab43e",
+      "patch": "src/patches/teammate-ipc-compat/serial.diff",
+      "patch_sha256": "6ad120030012ec2e230c9ffa32d9e022a7cccfc453d9c2eba9d0effe832fb3f2",
+      "protected_ast_unchanged": null
+    }
+  },
+  "targets": {
+    "CVE-2016-7911": {
+      "2016-7911": "dbc10472bc20d2868b0b8617688daa949acc9275b6b4fc7de3c7dae24b586e47",
+      "2016-7911.cpp": "c8d43024149d957da61fefb75e0cf1abca8952104356c3af855e9ccf14bc24f4",
+      "ConConfig.2016-7911": "84d8671c78ee9743b579f6cff91516db43a0653e324223e94e10c6df2a75ed42",
+      "mempair.2016-7911.npz": "dc49bc2fec2fdb42dba18d7c2de6b9165f0f5ded30a78be9138ae61d2324d46c"
+    },
+    "CVE-2016-9806": {
+      "2016-9806": "753a5d03fe39f0348b73b4ff91dd7d0ea47b05d3a95d048f323b14e3c478446b",
+      "2016-9806.cpp": "0fdfd87a82cd03cc3d5bb039f0c057a2e905c080cb73a1ba99f971fa1048c144",
+      "ConConfig.2016-9806": "b9fffd1aec2b92b9b542144e5343b7ff34e332bce6151ef8c05f6e06451ced59",
+      "mempair.2016-9806.npz": "016e7b18dd523ab9119dea4957259adaa7948df6cbfc0519ef76ad059ecac8b3"
+    },
+    "CVE-2017-15265": {
+      "2017-15265": "92285abcf385c1d566c765140b53c23f4055eed73efe92c89d1d00a817912b77",
+      "2017-15265.cpp": "29cca575c999314d5352c6fcbc9898062c3b0a4cf7bf7ff411f28935bc4c0a21",
+      "ConConfig.2017-15265": "6a4b560037f64a927e132cd3d329878b7c76ffb00a082dca9cc6e7a232fe1b91",
+      "mempair.2017-15265.npz": "06f9b4ddb200c5a51579f37e3d88d06aa61a51e3f679298473a99e5e4704f435"
+    }
+  },
+  "frozen_driver_files": {
+    "period": {
+      "bp_sched.py": "59a433efd801074b4a5021df6b086c4ccb7522c6f0152d8b0e76e305a397cc88",
+      "external_def.py": "41a3023659e60c68eef7c1f7a897e1d8e08de50638d70ca7c0360de105688d08",
+      "interleaving.py": "226f96ec7855b0ec0ff6cd78b855a2938de06afbbd931d65a52a867708bd1d2f",
+      "ipc.py": "ccfdb8c35117a305e3c4b64d7b2048367ae759e64c48e7c3671b75c37b9f9c24",
+      "pds.py": "fcbc0ef658a3303f008b98b2a21d8139147ad52ddde12c60bead15409d6900af",
+      "run_DBDS.py": "4068698152fd8a6e97950a736eec0127fd89ac6bb6ac266eff99f1e33bd2e6c8",
+      "run_OldPDS.py": "a16575f2480d51496cb3a8387a548efb7ebf04ce2fa6856a0c6785932ee966e1",
+      "run_PDS.py": "10ab60b538fae42e84a40e0f412fc2845f598ca8f990cdddccd4fc5b9df4778b",
+      "run_dbds_lite.py": "e4606dde2257cecc4e6643a6badb2dc08167b78872329d41342a0fa07956dd75",
+      "run_increase_double_dbds_shm.py": "f00eeaab5fcfa301d51da58eea215821118cf83bf8cfb65f7da85f76187048b9",
+      "run_increase_double_dl.py": "8fcd9579ec2cbca5ae04f9d53054c1797ab43871c54517d9e4999462dce27b58",
+      "run_increase_double_dl_comp.py": "8e8ec24e5f72c8cb2536cdc72b581b989c7c93b0d9230688bd27c3edf2777000",
+      "run_increase_double_sleep.py": "0c08f3af1d5eabacc150b2427c540b48f73792dd2cbfa0fda4508113e8d98801",
+      "sbp_sched.py": "fc03cd03b9b4bbd82bb2e147df0ffc3a6527d7c58166d2f32484fb2bde157a7c",
+      "sbp_sched_mixed_end.py": "a187c622573072c7f75b1db00e2d8ae8af52b129177a6283262cc2c34d732cd2",
+      "sched.py": "0f0bf52d71428cb4c7e830613a8e97570bef9a05b0d96449ee3d3b55c44cf6a3",
+      "test.py": "d11ef49eabf56c279514af50dedc13e3bec050ced159f605021d41d255cf4fdb"
+    },
+    "serial": {
+      "bp_sched.py": "59a433efd801074b4a5021df6b086c4ccb7522c6f0152d8b0e76e305a397cc88",
+      "external_def.py": "41a3023659e60c68eef7c1f7a897e1d8e08de50638d70ca7c0360de105688d08",
+      "interleaving.py": "226f96ec7855b0ec0ff6cd78b855a2938de06afbbd931d65a52a867708bd1d2f",
+      "ipc.py": "ccfdb8c35117a305e3c4b64d7b2048367ae759e64c48e7c3671b75c37b9f9c24",
+      "pds.py": "fcbc0ef658a3303f008b98b2a21d8139147ad52ddde12c60bead15409d6900af",
+      "run_DBDS.py": "4068698152fd8a6e97950a736eec0127fd89ac6bb6ac266eff99f1e33bd2e6c8",
+      "run_OldPDS.py": "30bae09077dbcc9bfa471accb534f4667bc59147a1ed8775d3798535609ab43e",
+      "run_PDS.py": "c6ed1312f61f7ec739e3dcead0086e0265d37f07bd88ef64d6588d3ff61a8e8f",
+      "run_dbds_lite.py": "e4606dde2257cecc4e6643a6badb2dc08167b78872329d41342a0fa07956dd75",
+      "run_increase_double_dbds_shm.py": "f00eeaab5fcfa301d51da58eea215821118cf83bf8cfb65f7da85f76187048b9",
+      "run_increase_double_dl.py": "8fcd9579ec2cbca5ae04f9d53054c1797ab43871c54517d9e4999462dce27b58",
+      "run_increase_double_dl_comp.py": "8e8ec24e5f72c8cb2536cdc72b581b989c7c93b0d9230688bd27c3edf2777000",
+      "run_increase_double_sleep.py": "0c08f3af1d5eabacc150b2427c540b48f73792dd2cbfa0fda4508113e8d98801",
+      "sbp_sched.py": "fc03cd03b9b4bbd82bb2e147df0ffc3a6527d7c58166d2f32484fb2bde157a7c",
+      "sbp_sched_mixed_end.py": "a187c622573072c7f75b1db00e2d8ae8af52b129177a6283262cc2c34d732cd2",
+      "sched.py": "0f0bf52d71428cb4c7e830613a8e97570bef9a05b0d96449ee3d3b55c44cf6a3",
+      "test.py": "d11ef49eabf56c279514af50dedc13e3bec050ced159f605021d41d255cf4fdb"
+    },
+    "observe_driver.py": "b32fc5add862b90b7f08ec275d0d8c1b711cefb15bca5ee9d35701aaa5814c1a"
+  },
+  "upstream_driver_hashes": {
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/bp_sched.py": "59a433efd801074b4a5021df6b086c4ccb7522c6f0152d8b0e76e305a397cc88",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/external_def.py": "41a3023659e60c68eef7c1f7a897e1d8e08de50638d70ca7c0360de105688d08",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/interleaving.py": "226f96ec7855b0ec0ff6cd78b855a2938de06afbbd931d65a52a867708bd1d2f",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/ipc.py": "ccfdb8c35117a305e3c4b64d7b2048367ae759e64c48e7c3671b75c37b9f9c24",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/pds.py": "fcbc0ef658a3303f008b98b2a21d8139147ad52ddde12c60bead15409d6900af",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_DBDS.py": "4068698152fd8a6e97950a736eec0127fd89ac6bb6ac266eff99f1e33bd2e6c8",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_OldPDS.py": "a16575f2480d51496cb3a8387a548efb7ebf04ce2fa6856a0c6785932ee966e1",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_PDS.py": "c6ed1312f61f7ec739e3dcead0086e0265d37f07bd88ef64d6588d3ff61a8e8f",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_dbds_lite.py": "e4606dde2257cecc4e6643a6badb2dc08167b78872329d41342a0fa07956dd75",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_increase_double_dbds_shm.py": "f00eeaab5fcfa301d51da58eea215821118cf83bf8cfb65f7da85f76187048b9",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_increase_double_dl.py": "8fcd9579ec2cbca5ae04f9d53054c1797ab43871c54517d9e4999462dce27b58",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_increase_double_dl_comp.py": "8e8ec24e5f72c8cb2536cdc72b581b989c7c93b0d9230688bd27c3edf2777000",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/run_increase_double_sleep.py": "0c08f3af1d5eabacc150b2427c540b48f73792dd2cbfa0fda4508113e8d98801",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/sbp_sched.py": "fc03cd03b9b4bbd82bb2e147df0ffc3a6527d7c58166d2f32484fb2bde157a7c",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/sbp_sched_mixed_end.py": "a187c622573072c7f75b1db00e2d8ae8af52b129177a6283262cc2c34d732cd2",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/sched.py": "0f0bf52d71428cb4c7e830613a8e97570bef9a05b0d96449ee3d3b55c44cf6a3",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/DBDS/test.py": "d11ef49eabf56c279514af50dedc13e3bec050ced159f605021d41d255cf4fdb"
+  },
+  "original_hashes": {
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-7911/2016-7911.cpp": "c8d43024149d957da61fefb75e0cf1abca8952104356c3af855e9ccf14bc24f4",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-7911/build.sh": "2e0fd9ff6648fd9d470e9564cb412160d66d9caa115ffe6a8fc3d93ef11c92d8",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-7911/cleanDIR.sh": "7887ad5759eb63a7dd9c3829cc90afc70e0ca397536efbfba7473afbb55ca88b",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-7911/README.md": "4ac80c2c0197e268e5f99455cf5f98232830be861bf47dcedc25a259956dc898",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-9806/2016-9806.cpp": "0fdfd87a82cd03cc3d5bb039f0c057a2e905c080cb73a1ba99f971fa1048c144",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-9806/build.sh": "a078f6b09847cea1d7897399f12e1e4ced5b3579c1dd7770923cd241c12637eb",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-9806/cleanDIR.sh": "aa3131ea8e843354c2d4cb6b58c212689a6c4b8408ae008f6114347f615dcf06",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2016-9806/README.md": "62636a7d9743f4c0090e527919f9022236ad5489887f93ccd0f53a51b625d741",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2017-15265/2017-15265.cpp": "29cca575c999314d5352c6fcbc9898062c3b0a4cf7bf7ff411f28935bc4c0a21",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2017-15265/build.sh": "7baed6c1460e86daeced3f2497a329654c6036046952a4619e1b3b435fdb6d67",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2017-15265/cleanDIR.sh": "5a7b228813534bcaab83cd71adaaaa2786b73ac6cb0e85f10e252752e1822b40",
+    "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/evaluation/ConVul-CVE-Benchmarks/CVE-2017-15265/README.md": "a00dd856983cfc1be8c81508669ec250ab1b01230335fe11f44c310f1e7fb14f"
+  },
+  "runs": [
+    {
+      "method": "period",
+      "case": "CVE-2016-7911",
+      "run": 1,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 9.254537302000001,
+        "end_utc": "2026-11-18T14:25:12.079385+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 9.12253,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.0202796440000022,
+          "end_utc": "2026-11-18T14:25:13.106753+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.0202796440000022,
+        "end_utc": "2026-11-18T14:25:13.106753+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-9806",
+      "run": 1,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 5.489206835000001,
+        "end_utc": "2026-11-18T14:25:18.602253+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 5.40889,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.9686141400000032,
+          "end_utc": "2026-11-18T14:25:19.573541+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.9686141400000032,
+        "end_utc": "2026-11-18T14:25:19.573541+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2017-15265",
+      "run": 1,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 2.6753671699999977,
+        "end_utc": "2026-11-18T14:25:22.253864+00:00",
+        "validation_issue": null,
+        "schedules": 96,
+        "error_schedules": 1,
+        "timeouts": 0,
+        "first_bug_schedule": 11,
+        "tool_elapsed_seconds": 2.59041,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.2203388369999963,
+          "end_utc": "2026-11-18T14:25:23.478333+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "heap-use-after-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.2203388369999963,
+        "end_utc": "2026-11-18T14:25:23.478333+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "heap-use-after-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-7911",
+      "run": 1,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 10.255573824000003,
+        "end_utc": "2026-11-18T14:25:33.740186+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 10.15236,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.371193273000003,
+          "end_utc": "2026-11-18T14:25:35.115531+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.371193273000003,
+        "end_utc": "2026-11-18T14:25:35.115531+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-9806",
+      "run": 1,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 5.535455518999996,
+        "end_utc": "2026-11-18T14:25:40.655419+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 5.44415,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.2700819089999982,
+          "end_utc": "2026-11-18T14:25:41.929203+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.2700819089999982,
+        "end_utc": "2026-11-18T14:25:41.929203+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-7911",
+      "run": 2,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 9.654201923999999,
+        "end_utc": "2026-11-18T14:25:51.587953+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 9.59087,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.0184450249999983,
+          "end_utc": "2026-11-18T14:25:52.608296+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.0184450249999983,
+        "end_utc": "2026-11-18T14:25:52.608296+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-9806",
+      "run": 2,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 6.691295158999999,
+        "end_utc": "2026-11-18T14:25:59.305457+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 6.59304,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.7675676650000014,
+          "end_utc": "2026-11-18T14:26:00.075854+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.7675676650000014,
+        "end_utc": "2026-11-18T14:26:00.075854+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2017-15265",
+      "run": 2,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.786588921999993,
+        "end_utc": "2026-11-18T14:26:04.864990+00:00",
+        "validation_issue": null,
+        "schedules": 96,
+        "error_schedules": 1,
+        "timeouts": 0,
+        "first_bug_schedule": 11,
+        "tool_elapsed_seconds": 4.70843,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.9693052589999951,
+          "end_utc": "2026-11-18T14:26:05.840181+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "heap-use-after-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.9693052589999951,
+        "end_utc": "2026-11-18T14:26:05.840181+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "heap-use-after-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-7911",
+      "run": 2,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 10.001128143999992,
+        "end_utc": "2026-11-18T14:26:15.844698+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 9.94176,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.3203097739999947,
+          "end_utc": "2026-11-18T14:26:17.167266+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.3203097739999947,
+        "end_utc": "2026-11-18T14:26:17.167266+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-9806",
+      "run": 2,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 7.293469559000002,
+        "end_utc": "2026-11-18T14:26:24.467573+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 7.20296,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.2696302270000075,
+          "end_utc": "2026-11-18T14:26:25.739400+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.2696302270000075,
+        "end_utc": "2026-11-18T14:26:25.739400+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-7911",
+      "run": 3,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 9.20232347000001,
+        "end_utc": "2026-11-18T14:26:34.944606+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 9.13796,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.8677373410000087,
+          "end_utc": "2026-11-18T14:26:35.814556+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.8677373410000087,
+        "end_utc": "2026-11-18T14:26:35.814556+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-9806",
+      "run": 3,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 5.187061248999996,
+        "end_utc": "2026-11-18T14:26:41.004911+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 5.11146,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.0691291950000021,
+          "end_utc": "2026-11-18T14:26:42.076545+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.0691291950000021,
+        "end_utc": "2026-11-18T14:26:42.076545+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2017-15265",
+      "run": 3,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.184262153999995,
+        "end_utc": "2026-11-18T14:26:46.270178+00:00",
+        "validation_issue": null,
+        "schedules": 96,
+        "error_schedules": 1,
+        "timeouts": 0,
+        "first_bug_schedule": 11,
+        "tool_elapsed_seconds": 4.09331,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.7683821829999999,
+          "end_utc": "2026-11-18T14:26:47.042779+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "heap-use-after-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.7683821829999999,
+        "end_utc": "2026-11-18T14:26:47.042779+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "heap-use-after-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-7911",
+      "run": 3,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 9.399346562000005,
+        "end_utc": "2026-11-18T14:26:56.448839+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 9.28973,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.3211820490000008,
+          "end_utc": "2026-11-18T14:26:57.774455+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.3211820490000008,
+        "end_utc": "2026-11-18T14:26:57.774455+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-9806",
+      "run": 3,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.633275569000006,
+        "end_utc": "2026-11-18T14:27:02.417832+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 4.54107,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.9678115309999953,
+          "end_utc": "2026-11-18T14:27:03.387964+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.9678115309999953,
+        "end_utc": "2026-11-18T14:27:03.387964+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-7911",
+      "run": 4,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 8.147036624000009,
+        "end_utc": "2026-11-18T14:27:11.538708+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 8.06268,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.8185775569999976,
+          "end_utc": "2026-11-18T14:27:12.363428+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.8185775569999976,
+        "end_utc": "2026-11-18T14:27:12.363428+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-9806",
+      "run": 4,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 5.4410917570000095,
+        "end_utc": "2026-11-18T14:27:17.815162+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 5.32747,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.8689835669999866,
+          "end_utc": "2026-11-18T14:27:18.689284+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.8689835669999866,
+        "end_utc": "2026-11-18T14:27:18.689284+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2017-15265",
+      "run": 4,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.6704240319999997,
+        "end_utc": "2026-11-18T14:27:20.370760+00:00",
+        "validation_issue": null,
+        "schedules": 96,
+        "error_schedules": 1,
+        "timeouts": 0,
+        "first_bug_schedule": 11,
+        "tool_elapsed_seconds": 1.58301,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.6163228510000067,
+          "end_utc": "2026-11-18T14:27:20.989584+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "heap-use-after-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.6163228510000067,
+        "end_utc": "2026-11-18T14:27:20.989584+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "heap-use-after-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-7911",
+      "run": 4,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 6.93550707,
+        "end_utc": "2026-11-18T14:27:27.928577+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 6.86657,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.520871956999997,
+          "end_utc": "2026-11-18T14:27:29.452710+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.520871956999997,
+        "end_utc": "2026-11-18T14:27:29.452710+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-9806",
+      "run": 4,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.029141781000021,
+        "end_utc": "2026-11-18T14:27:33.488817+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 3.96006,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.0191663789999836,
+          "end_utc": "2026-11-18T14:27:34.509984+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.0191663789999836,
+        "end_utc": "2026-11-18T14:27:34.509984+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-7911",
+      "run": 5,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 6.038059271000009,
+        "end_utc": "2026-11-18T14:27:40.551345+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 5.94719,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.666841565999988,
+          "end_utc": "2026-11-18T14:27:41.222474+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.666841565999988,
+        "end_utc": "2026-11-18T14:27:41.222474+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-9806",
+      "run": 5,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.330153727999999,
+        "end_utc": "2026-11-18T14:27:45.556028+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 4.24001,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.6166055390000054,
+          "end_utc": "2026-11-18T14:27:46.174955+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.6166055390000054,
+        "end_utc": "2026-11-18T14:27:46.174955+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2017-15265",
+      "run": 5,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.282705254000007,
+        "end_utc": "2026-11-18T14:27:50.464793+00:00",
+        "validation_issue": null,
+        "schedules": 96,
+        "error_schedules": 1,
+        "timeouts": 0,
+        "first_bug_schedule": 11,
+        "tool_elapsed_seconds": 4.1784,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.8688802009999961,
+          "end_utc": "2026-11-18T14:27:51.337877+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "heap-use-after-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.8688802009999961,
+        "end_utc": "2026-11-18T14:27:51.337877+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "heap-use-after-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-7911",
+      "run": 5,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 5.53240228300001,
+        "end_utc": "2026-11-18T14:27:56.878581+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 5.45936,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.6660797090000017,
+          "end_utc": "2026-11-18T14:27:57.546685+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.6660797090000017,
+        "end_utc": "2026-11-18T14:27:57.546685+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-9806",
+      "run": 5,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 2.973087184999997,
+        "end_utc": "2026-11-18T14:28:00.523773+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 2.87879,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.6665033559999927,
+          "end_utc": "2026-11-18T14:28:01.192244+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.6665033559999927,
+        "end_utc": "2026-11-18T14:28:01.192244+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-7911",
+      "run": 6,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 5.383148274000007,
+        "end_utc": "2026-11-18T14:28:06.581244+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 5.30387,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.6166098539999894,
+          "end_utc": "2026-11-18T14:28:07.199993+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.6166098539999894,
+        "end_utc": "2026-11-18T14:28:07.199993+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-9806",
+      "run": 6,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 3.625783341000016,
+        "end_utc": "2026-11-18T14:28:10.830087+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 3.56326,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.5672500240000034,
+          "end_utc": "2026-11-18T14:28:11.399519+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.5672500240000034,
+        "end_utc": "2026-11-18T14:28:11.399519+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2017-15265",
+      "run": 6,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.384587068000002,
+        "end_utc": "2026-11-18T14:28:15.787979+00:00",
+        "validation_issue": null,
+        "schedules": 96,
+        "error_schedules": 1,
+        "timeouts": 0,
+        "first_bug_schedule": 11,
+        "tool_elapsed_seconds": 4.27314,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.0188125169999864,
+          "end_utc": "2026-11-18T14:28:16.811857+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "heap-use-after-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.0188125169999864,
+        "end_utc": "2026-11-18T14:28:16.811857+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "heap-use-after-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-7911",
+      "run": 6,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 10.408318439999988,
+        "end_utc": "2026-11-18T14:28:27.228625+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 10.31888,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.0694325239999785,
+          "end_utc": "2026-11-18T14:28:28.300976+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.0694325239999785,
+        "end_utc": "2026-11-18T14:28:28.300976+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "serial",
+      "case": "CVE-2016-9806",
+      "run": 6,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 4.733416609000017,
+        "end_utc": "2026-11-18T14:28:33.042677+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 4.65905,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 1.0689751580000006,
+          "end_utc": "2026-11-18T14:28:34.113870+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 1.0689751580000006,
+        "end_utc": "2026-11-18T14:28:34.113870+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-7911",
+      "run": 7,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 9.504151626999999,
+        "end_utc": "2026-11-18T14:28:43.627657+00:00",
+        "validation_issue": null,
+        "schedules": 19,
+        "error_schedules": 8,
+        "timeouts": 0,
+        "first_bug_schedule": 3,
+        "tool_elapsed_seconds": 9.39982,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.6176597839999829,
+          "end_utc": "2026-11-18T14:28:44.250595+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "SEGV",
+          "diagnostic_confirmed": true,
+          "near_null_address": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.6176597839999829,
+        "end_utc": "2026-11-18T14:28:44.250595+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "SEGV",
+        "diagnostic_confirmed": true,
+        "near_null_address": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2016-9806",
+      "run": 7,
+      "status": "completed",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 3.576701884000016,
+        "end_utc": "2026-11-18T14:28:47.831768+00:00",
+        "validation_issue": null,
+        "schedules": 42,
+        "error_schedules": 4,
+        "timeouts": 0,
+        "first_bug_schedule": 6,
+        "tool_elapsed_seconds": 3.49994,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.5668757180000057,
+          "end_utc": "2026-11-18T14:28:48.401799+00:00",
+          "observed_child_exits": [
+            0,
+            -6
+          ],
+          "last_child_exit": -6,
+          "replay_exit_confirmed": true,
+          "dry_run_abort": false,
+          "expected_diagnostic": "double-free",
+          "diagnostic_confirmed": true,
+          "status": "confirmed"
+        }
+      ],
+      "replay": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 0.5668757180000057,
+        "end_utc": "2026-11-18T14:28:48.401799+00:00",
+        "observed_child_exits": [
+          0,
+          -6
+        ],
+        "last_child_exit": -6,
+        "replay_exit_confirmed": true,
+        "dry_run_abort": false,
+        "expected_diagnostic": "double-free",
+        "diagnostic_confirmed": true,
+        "status": "confirmed"
+      }
+    },
+    {
+      "method": "period",
+      "case": "CVE-2017-15265",
+      "run": 7,
+      "status": "needs_inspection",
+      "search": {
+        "exit_code": 0,
+        "outer_timeout": false,
+        "wrapper_elapsed_seconds": 2.2713010020000013,
+        "end_utc": "2026-11-18T14:28:50.681040+00:00",
+        "validation_issue": null,
+        "schedules": 96,
+        "error_schedules": 2,
+        "timeouts": 0,
+        "first_bug_schedule": 7,
+        "tool_elapsed_seconds": 2.17346,
+        "effective_depth_confirmed": true
+      },
+      "replay_tries": [
+        {
+          "exit_code": 0,
+          "outer_timeout": false,
+          "wrapper_elapsed_seconds": 0.1146627770000066,
+          "end_utc": "2026-11-18T14:28:50.798083+00:00",
+          "observed_child_exits": [
+            0,
+            0
+          ],
+          "last_child_exit": 0,
+          "replay_exit_confirmed": false,
+          "dry_run_abort": false,
+          "expected_diagnostic": "heap-use-after-free",
+          "diagnostic_confirmed": false,
+          "status": "ran_without_expected_diagnostic"
+        }
+      ]
+    }
+  ],
+  "started_utc": "2026-11-18T14:24:58.587912+00:00",
+  "status": "stopped_for_inspection",
+  "runtime_build_file_hashes": {
+    "tool/staticAnalysis/DBDS-INSTRU/llvm-mode/DBDSFunction.cpp": "6e5001f8a79851f24f3074b4a6d84cf2550b52b947946f8a330f8877e44e4f61",
+    "tool/staticAnalysis/DBDS-INSTRU/dbds-clang-fast++": "6f15cc22e68e20e204e1a5bfa32d84a35fc11a5680c4564d0e81cba1cc2756b5",
+    "tool/staticAnalysis/staticAnalysis.sh": "f91e0353bc7538bb9d5ede174525a1d279e332051f26cf6d8862f2d2836bafad"
+  },
+  "exception": "RuntimeError: Replay ran without expected diagnostic: /root/cs340-period/formal/local-table1-local-runs-20261118-scoped-aa_3831h/runs/period/CVE-2017-15265/run-7"
+}

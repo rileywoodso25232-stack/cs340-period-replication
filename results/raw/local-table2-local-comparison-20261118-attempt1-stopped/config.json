@@ -1,0 +1,54 @@
+{
+  "experiment_id": "local-table2-local-comparison-20261118",
+  "status": "formal-table2-subset",
+  "claim_id": "C2",
+  "scope": "SCTBench CS.reorder_3_bad, CS.reorder_4_bad, CS.reorder_5_bad, CS.reorder_10_bad; Period and Serial; 3 attempts per setting",
+  "scope_reason": "Thread-count series directly tests the paper's parallel-vs-serial schedule-space claim. The course minimum is three independent runs; the paper used ten. CS.reorder_10_bad needs about 125-145 seconds per search, so ten attempts per method would take over 40 minutes; three attempts are a declared reduced-scale reproduction.",
+  "subjects": [
+    "reorder_3",
+    "reorder_4",
+    "reorder_5",
+    "reorder_10"
+  ],
+  "method_subjects": {
+    "period": [
+      "reorder_3",
+      "reorder_4",
+      "reorder_5",
+      "reorder_10"
+    ],
+    "serial": [
+      "reorder_3",
+      "reorder_4",
+      "reorder_5",
+      "reorder_10"
+    ]
+  },
+  "methods": [
+    {
+      "name": "period",
+      "driver": "run_PDS.py",
+      "patch": "src/patches/teammate-ipc-compat/period.diff"
+    },
+    {
+      "name": "serial",
+      "driver": "run_OldPDS.py",
+      "patch": "src/patches/teammate-ipc-compat/serial.diff"
+    }
+  ],
+  "depth": 3,
+  "schedule_budget": 10000,
+  "attempts_per_subject": 3,
+  "child_timeout_seconds": 5,
+  "outer_timeout_seconds": 300,
+  "replay_attempts": 3,
+  "ordering": "attempt-major; method-major; subjects in listed order; sequential",
+  "interactive": false,
+  "deep_search_mode": "upstream default prefix filtering; no -z",
+  "expected_diagnostic": "Assertion",
+  "replay": "first saved failure of every found run; a replay dry-run abort is retried up to 3 attempts and every attempt is kept",
+  "dry_run_abort_policy": "aborted_at_dry_run counts in the attempt denominator; it is not replayed and not replaced",
+  "replay_invalid_policy": "a replay that runs to Perform Reproduction! but does not show the expected assertion is recorded as invalid_replay; its search row is kept for audit and excluded from aggregate metrics",
+  "not_found_policy": "zero buggy schedules is a valid not_found outcome (paper '%'), not a tool error; total schedules and zero buggy schedules are recorded, first-bug is left missing",
+  "stopping_rule": "stop for inspection on build failure, outer timeout, search abort after DBDS started, replay timeout, or changed originals"
+}

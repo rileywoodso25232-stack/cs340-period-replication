@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "patch",
+    "--batch",
+    "--fuzz=0",
+    "/root/cs340-period/formal/local-table1-local-runs-20261118-scoped-aa_3831h/driver-serial/run_OldPDS.py",
+    "/mnt/c/Users/13989/Desktop/OS\u590d\u73b0/cs340-period-replication/src/patches/teammate-ipc-compat/serial.diff"
+  ],
+  "cwd": "/root/cs340-period/formal/local-table1-local-runs-20261118-scoped-aa_3831h",
+  "timeout_seconds": 30,
+  "start_utc": "2026-11-18T14:24:58.699497+00:00",
+  "environment": {
+    "ROOT_DIR": "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069",
+    "PATH": "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/bin:/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/tool/SVF/Release-build/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/d/mingw64/bin:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR:/mnt/c/Windows/system32/downlevel:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/WSL/:/mnt/c/Users/13989/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/d/paycharm/PyCharm 2024.3.1.1/bin:/mnt/c/Users/13989/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin:/mnt/c/Users/13989/AppData/Local/GitHubDesktop/bin:/mnt/d/Microsoft VS Code/bin/copilot-shim",
+    "LD_LIBRARY_PATH": "/root/cs340-period/source/cb8deb9a176e5bb292d70d46557dd61dc0e98069/clang+llvm/lib",
+    "LC_ALL": "C.UTF-8"
+  }
+}

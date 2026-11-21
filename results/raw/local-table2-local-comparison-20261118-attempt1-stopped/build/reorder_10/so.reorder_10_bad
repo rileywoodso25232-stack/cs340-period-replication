@@ -1,0 +1,117 @@
+[DEBUG] The ConConfig file was successfully opened.
+[DEBUG] The file is /root/cs340-period/table2/local-table2-local-comparison-20261118-x32mzat1/build/reorder_10/ConConfig.reorder_10_bad
+[DEBUG]
+[DEBUG] All the Concurent insteresting line are shown as follow:
+[DEBUG]  1)	reorder_bad.c:25
+[DEBUG]  2)	reorder_bad.c:35
+[DEBUG]  3)	reorder_bad.c:36
+[DEBUG]  4)	reorder_bad.c:38
+[DEBUG]  5)	reorder_bad.c:40
+[DEBUG]  6)	reorder_bad.c:45
+[DEBUG]  7)	reorder_bad.c:48
+[DEBUG]  8)	reorder_bad.c:53
+[DEBUG]  9)	reorder_bad.c:54
+[DEBUG]  10)	reorder_bad.c:55
+[DEBUG]  11)	reorder_bad.c:60
+[DEBUG]  12)	reorder_bad.c:61
+[DEBUG]  13)	reorder_bad.c:62
+[DEBUG]  14)	reorder_bad.c:71
+[DEBUG]  15)	reorder_bad.c:72
+[DEBUG]  16)	reorder_bad.c:78
+[DEBUG]  17)	reorder_bad.c:79
+reorder_bad.c:25 R/W main 57543
+reorder_bad.c:25 R/W main 57543
+reorder_bad.c:35 R/W main 6264
+reorder_bad.c:35 R/W main 6264
+reorder_bad.c:35 R/W main 6264
+reorder_bad.c:35 R/W main 6264
+reorder_bad.c:35 R/W main 6264
+reorder_bad.c:35 R/W main 6264
+reorder_bad.c:36 R/W main 19984
+reorder_bad.c:36 R/W main 19984
+reorder_bad.c:36 R/W main 19984
+reorder_bad.c:36 R/W main 19984
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:40 R/W main 16112
+reorder_bad.c:40 R/W main 16112
+reorder_bad.c:40 R/W main 16112
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:38 R/W main 47424
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:48 R/W main 62488
+reorder_bad.c:48 R/W main 62488
+reorder_bad.c:48 R/W main 62488
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:45 R/W main 20521
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:54 R/W main 20520
+reorder_bad.c:55 R/W main 34778
+reorder_bad.c:55 R/W main 34778
+reorder_bad.c:55 R/W main 34778
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:53 R/W main 6262
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:61 R/W main 56463
+reorder_bad.c:62 R/W main 5454
+reorder_bad.c:62 R/W main 5454
+reorder_bad.c:62 R/W main 5454
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:60 R/W main 41936
+reorder_bad.c:71 R/W setThread 4108
+reorder_bad.c:72 R/W setThread 18904
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:78 R/W checkThread 42144
+reorder_bad.c:79 R/W checkThread 56940
+reorder_bad.c:79 R/W checkThread 56940
