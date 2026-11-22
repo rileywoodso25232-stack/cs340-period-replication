@@ -1,5 +1,17 @@
 # AI usage record
 
+## 2026-11-22 L1 周期调度最小示例
+
+DeepSeek Harness（deepseek-flash）在本机 macOS 上编写并运行
+`experiments/l1-period-minimal`：用 pthread 条件变量模拟论文 §3.3 的周期执行，
+以手写调度复现 CVE-2016-1972 的 NPD／UAF／DF，并用 AddressSanitizer 复核三类错误。
+该示例用于教学与机制理解，不产生表一／表二的测量数据，也不进入 claim 证据链。
+人工复核待完成。
+
+| Date | Tool | Assistance | Human verification | Scope limitation |
+| --- | --- | --- | --- | --- |
+| 2026-11-22 | DeepSeek Harness (deepseek-flash) | L1 periodical-execution demo, five hand-written schedules, ASan cross-check, README | Pending human review | macOS teaching demo; no benchmark measurements or baseline comparison |
+
 ## 2026-11-21 表二 PR 主线同步
 
 | Date | Tool | Assistance | Human verification | Scope limitation |
